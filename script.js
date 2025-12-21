@@ -8,11 +8,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // --- CONFIGURATION DES LIENS DE CONTACT ---
     const contactLinks = [
-    { name: 'WhatsApp', url: 'https://wa.me/', icon: '#icon-whatsapp', id: 'whatsapp' ,className: 'whatsapp', text: "WhatsApp"},
-    { name: 'Snapchat', url: 'https://www.snapchat.com/', icon: '#icon-snapchat', id: 'snapchat', className: 'snapchat' , text: "Snapchat"},
-    { name: 'Telegram', url: 'https://t.me/', icon: '#icon-telegram', id: 'telegram',className: 'telegram', text: "Telegram" },
-    { name: 'Signal', url: 'https://signal.me/#eu/', icon: '#icon-signal', id: 'signal', className: 'signal', text: "Signal" }
-];
+        { name: 'WhatsApp', url: 'https://wa.me/33745728635', icon: '#icon-whatsapp', id: 'whatsapp', className: 'whatsapp', text: "WhatsApp" },
+        { name: 'Snapchat', url: 'https://www.snapchat.com/cerclesecret', icon: '#icon-snapchat', id: 'snapchat', className: 'snapchat', text: "Snapchat" },
+        { name: 'Telegram', url: 'https://t.me/frankybaby50', icon: '#icon-telegram', id: 'telegram', className: 'telegram', text: "Telegram" },
+        {
+            name: 'Canal Telegram 💙',
+            url: 'https://t.me/+rl7MYRyOPr04Y2U0',
+            id: 'telegram-canal',
+            className: 'telegram', // Garde le style Bleu Telegram
+            text: "Canal Telegram 💙"
+        },
+        { name: 'Signal', url: 'https://signal.me/#eu/frankybaby.50', icon: '#icon-signal', id: 'signal', className: 'signal', text: "Signal" },
+        {
+            name: 'POTATO 🥔',
+            url: 'https://dympt.org/franky',
+            id: 'potato',
+            className: 'potato', // Garde le style Marron/Doré Potato
+            text: "POTATO 🥔"
+        },
+        {
+            name: 'CANAL POTATO 🥔',
+            url: 'https://dympt.org/joinchat/sHotQAx0zBf6c9wNPkfQ2A',
+            id: 'potato-main',
+            className: 'potato', // Garde le style Marron/Doré Potato
+            text: "CANAL POTATO 🥔"
+        }
+    ];
 
     // --- DONNÉES DE L'APPLICATION (NOUVELLE STRUCTURE) ---
     const appData = [
@@ -28,14 +49,14 @@ document.addEventListener('DOMContentLoaded', function () {
             // La catégorie contient maintenant des "farms"
             farms: [
                 {
-                /*     id: 'HASH',
-                    name: 'HASH',
-                    image: 'Frosty2.png', // Mets une image de farm si tu veux
-                    badgeText: '5 produits', */
+                    /*     id: 'HASH',
+                        name: 'HASH',
+                        image: 'Frosty2.png', // Mets une image de farm si tu veux
+                        badgeText: '5 produits', */
                     products: [
-                         {
+                        {
                             id: '🍋 Lemon cherry 🍒',
-                           //  flag: '🇺🇸',
+                            //  flag: '🇺🇸',
                             name: '🍋 Lemon cherry 🍒',
                             farm: '🏠 NoFarm',
                             promoEligible: true,
@@ -57,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         },
                         {
                             id: 'Amnesia haze hipro 🌟',
-                           //  flag: '🇺🇸',
+                            //  flag: '🇺🇸',
                             name: 'Amnesia haze hipro 🌟',
                             farm: '🏠 NoFarm',
                             promoEligible: true,
@@ -77,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         },
                         {
                             id: '🌴 Tropicana Banana 🍌',
-                           //  flag: '🇺🇸',
+                            //  flag: '🇺🇸',
                             name: '🌴 Tropicana Banana 🍌',
                             farm: 'Calimàn 🇯🇲',
                             promoEligible: true,
@@ -112,36 +133,36 @@ document.addEventListener('DOMContentLoaded', function () {
 
             farms: [
                 {
-               /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
-                    name: 'Wizard trees 🔮',
-                    image: 'Wizard4.png', // Mets une image de farm si tu veux
-                    badgeText: '2 produits', */
+                    /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
+                         name: 'Wizard trees 🔮',
+                         image: 'Wizard4.png', // Mets une image de farm si tu veux
+                         badgeText: '2 produits', */
                     products: [
-                /*         {
-                            id: 'LEMONHAZE',
-                           //flag: '🇺🇸',
-                            name: '🍋 LEMON HAZE 🍋',
-                            farm: 'FARM',
-                            promoEligible: true,
-                            type: 'Weed',
-                            image: 'LemonProduct.png',
-                            video: 'LemonHaze.mp4',
-                            description: 'Beuh Hollandaise craquante et poleneuse sans super fort a super bon goût à la bouche 🤪',
-                            tarifs: [
-                                { weight: '2g', price: 20.00 },
-                                { weight: '5g', price: 50.00 },
-                                { weight: '10g', price: 80.00 },
-                                { weight: '25g', price: 160.00 },
-                                { weight: '50g', price: 300.00 },
-                                { weight: '100g', price: 550.00 },
-                            ]
-                        }  */
+                        /*         {
+                                    id: 'LEMONHAZE',
+                                   //flag: '🇺🇸',
+                                    name: '🍋 LEMON HAZE 🍋',
+                                    farm: 'FARM',
+                                    promoEligible: true,
+                                    type: 'Weed',
+                                    image: 'LemonProduct.png',
+                                    video: 'LemonHaze.mp4',
+                                    description: 'Beuh Hollandaise craquante et poleneuse sans super fort a super bon goût à la bouche 🤪',
+                                    tarifs: [
+                                        { weight: '2g', price: 20.00 },
+                                        { weight: '5g', price: 50.00 },
+                                        { weight: '10g', price: 80.00 },
+                                        { weight: '25g', price: 160.00 },
+                                        { weight: '50g', price: 300.00 },
+                                        { weight: '100g', price: 550.00 },
+                                    ]
+                                }  */
                     ]
                 }
             ]
         },
-         // --- Catégorie 3: Cali usa 🇺🇸 ---
-         {
+        // --- Catégorie 3: Cali usa 🇺🇸 ---
+        {
             id: 'Cali usa 🇺🇸',
             name: ' Cali usa 🇺🇸',
             farm: '',
@@ -151,14 +172,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
             farms: [
                 {
-               /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
-                    name: 'Wizard trees 🔮',
-                    image: 'Wizard4.png', // Mets une image de farm si tu veux
-                    badgeText: '2 produits', */
+                    /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
+                         name: 'Wizard trees 🔮',
+                         image: 'Wizard4.png', // Mets une image de farm si tu veux
+                         badgeText: '2 produits', */
                     products: [
                         {
                             id: 'Oreoz 🍪',
-                           //flag: '🇺🇸',
+                            //flag: '🇺🇸',
                             name: 'Oreoz 🍪',
                             farm: '🏠 NoFarm',
                             type: 'Weed',
@@ -174,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         },
                         {
                             id: 'Runtz 👹',
-                           //flag: '🇺🇸',
+                            //flag: '🇺🇸',
                             name: 'Runtz 👹',
                             farm: '🏠 NoFarm',
                             type: 'Weed',
@@ -190,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         },
                         {
                             id: 'Mach One 🥇',
-                           //flag: '🇺🇸',
+                            //flag: '🇺🇸',
                             name: 'Mach One 🥇',
                             farm: '🏠 NoFarm',
                             type: 'Weed',
@@ -203,13 +224,13 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '10G', price: 150.00 },
                                 { weight: '25G', price: 300.00 },
                             ]
-                        } 
+                        }
                     ]
                 }
             ]
         },
-         // --- Catégorie 4: Cali Canada 🇨🇦 ---
-         {
+        // --- Catégorie 4: Cali Canada 🇨🇦 ---
+        {
             id: 'Cali Canada 🇨🇦',
             name: ' Cali Canada 🇨🇦',
             farm: '',
@@ -219,14 +240,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
             farms: [
                 {
-               /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
-                    name: 'Wizard trees 🔮',
-                    image: 'Wizard4.png', // Mets une image de farm si tu veux
-                    badgeText: '2 produits', */
+                    /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
+                         name: 'Wizard trees 🔮',
+                         image: 'Wizard4.png', // Mets une image de farm si tu veux
+                         badgeText: '2 produits', */
                     products: [
                         {
                             id: 'Turbo 🐌',
-                           //flag: '🇺🇸',
+                            //flag: '🇺🇸',
                             name: 'Turbo 🐌',
                             farm: '🏠 No Farm',
                             promoEligible: true,
@@ -240,13 +261,13 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '25G', price: 240.00 },
                                 { weight: '50G', price: 400.00 },
                             ]
-                        } 
+                        }
                     ]
                 }
             ]
         },
-         // --- Catégorie 5: Snow cali ❄️ ---
-         {
+        // --- Catégorie 5: Snow cali ❄️ ---
+        {
             id: 'Snow cali ❄️',
             name: 'Snow cali ❄️',
             farm: '',
@@ -256,14 +277,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
             farms: [
                 {
-               /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
-                    name: 'Wizard trees 🔮',
-                    image: 'Wizard4.png', // Mets une image de farm si tu veux
-                    badgeText: '2 produits', */
+                    /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
+                         name: 'Wizard trees 🔮',
+                         image: 'Wizard4.png', // Mets une image de farm si tu veux
+                         badgeText: '2 produits', */
                     products: [
                         {
                             id: '🍋/🥭/🥤/🍌/🍓',
-                           //flag: '🇺🇸',
+                            //flag: '🇺🇸',
                             name: '🍋/🥭/🥤/🍌/🍓',
                             farm: '🏠 No Farm',
                             promoEligible: true,
@@ -278,50 +299,50 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '10G', price: 180.00 },
                                 { weight: '25G', price: 400.00 },
                             ]
-                        } 
+                        }
                     ]
                 }
             ]
         },
-                   // --- Catégorie 6: Frozen 🧊 ---
-                   {
-                    id: 'Exctraction ☢️',
-                    name: 'Exctraction ☢️',
-                    farm: '',
-                    type: 'Exctraction',
-                    quality: 'Exctraction ☢️',
-                    image: 'CategExctra.png', // Image de la catégorie
-        
-                    farms: [
+        // --- Catégorie 6: Frozen 🧊 ---
+        {
+            id: 'Exctraction ☢️',
+            name: 'Exctraction ☢️',
+            farm: '',
+            type: 'Exctraction',
+            quality: 'Exctraction ☢️',
+            image: 'CategExctra.png', // Image de la catégorie
+
+            farms: [
+                {
+                    /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
+                         name: 'Wizard trees 🔮',
+                         image: 'Wizard4.png', // Mets une image de farm si tu veux
+                         badgeText: '2 produits', */
+                    products: [
                         {
-                       /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
-                            name: 'Wizard trees 🔮',
-                            image: 'Wizard4.png', // Mets une image de farm si tu veux
-                            badgeText: '2 produits', */
-                            products: [
-                                {
-                                    id: 'Mix',
-                                   //flag: '🇺🇸',
-                                    name: '🧬 Mix cali usa 🧬',
-                                    farm: '🥼 Home made',
-                                    promoEligible: true,
-                                    type: 'Exctraction',
-                                    image: 'ProductMix.png',
-                                    video: 'VideoMix.mp4',
-                                    description: 'Beuh Hollandaise craquante et poleneuse sans super fort a super bon goût à la bouche 🤪',
-                                    tarifs: [
-                                        { weight: '1G', price: 50.00 },
-                                        { weight: '2G', price: 90.00 },
-                                        { weight: '3G', price: 120.00 },
-                                        { weight: '5G', price: 200.00 },
-                                        { weight: '10G', price: 350.00 },
-                                    ]
-                                } 
+                            id: 'Mix',
+                            //flag: '🇺🇸',
+                            name: '🧬 Mix cali usa 🧬',
+                            farm: '🥼 Home made',
+                            promoEligible: true,
+                            type: 'Exctraction',
+                            image: 'ProductMix.png',
+                            video: 'VideoMix.mp4',
+                            description: 'Beuh Hollandaise craquante et poleneuse sans super fort a super bon goût à la bouche 🤪',
+                            tarifs: [
+                                { weight: '1G', price: 50.00 },
+                                { weight: '2G', price: 90.00 },
+                                { weight: '3G', price: 120.00 },
+                                { weight: '5G', price: 200.00 },
+                                { weight: '10G', price: 350.00 },
                             ]
                         }
                     ]
-                },
-                 // --- Catégorie 6: Frozen 🧊 ---
+                }
+            ]
+        },
+        // --- Catégorie 6: Frozen 🧊 ---
         {
             id: 'Frozen 🧊',
             name: 'Frozen 🧊',
@@ -332,14 +353,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
             farms: [
                 {
-               /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
-                    name: 'Wizard trees 🔮',
-                    image: 'Wizard4.png', // Mets une image de farm si tu veux
-                    badgeText: '2 produits', */
+                    /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
+                         name: 'Wizard trees 🔮',
+                         image: 'Wizard4.png', // Mets une image de farm si tu veux
+                         badgeText: '2 produits', */
                     products: [
                         {
                             id: 'Red Bull 🐂',
-                           //flag: '🇺🇸',
+                            //flag: '🇺🇸',
                             name: 'Red Bull 🐂',
                             farm: '🏠 No Farm',
                             promoEligible: true,
@@ -354,12 +375,12 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '40G', price: 700.00 },
                                 { weight: '50G', price: 850.00 },
                             ]
-                        } 
+                        }
                     ]
                 }
             ]
         },
-                 // --- Catégorie 7: Fresh Frozen Plasma 🔮 ---
+        // --- Catégorie 7: Fresh Frozen Plasma 🔮 ---
 
         {
             id: 'Fresh Frozen Plasma 🔮',
@@ -371,14 +392,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
             farms: [
                 {
-               /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
-                    name: 'Wizard trees 🔮',
-                    image: 'Wizard4.png', // Mets une image de farm si tu veux
-                    badgeText: '2 produits', */
+                    /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
+                         name: 'Wizard trees 🔮',
+                         image: 'Wizard4.png', // Mets une image de farm si tu veux
+                         badgeText: '2 produits', */
                     products: [
                         {
                             id: 'Mojito strawberry 🍹',
-                           //flag: '🇺🇸',
+                            //flag: '🇺🇸',
                             name: 'Mojito strawberry 🍹',
                             farm: '🪖 Warz of Terpz 🪖',
                             promoEligible: true,
@@ -396,7 +417,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         },
                         {
                             id: 'Chocolop 🐥',
-                           //flag: '🇺🇸',
+                            //flag: '🇺🇸',
                             name: 'Chocolop 🐥',
                             farm: '🪖 Warz of Terpz 🪖',
                             promoEligible: true,
@@ -416,7 +437,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             ]
         },
-                 // --- Catégorie 8: Double static 💥 ---
+        // --- Catégorie 8: Double static 💥 ---
 
         {
             id: 'Double static 💥',
@@ -428,14 +449,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
             farms: [
                 {
-               /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
-                    name: 'Wizard trees 🔮',
-                    image: 'Wizard4.png', // Mets une image de farm si tu veux
-                    badgeText: '2 produits', */
+                    /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
+                         name: 'Wizard trees 🔮',
+                         image: 'Wizard4.png', // Mets une image de farm si tu veux
+                         badgeText: '2 produits', */
                     products: [
                         {
                             id: '⛔ Forbidden ⛔',
-                           //flag: '🇺🇸',
+                            //flag: '🇺🇸',
                             name: '⛔ Forbidden ⛔',
                             farm: '🪖 Warz of Terpz 🪖',
                             promoEligible: true,
@@ -453,7 +474,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         },
                         {
                             id: 'Oreoz caprizun 🧃',
-                           //flag: '🇺🇸',
+                            //flag: '🇺🇸',
                             name: 'Oreoz caprizun 🧃',
                             farm: '🪖 Warz of Terpz 🪖',
                             promoEligible: true,
@@ -469,9 +490,9 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '50g', price: 1000.00 },
                             ]
                         },
-                         {
+                        {
                             id: 'Piniacolada 🍍',
-                           //flag: '🇺🇸',
+                            //flag: '🇺🇸',
                             name: 'Piniacolada 🍍',
                             farm: '🪖 Warz of Terpz 🪖',
                             promoEligible: true,
@@ -491,7 +512,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             ]
         },
-                 // --- Catégorie 9: Static ⚡ ---
+        // --- Catégorie 9: Static ⚡ ---
 
         {
             id: 'Static ⚡',
@@ -503,14 +524,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
             farms: [
                 {
-               /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
-                    name: 'Wizard trees 🔮',
-                    image: 'Wizard4.png', // Mets une image de farm si tu veux
-                    badgeText: '2 produits', */
+                    /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
+                         name: 'Wizard trees 🔮',
+                         image: 'Wizard4.png', // Mets une image de farm si tu veux
+                         badgeText: '2 produits', */
                     products: [
                         {
                             id: 'Purple punch 🍇',
-                           //flag: '🇺🇸',
+                            //flag: '🇺🇸',
                             name: 'Purple punch 🍇',
                             farm: '🏠 No Farm',
                             promoEligible: true,
@@ -527,7 +548,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         },
                         {
                             id: 'Girls cookies 💃',
-                           //flag: '🇺🇸',
+                            //flag: '🇺🇸',
                             name: 'Girls cookies 💃',
                             farm: '🏠 No Farm',
                             promoEligible: true,
@@ -544,7 +565,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         },
                         {
                             id: 'Tidirhine 🇲🇦',
-                           //flag: '🇺🇸',
+                            //flag: '🇺🇸',
                             name: 'Tidirhine 🇲🇦',
                             farm: '🏠 No Farm',
                             promoEligible: true,
@@ -561,7 +582,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         },
                         {
                             id: 'Juanita lagrimosa ✨',
-                           //flag: '🇺🇸',
+                            //flag: '🇺🇸',
                             name: 'Juanita lagrimosa ✨',
                             farm: '🏠 No Farm',
                             promoEligible: true,
@@ -578,7 +599,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         },
                         {
                             id: 'Banana Kush 🍌',
-                           //flag: '🇺🇸',
+                            //flag: '🇺🇸',
                             name: 'Banana Kush 🍌',
                             farm: '🏠 No Farm',
                             promoEligible: true,
@@ -608,14 +629,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
             farms: [
                 {
-               /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
-                    name: 'Wizard trees 🔮',
-                    image: 'Wizard4.png', // Mets une image de farm si tu veux
-                    badgeText: '2 produits', */
+                    /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
+                         name: 'Wizard trees 🔮',
+                         image: 'Wizard4.png', // Mets une image de farm si tu veux
+                         badgeText: '2 produits', */
                     products: [
                         {
                             id: 'Beldia Original Genetic 🧬',
-                           //flag: '🇺🇸',
+                            //flag: '🇺🇸',
                             name: 'Beldia Original Genetic 🧬',
                             farm: '🏠 No Farm',
                             promoEligible: true,
@@ -633,7 +654,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         },
                         {
                             id: '🍊 Orange Ice 🥶',
-                           //flag: '🇺🇸',
+                            //flag: '🇺🇸',
                             name: '🍊 Orange Ice 🥶',
                             farm: '🏕️ Jungle Farmz 🏕️',
                             promoEligible: true,
@@ -651,7 +672,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         },
                         {
                             id: 'Sour diesel ⛽️',
-                           //flag: '🇺🇸',
+                            //flag: '🇺🇸',
                             name: 'Sour diesel ⛽️',
                             farm: '🏠 No Farm',
                             promoEligible: true,
@@ -669,7 +690,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         },
                         {
                             id: 'Mascot boy 🧸',
-                           //flag: '🇺🇸',
+                            //flag: '🇺🇸',
                             name: 'Mascot boy 🧸',
                             farm: '🏠 No Farm',
                             promoEligible: true,
@@ -689,7 +710,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             ]
         },
-         {
+        {
             id: 'Filtre x3 🍦',
             name: 'Filtre x3 🍦',
             farm: '',
@@ -699,14 +720,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
             farms: [
                 {
-               /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
-                    name: 'Wizard trees 🔮',
-                    image: 'Wizard4.png', // Mets une image de farm si tu veux
-                    badgeText: '2 produits', */
+                    /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
+                         name: 'Wizard trees 🔮',
+                         image: 'Wizard4.png', // Mets une image de farm si tu veux
+                         badgeText: '2 produits', */
                     products: [
                         {
                             id: 'Fruit Cake 🍰',
-                           //flag: '🇺🇸',
+                            //flag: '🇺🇸',
                             name: 'Willy Wonka 🍰',
                             farm: 'Willy Wonka 🧙🏼‍♂️',
                             promoEligible: true,
@@ -723,7 +744,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         },
                         {
                             id: 'Cherry Pie 🍒',
-                           //flag: '🇺🇸',
+                            //flag: '🇺🇸',
                             name: 'Cherry Pie 🍒',
                             farm: 'Willy Wonka 🧙🏼‍♂️',
                             promoEligible: true,
@@ -740,7 +761,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         },
                         {
                             id: 'Grappe Pie 🍇',
-                           //flag: '🇺🇸',
+                            //flag: '🇺🇸',
                             name: 'Grappe Pie 🍇',
                             farm: 'Willy Wonka 🧙🏼‍♂️',
                             promoEligible: true,
@@ -757,7 +778,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         },
                         {
                             id: 'Bubble gum 🫧',
-                           //flag: '🇺🇸',
+                            //flag: '🇺🇸',
                             name: 'Bubble gum 🫧',
                             farm: '🏠 No Farm',
                             promoEligible: true,
@@ -772,9 +793,9 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '25G', price: 170.00 },
                             ]
                         },
-                         {
+                        {
                             id: 'Ice Cream 🍨',
-                           //flag: '🇺🇸',
+                            //flag: '🇺🇸',
                             name: 'Ice Cream 🍨',
                             farm: '🏠 No Farm',
                             promoEligible: true,
@@ -793,7 +814,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         },
                         {
                             id: 'Cherry 🍒 Pie',
-                           //flag: '🇺🇸',
+                            //flag: '🇺🇸',
                             name: 'Cherry 🍒 Pie',
                             farm: '🏠 No Farm',
                             promoEligible: true,
@@ -815,7 +836,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             ]
         },
-                 // --- Catégorie 10: Bonbon 🍭 ---
+        // --- Catégorie 10: Bonbon 🍭 ---
 
         {
             id: 'Bonbon 🍭',
@@ -827,14 +848,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
             farms: [
                 {
-               /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
-                    name: 'Wizard trees 🔮',
-                    image: 'Wizard4.png', // Mets une image de farm si tu veux
-                    badgeText: '2 produits', */
+                    /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
+                         name: 'Wizard trees 🔮',
+                         image: 'Wizard4.png', // Mets une image de farm si tu veux
+                         badgeText: '2 produits', */
                     products: [
                         {
                             id: '6️⃣ 9️⃣',
-                           //flag: '🇺🇸',
+                            //flag: '🇺🇸',
                             name: '6️⃣ 9️⃣',
                             farm: '🏠 No Farm',
                             promoEligible: true,
@@ -848,12 +869,12 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '30', price: 170.00 },
                                 { weight: '50', price: 250.00 },
                             ]
-                        } 
+                        }
                     ]
                 }
             ]
         },
-                 // --- Catégorie 11: Neige ⛄ ---
+        // --- Catégorie 11: Neige ⛄ ---
 
         {
             id: 'Neige ⛄',
@@ -865,14 +886,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
             farms: [
                 {
-               /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
-                    name: 'Wizard trees 🔮',
-                    image: 'Wizard4.png', // Mets une image de farm si tu veux
-                    badgeText: '2 produits', */
+                    /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
+                         name: 'Wizard trees 🔮',
+                         image: 'Wizard4.png', // Mets une image de farm si tu veux
+                         badgeText: '2 produits', */
                     products: [
                         {
                             id: 'Pablo 🤠',
-                           //flag: '🇺🇸',
+                            //flag: '🇺🇸',
                             name: 'Pablo 🤠',
                             farm: '🇨🇴',
                             promoEligible: true,
@@ -888,12 +909,30 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '10G', price: 550.00 },
                                 { weight: '20G', price: 1000.00 },
                             ]
-                        } 
+                        },
+                        {
+                            id: 'Le Yakuza ㊙️',
+                            //flag: '🇺🇸',
+                            name: 'Le Yakuza ㊙️',
+                            farm: '🇨🇴',
+                            promoEligible: true,
+                            type: 'Neige',
+                            image: 'ProductYakuza.png',
+                            video: 'VideoYakuza.mp4',
+                            description: '',
+                            tarifs: [
+                                { weight: '1G', price: 70.00 },
+                                { weight: '2G', price: 130.00 },
+                                { weight: '3G', price: 200.00 },
+                                { weight: '5G', price: 300.00 },
+                                { weight: '10G', price: 550.00 },
+                            ]
+                        }
                     ]
                 }
             ]
         }
-      
+
     ];
 
     // --- VARIABLES D'ÉTAT ---
@@ -1194,20 +1233,20 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-   // Affiche la page de détail d'un produit
-function renderProductPage(productId) {
-    // On utilise notre nouvelle fonction "helper"
-    const product = getProductById(productId);
-    if (!product) return;
+    // Affiche la page de détail d'un produit
+    function renderProductPage(productId) {
+        // On utilise notre nouvelle fonction "helper"
+        const product = getProductById(productId);
+        if (!product) return;
 
-    const videoElement = document.querySelector('#page-product .product-video');
-    videoElement.src = product.video;
-    videoElement.poster = product.image;
+        const videoElement = document.querySelector('#page-product .product-video');
+        videoElement.src = product.video;
+        videoElement.poster = product.image;
 
-    document.getElementById('product-page-title').innerText = product.name;
-    const detailsContainer = document.getElementById('product-details-content');
+        document.getElementById('product-page-title').innerText = product.name;
+        const detailsContainer = document.getElementById('product-details-content');
 
-    let tarifsHTML = product.tarifs.map(tarif => `
+        let tarifsHTML = product.tarifs.map(tarif => `
     <div class="tarif-item">
         <div class="box-tarif">
             <div class="tarif-wieght">${tarif.weight}</div>
@@ -1219,14 +1258,14 @@ function renderProductPage(productId) {
     </div>
 `).join('');
 
-    // ... (la logique de descriptionHTML ne change pas) ...
-    let descriptionHTML = '';
-    if (product.description) {
-        // ...
-    }
-    
-    // On injecte le HTML, y compris la description
-    detailsContainer.innerHTML = `
+        // ... (la logique de descriptionHTML ne change pas) ...
+        let descriptionHTML = '';
+        if (product.description) {
+            // ...
+        }
+
+        // On injecte le HTML, y compris la description
+        detailsContainer.innerHTML = `
     <div class="name">${product.name}</div>
     <div class="farm">${product.farm}</div>
     ${descriptionHTML} 
@@ -1236,8 +1275,8 @@ function renderProductPage(productId) {
         ${tarifsHTML}
     </div>
     `;
-    showPage('page-product');
-}
+        showPage('page-product');
+    }
     // Met à jour l'affichage du panier (inchangé)
     function renderCart() {
         const cartContainer = document.getElementById('cart-items-container');
@@ -1574,32 +1613,32 @@ function renderProductPage(productId) {
     }
 
     // --- NOUVELLE FONCTION POUR COPIER DANS LE PRESSE-PAPIERS ---
- /*    function copyToClipboard(text) {
-        if (navigator.clipboard) { // API moderne et sécurisée
-            navigator.clipboard.writeText(text).then(() => {
-                showNotification('✅ Commande copiée ! Colle-la dans le chat.');
-                tg.HapticFeedback.notificationOccurred('success');
-            }, (err) => {
-                showNotification('❌ Erreur en copiant le message');
-            });
-        } else { // Ancien fallback (pour certains navigateurs)
-            const textArea = document.createElement('textarea');
-            textArea.value = text;
-            textArea.style.position = 'fixed'; // Hors de l'écran
-            document.body.appendChild(textArea);
-            textArea.focus();
-            textArea.select();
-            try {
-                document.execCommand('copy');
-                showNotification('✅ Commande copiée ! Colle-la dans le chat.');
-                tg.HapticFeedback.notificationOccurred('success');
-            } catch (err) {
-                showNotification('❌ Erreur en copiant le message');
-            }
-            document.body.removeChild(textArea);
-        }
-    }
- */
+    /*    function copyToClipboard(text) {
+           if (navigator.clipboard) { // API moderne et sécurisée
+               navigator.clipboard.writeText(text).then(() => {
+                   showNotification('✅ Commande copiée ! Colle-la dans le chat.');
+                   tg.HapticFeedback.notificationOccurred('success');
+               }, (err) => {
+                   showNotification('❌ Erreur en copiant le message');
+               });
+           } else { // Ancien fallback (pour certains navigateurs)
+               const textArea = document.createElement('textarea');
+               textArea.value = text;
+               textArea.style.position = 'fixed'; // Hors de l'écran
+               document.body.appendChild(textArea);
+               textArea.focus();
+               textArea.select();
+               try {
+                   document.execCommand('copy');
+                   showNotification('✅ Commande copiée ! Colle-la dans le chat.');
+                   tg.HapticFeedback.notificationOccurred('success');
+               } catch (err) {
+                   showNotification('❌ Erreur en copiant le message');
+               }
+               document.body.removeChild(textArea);
+           }
+       }
+    */
     // --- GESTION DES ÉVÉNEMENTS ---
 
     // Clics sur la barre de navigation
@@ -1837,9 +1876,9 @@ function renderProductPage(productId) {
 
         // Clic sur "Confirmer la commande" (VERSION COPIER/COLLER - LA SEULE FIABLE)
         if (target.closest('#confirm-order-button')) {
-            
+
             // 1. TON PSEUDO TELEGRAM
-            const targetUsername = ''; 
+            const targetUsername = 'frankybaby50';
 
             // 2. On prépare le message
             let message = formatOrderMessage();
@@ -1851,7 +1890,7 @@ function renderProductPage(productId) {
             // 4. On encode et on ouvre le lien
             const encodedMessage = encodeURIComponent(message);
             const telegramUrl = `https://t.me/${targetUsername}?text=${encodedMessage}`;
-            
+
             tg.openLink(telegramUrl);
         }
 
