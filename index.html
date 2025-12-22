@@ -843,8 +843,8 @@
             height: 15vh;
             width: 15vh;
             margin-bottom: 6vh;
-            border-radius: 50%;
-            box-shadow: 0px 0px 10px 2px red;
+            border-radius: 20%;
+    box-shadow: 0px 0px 10px 2px #03e7f6;
             margin-top: 2vh;
         }
 
@@ -1146,9 +1146,6 @@
             opacity: 0.7;
         }
 
-        #nav-info {
-            display: none;
-        }
 
         /* --- NOUVEAU STYLE POUR LA GRILLE DES TARIFS --- */
 
@@ -1204,6 +1201,199 @@
     background-color: #0400ff; /* Vert Signal */
     color: #ffffff; 
 }
+
+/* --- STYLE POUR LES INPUTS ADRESSE & INFO --- */
+.user-details-container {
+            margin-top: 20px;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--tertiary-bg-color);
+        }
+
+        .user-details-container h4 {
+            margin-bottom: 10px;
+            margin-top: 10px;
+            font-family: Optima, sans-serif; /* Pour matcher tes titres */
+        }
+
+        .input-area {
+            width: 100%;
+            background: var(--secondary-bg-color);
+            color: var(--text-color);
+            border: 1px solid #03e7f6; /* Ton cyan */
+            border-radius: 10px;
+            padding: 15px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            resize: vertical; /* Permet d'agrandir la case */
+            min-height: 80px;
+            box-sizing: border-box; /* Important pour ne pas dépasser */
+            outline: none;
+        }
+
+        .input-area:focus {
+            box-shadow: 0px 0px 5px 1px #03e7f6; /* Petit effet néon au clic */
+        }
+
+        /* --- STYLE GOODIES --- */
+        .goodies-wrapper {
+            margin-top: 15px;
+            background: var(--secondary-bg-color);
+            border-radius: 10px;
+            padding: 15px;
+            border: 1px solid var(--tertiary-bg-color);
+        }
+
+        .switch-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .goodies-title {
+            font-weight: bold;
+            color: var(--text-color);
+        }
+
+        /* Style du Switch principal */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 26px;
+        }
+        .switch input { opacity: 0; width: 0; height: 0; }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: #3a3a3c;
+            transition: .4s;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 20px;
+            width: 20px;
+            left: 3px; bottom: 3px;
+            background-color: white;
+            transition: .4s;
+        }
+        input:checked + .slider { background-color: #03e7f6; } /* Cyan activé */
+        input:checked + .slider:before { transform: translateX(24px); }
+        .slider.round { border-radius: 34px; }
+        .slider.round:before { border-radius: 50%; }
+
+        /* Style de la liste déroulante */
+        .goodies-options {
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px solid var(--tertiary-bg-color);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .goodies-subtitle {
+            font-size: 0.9rem;
+            color: var(--hint-color);
+            margin-bottom: 5px;
+        }
+
+        .goodie-item {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 5px;
+            transition: background 0.2s;
+        }
+        .goodie-item:hover { background: #3a3a3c; }
+
+        .goodie-checkbox {
+            accent-color: #03e7f6; /* Checkbox cyan */
+            transform: scale(1.3);
+            margin-right: 15px;
+        }
+
+        /* --- STYLE CIGARETTES --- */
+        .cigarette-wrapper {
+            margin-top: 15px;
+            background: var(--secondary-bg-color);
+            border-radius: 10px;
+            padding: 15px;
+            border: 1px solid var(--tertiary-bg-color);
+        }
+        
+        /* On réutilise le style .input-area existant mais on s'assure qu'il est beau ici */
+        #cigarette-brand {
+            background: #000000;
+            border: 1px solid #ff3b30; /* Bordure rouge pour rappeler le tabac/danger ou juste le style */
+            color: white;
+            padding-left: 15px;
+        }
+        
+        #cigarette-brand::placeholder {
+            color: var(--hint-color);
+        }
+        /* Style du menu déroulant Cigarette */
+        select#cigarette-brand {
+            background: #000000;
+            border: 1px solid #ff3b30;
+            color: white;
+            padding-left: 15px;
+            appearance: none; /* Enlève le style par défaut du navigateur */
+            -webkit-appearance: none;
+        }
+
+        /* Style spécifique pour la case Bonus automatique */
+        .bonus-wrapper {
+            background: #2c2c2e; /* Gris foncé */
+            border-radius: 10px;
+            padding: 10px 15px;
+            border: 1px solid #555; /* Bordure grise discrète */
+        }
+        
+        /* Quand la case est cochée (active), on la met en valeur */
+        .bonus-wrapper.active {
+            border: 1px solid #03e7f6; /* Bordure Cyan */
+            opacity: 1 !important;
+            box-shadow: 0px 0px 10px rgba(3, 231, 246, 0.2);
+        }
+        /* --- STYLE DES ZONES DE LIVRAISON --- */
+        .zone-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 4px solid #03e7f6;
+            border-radius: 0 10px 10px 0;
+            padding: 10px 15px;
+            margin-bottom: 15px; /* Un peu plus d'espace entre les cartes */
+            text-align: left;
+        }
+
+        .zone-title {
+            color: #03e7f6;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 8px;
+            font-family: Optima, sans-serif;
+            text-transform: uppercase;
+        }
+
+        /* NOUVEAU STYLE POUR L'IMAGE DE ZONE */
+        .zone-img {
+            width: 100%;
+            height: 15vh; /* Hauteur fixe pour que ce soit uniforme */
+            object-fit: cover; /* Ça coupe l'image proprement si elle est trop grande */
+            border-radius: 8px;
+            margin-bottom: 8px;
+            border: 1px solid #3a3a3c;
+        }
+
+        .zone-desc {
+            color: var(--hint-color);
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin: 0;
+        }
     </style>
 </head>
 
@@ -1226,32 +1416,27 @@
             <div class="contact-card">
 
                 <div class="accordion-container">
+                    
                     <div class="accordion-item">
                         <button class="accordion-header">
-                            <p style="
-                        height: 4vh;
-                        width: 4vh;
-                        font-size: 3vh;">🛵</p>
-                            <span>DELIVERY </span>
+                            <p style="height: 4vh; width: 4vh; font-size: 3vh; margin:0;">🛵</p>
+                            <span>LIVRAISON / DELIVERY</span>
                             <svg class="accordion-arrow" width="24" height="24" viewBox="0 0 24 24">
                                 <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z" />
                             </svg>
                         </button>
                         <div class="accordion-content">
                             <p>
-                                Service rapide et fiable disponible des 100€ de commande avec 20€ de frais de livraison
-                                dans Bordeaux Centre et varient suivant la distance !
-                                <br><br> 🏆 Frais offert pour le canal VIP 🏆
+                                Nous livrons directement à l'adresse de votre choix.
+                                <br><br>
+                                📝 <strong>Important :</strong> Merci de fournir une adresse précise ainsi que toutes les informations nécessaires au livreur (Digicode, étage, instructions spéciales) lors de la validation de commande.
                             </p>
                         </div>
                     </div>
 
                     <div class="accordion-item">
                         <button class="accordion-header">
-                            <p style="
-                        height: 4vh;
-                        width: 4vh;
-                        font-size: 3vh;">🏢</p>
+                            <p style="height: 4vh; width: 4vh; font-size: 3vh; margin:0;">🏢</p>
                             <span>MEET-UP</span>
                             <svg class="accordion-arrow" width="24" height="24" viewBox="0 0 24 24">
                                 <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z" />
@@ -1259,51 +1444,87 @@
                         </button>
                         <div class="accordion-content">
                             <p>
-                                Adresse discrète dans le centre bosseur fiable et rapide !
-                                <br><br> Minimum 50€ de commande 🤑
+                                Rencontre dans un lieu discret ou public selon votre préférence.
+                                <br><br>
+                                📍 <strong>Lieux suggérés :</strong> Parking Leclerc, Leroy Merlin, ou tout autre lieu qui vous arrange.
+                                <br>
+                                🤝 Proposez votre point de rendez-vous directement dans les notes de commande.
                             </p>
                         </div>
                     </div>
 
                     <div class="accordion-item">
                         <button class="accordion-header">
-                            <p style="
-                        height: 4vh;
-                        width: 4vh;
-                        font-size: 3vh;">⏱️</p>
-                            <span>HORAIRES</span>
+                            <p style="height: 4vh; width: 4vh; font-size: 3vh; margin:0;">⏱️</p>
+                            <span>HORAIRES & ZONES</span>
                             <svg class="accordion-arrow" width="24" height="24" viewBox="0 0 24 24">
                                 <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z" />
                             </svg>
                         </button>
                         <div class="accordion-content">
-                            <p>
-                                12H - 00h
-                                <br><br> 🏆 Accès au canal VIP après votre première commandes
-                            </p>
+                            <div style="padding: 15px;">
+                                <p style="margin-bottom: 15px;">
+                                    <strong>Prise de commandes :</strong> 10h00 - 18h00<br>
+                                    <strong>Livraisons :</strong> À partir de 19h30
+                                </p>
+
+                                <div class="zone-card">
+                                    <div class="zone-title">🟢 ZONE 1</div>
+                                    <img src="Zone1.jpg" alt="Carte Zone 1" class="zone-img">
+                                    
+                                    <p class="zone-desc">
+                                        Gratuit minimum 40 euros commandes.
+                                    </p>
+                                </div>
+
+                                <div class="zone-card">
+                                    <div class="zone-title">🟡 ZONE 2</div>
+                                    <img src="Zone2.jpg" alt="Carte Zone 2" class="zone-img">
+
+                                    <p class="zone-desc">
+                                        Minimum 500 <br>
+                                        Livraison 100 euros
+                                    </p>
+                                </div>
+
+                                <div class="zone-card">
+                                    <div class="zone-title">🔴 ZONE 3 </div>
+                                    <img src="Zone3.jpg" alt="Carte Zone 3" class="zone-img">
+
+                                    <p class="zone-desc">
+                                        Minimum 500 <br>
+                                        Livraison 200 euros
+                                    </p>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                     <div class="accordion-item">
                         <button class="accordion-header">
-                            <p style="
-                        height: 4vh;
-                        width: 4vh;
-                        font-size: 3vh;">📦</p>
-                            <span>SHIPPING</span>
+                            <p style="height: 4vh; width: 4vh; font-size: 3vh; margin:0;">📦</p>
+                            <span>SHIPPING / EXPÉDITION</span>
                             <svg class="accordion-arrow" width="24" height="24" viewBox="0 0 24 24">
                                 <path fill="currentColor" d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z" />
                             </svg>
                         </button>
                         <div class="accordion-content">
                             <p>
-                                Colis sécuriser 2 a 3x sous vide plus mousse expansive, pour se qui concerne la France
-                                des frais de 20€ vous sont demander a partir de 100€ de commande par contre vous pouvez
-                                compter 40€ de frais pour les autres pays !
+                                🇫🇷 <strong>FRANCE :</strong>
+                                <br>
+                                Envoi via Relais Locker (Mondial Relay / Shop2Shop).
+                                <br>
+                                💳 <em>Pré-paiement requis : USDT / Crypto / CB.</em>
                                 <br><br>
-                                ✅ Payement uniquement en crypto ✅
+                                🇪🇸 <strong>ESPAGNE :</strong>
+                                <br>
+                                - Envoi Colis (Pré-paiement requis).
+                                <br>
+                                - <strong>Meet-up sur place :</strong> Possible dans un Coffee Shop, magasin ou lieu public (à convenir ensemble).
                             </p>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -1508,6 +1729,63 @@
             <div id="confirmation-items-list">
             </div>
 
+            <div class="goodies-wrapper">
+                <div class="switch-header">
+                    <span class="goodies-title">🎁 Ajouter des Goodies offerts ?</span>
+                    <label class="switch">
+                        <input type="checkbox" id="want-goodies-toggle">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+
+                <div id="goodies-selection-list" class="goodies-options" style="display: none;">
+                    <p class="goodies-subtitle">Cochez ce qui vous ferait plaisir :</p>
+                    
+                    <label class="goodie-item">
+                        <input type="checkbox" value="Briquet 🧨" class="goodie-checkbox">
+                        <span class="goodie-label">🔥 Briquet</span>
+                    </label>
+
+                    <label class="goodie-item" id="goodie-feuille-option">
+                        <input type="checkbox" value="Feuilles 🍃" class="goodie-checkbox">
+                        <span class="goodie-label">🍃 Feuilles</span>
+                    </label>
+
+                    <label class="goodie-item">
+                        <input type="checkbox" value="Bonbons 🍬" class="goodie-checkbox">
+                        <span class="goodie-label">🍬 Bonbons</span>
+                    </label>
+
+                    <label class="goodie-item">
+                        <input type="checkbox" value="Jeux à gratter 🎰" class="goodie-checkbox">
+                        <span class="goodie-label">🎰 Jeux à gratter</span>
+                    </label>
+                </div>
+            </div>
+          <div class="cigarette-wrapper">
+                <div class="switch-header">
+                    <span class="goodies-title">🚬 Cigarettes Allemandes (+10€)</span>
+                    <label class="switch">
+                        <input type="checkbox" id="cigarette-toggle">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+
+                <div id="cigarette-details" style="display: none; margin-top: 15px;">
+                    <select id="cigarette-brand" class="input-area" style="height: 50px;">
+                        <option value="Marlboro Rouge">Marlboro Rouge</option>
+                        <option value="Camel">Camel</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="bonus-wrapper" style="margin-top: 15px; opacity: 0.7;">
+                <label class="switch-container" style="cursor: default;">
+                    <span class="goodies-text">🌟 Bonus Palier 300€ <small>(Automatique)</small></span>
+                    <input type="checkbox" id="bonus-300-checkbox" disabled> 
+                    <span class="checkmark" style="cursor: default;"></span>
+                </label>
+            </div>
             <div class="promo-container">
                 <h4>Code Promo</h4>
                 <div id="promo-input-container">
@@ -1518,6 +1796,14 @@
                     <span id="promo-applied-text"></span>
                     <button id="remove-promo-btn">×</button>
                 </div>
+            </div>
+
+            <div class="user-details-container">
+                <h4>📍 Informations de livraison</h4>
+                <textarea id="order-address" class="input-area" placeholder="Adresse complète (Rue, Ville, Code Postal)"></textarea>
+                
+                <h4>📝 Infos supplémentaires</h4>
+                <textarea id="order-info" class="input-area" placeholder="Exemple : Pas dispo avant 20h"></textarea>
             </div>
 
             <div class="payment-selector">

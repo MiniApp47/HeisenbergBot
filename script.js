@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             farm: 'Calimàn 🇯🇲',
                             promoEligible: true,
                             type: 'Weed',
-                            image: 'ProductHipro.jpg',
+                            image: 'ProductTropicana.jpg',
                             video: '',
                             description: 'Lorsqu’elle est fumée, la Banana Kush se distingue d’autres variétés Kush par sa fraîcheur. Avec ses effets, principalement indica, s’ajoute une belle touche de sativa qui rehaussent de puissants effets corporels.',
                             tarifs: [
@@ -177,6 +177,22 @@ document.addEventListener('DOMContentLoaded', function () {
                          image: 'Wizard4.png', // Mets une image de farm si tu veux
                          badgeText: '2 produits', */
                     products: [
+                        {
+                            id: 'Cali Farm W1 🥇',
+                            //flag: '🇺🇸',
+                            name: 'Cali Farm W1 🥇',
+                            farm: '🏠 NoFarm',
+                            type: 'Weed',
+                            image: 'ProductW1.png',
+                            video: 'VideoW1.mp4',
+                            description: 'Origine/Culture : Cultivée en hydroponie en intérieur, typique des standards de qualité "Cali". \n Génétique : Hybride, 40% Sativa / 60% Indica',
+                            tarifs: [
+                                { weight: '2G', price: 50.00 },
+                                { weight: '5G', price: 80.00 },
+                                { weight: '10G', price: 150.00 },
+                                { weight: '25G', price: 300.00 },
+                            ]
+                        },
                         {
                             id: 'Oreoz 🍪',
                             //flag: '🇺🇸',
@@ -1308,20 +1324,33 @@ document.addEventListener('DOMContentLoaded', function () {
         updateCartCount();
     }
 
-    // Affiche la page de confirmation et gere les codes promo
     function renderConfirmation() {
-        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-
-        // --- Logique de calcul des prix ---
+        // --- 1. Calcul de base du panier ---
         let subTotal = cart.reduce((sum, item) => sum + item.totalPrice, 0);
         let discount = 0;
-        let discountableAmount = 0;
 
+        // --- 2. Gestion CIGARETTES (+10€) ---
+        const cigToggle = document.getElementById('cigarette-toggle');
+        const cigDetails = document.getElementById('cigarette-details');
+        // On vérifie si c'est coché pour ajouter 10€
+        const cigarettePrice = cigToggle.checked ? 10.00 : 0;
+        
+        // Logique d'affichage du menu déroulant
+        cigToggle.onchange = function() {
+            if (this.checked) {
+                cigDetails.style.display = 'block';
+            } else {
+                cigDetails.style.display = 'none';
+            }
+            renderConfirmation(); // IMPORTANT : On recharge la fonction pour mettre à jour le prix total
+        };
+
+        // --- 3. Gestion PROMO ---
         if (appliedPromo) {
             const promo = validPromoCodes[appliedPromo];
+            let discountableAmount = 0;
 
             if (promo.appliesTo === 'eligible') {
-                // Calcul sur les articles éligibles
                 cart.forEach(item => {
                     const product = getProductById(item.productId);
                     if (product && product.promoEligible) {
@@ -1329,30 +1358,40 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 });
             } else {
-                // Calcul sur tout le panier
                 discountableAmount = subTotal;
             }
 
             if (promo.type === 'percent') {
                 discount = (discountableAmount * promo.value) / 100;
-            } else { // 'fixed'
+            } else {
                 discount = promo.value;
             }
         }
+        if (discount > subTotal) discount = subTotal;
 
-        // Assure que la réduc ne dépasse pas le montant
-        if (discount > subTotal) {
-            discount = subTotal;
+        // --- 4. TOTAL FINAL (Panier - Promo + Cigarette) ---
+        const totalPrice = subTotal - discount + cigarettePrice;
+
+
+        // --- 5. GESTION DU BONUS AUTOMATIQUE (CASE GRISE) ---
+        const bonusCheckbox = document.getElementById('bonus-300-checkbox');
+        const bonusWrapper = document.querySelector('.bonus-wrapper');
+
+        if (totalPrice >= 300) {
+            bonusCheckbox.checked = true;
+            bonusWrapper.classList.add('active'); // Ajoute l'effet lumineux
+        } else {
+            bonusCheckbox.checked = false;
+            bonusWrapper.classList.remove('active');
         }
 
-        const totalPrice = subTotal - discount;
-        // --- Fin de la logique de calcul ---
-
-        // Mise à jour du résumé (panier en haut)
+        // --- 6. Affichage HTML ---
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        
         document.getElementById('confirmation-items-count').innerText = `${totalItems} article${totalItems > 1 ? 's' : ''}`;
         document.getElementById('confirmation-total-price').innerText = `${totalPrice.toFixed(2)}€`;
 
-        // Remplissage de la liste des articles (inchangé)
+        // Liste des articles
         const itemsList = document.getElementById('confirmation-items-list');
         itemsList.innerHTML = cart.map((item, index) => `
              <div class="cart-item">
@@ -1365,7 +1404,7 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>
         `).join('');
 
-        // Mise à jour de l'UI Promo
+        // Promo UI
         const promoInputContainer = document.getElementById('promo-input-container');
         const promoAppliedContainer = document.getElementById('promo-applied-container');
         if (appliedPromo) {
@@ -1375,15 +1414,15 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             promoInputContainer.style.display = 'flex';
             promoAppliedContainer.style.display = 'none';
-            document.getElementById('promo-code-input').value = ''; // Reset l'input
+            document.getElementById('promo-code-input').value = '';
         }
 
-        // Mise à jour de l'UI Paiement
+        // Paiement UI
         document.querySelectorAll('.payment-btn').forEach(btn => {
             btn.classList.toggle('active', btn.dataset.method === paymentMethod);
         });
 
-        // Mise à jour du résumé final
+        // Résumé Final
         const summaryContainer = document.getElementById('confirmation-summary');
         let summaryHTML = `
             <div class="summary-line">
@@ -1399,6 +1438,17 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>
             `;
         }
+        
+        // Affichage Cigarette dans le résumé du prix
+        if (cigarettePrice > 0) {
+             summaryHTML += `
+            <div class="summary-line" style="color: #ff3b30;">
+                <span>🚬 Cigarettes:</span>
+                <span>+${cigarettePrice.toFixed(2)}€</span>
+            </div>
+            `;
+        }
+
         summaryHTML += `
             <div class="summary-line total">
                 <span>💰 Total final:</span>
@@ -1407,16 +1457,30 @@ document.addEventListener('DOMContentLoaded', function () {
         `;
         summaryContainer.innerHTML = summaryHTML;
 
-        /* const copyBtn = document.getElementById('copy-order-btn');
-        const contactBtn = document.getElementById('confirm-order-button');
+        // Logique Goodies (Reste inchangée, je la remets pour être sûr)
+        const goodiesToggle = document.getElementById('want-goodies-toggle');
+        const goodiesList = document.getElementById('goodies-selection-list');
+        const feuilleOption = document.getElementById('goodie-feuille-option');
 
-        // État initial: Copier = Rouge (main), Contacter = Gris (secondary/disabled)
-        copyBtn.classList.add('main-action-btn');
-        copyBtn.classList.remove('secondary-action-btn');
+        const isOnlyNeige = cart.every(item => {
+            const product = getProductById(item.productId);
+            return product && product.type === 'Neige'; 
+        });
 
-        contactBtn.classList.add('secondary-action-btn');
-        contactBtn.classList.remove('main-action-btn');
-        contactBtn.disabled = true; // On le re-verrouille */
+        if (isOnlyNeige) {
+            feuilleOption.style.display = 'none';
+        } else {
+            feuilleOption.style.display = 'flex';
+        }
+
+        goodiesToggle.onchange = function() {
+            if (this.checked) {
+                goodiesList.style.display = 'flex';
+            } else {
+                goodiesList.style.display = 'none';
+                document.querySelectorAll('.goodie-checkbox').forEach(cb => cb.checked = false);
+            }
+        };
 
         showPage('page-confirmation');
     }
@@ -1552,66 +1616,87 @@ document.addEventListener('DOMContentLoaded', function () {
         renderCart();
     }
 
-    // --- FORMATAGE DU MESSAGE DE COMMANDE (pour gere les promo) ---
-    function formatOrderMessage() {
-        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+ // --- FORMATAGE DU MESSAGE DE COMMANDE (pour gerer les promo + ADRESSE/INFOS) ---
+ function formatOrderMessage() {
+    // ... (Début identique à avant) ...
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
 
-        // Recalcul des prix pour le message
-        let subTotal = cart.reduce((sum, item) => sum + item.totalPrice, 0);
-        let discount = 0;
-        if (appliedPromo) {
-            const promo = validPromoCodes[appliedPromo];
-            let discountableAmount = 0;
-            if (promo.appliesTo === 'eligible') {
-                cart.forEach(item => {
-                    const product = getProductById(item.productId);
-                    if (product && product.promoEligible) {
-                        discountableAmount += item.totalPrice;
-                    }
-                });
-            } else {
-                discountableAmount = subTotal;
-            }
-            if (promo.type === 'percent') {
-                discount = (discountableAmount * promo.value) / 100;
-            } else {
-                discount = promo.value;
-            }
-        }
-        if (discount > subTotal) discount = subTotal;
-        const totalPrice = subTotal - discount;
-        // Fin recalcul
+    const addressInput = document.getElementById('order-address').value.trim();
+    const infoInput = document.getElementById('order-info').value.trim();
+    const finalAddress = addressInput ? addressInput : "A convenir en privé";
+    const finalInfo = infoInput ? infoInput : "Aucune";
 
-        const date = new Date();
-        const formattedDate = `${date.getDate()} ${date.toLocaleString('fr-FR', { month: 'long' })} ${date.getFullYear()} a ${date.getHours()}:${String(date.getMinutes()).padStart(2, '0')}`;
-
-        let message = "NOUVELLE COMMANDE\n\n";
-        message += "====================\n";
-        message += "RESUME:\n";
-        message += `- ${totalItems} article${totalItems > 1 ? 's' : ''} commande\n`;
-        message += `- Méthode de paiement: ${paymentMethod}\n`; // AJOUT
-        message += "====================\n";
-        message += `DETAIL DES ARTICLES:\n`;
-
-        cart.forEach((item) => {
-            message += `\n- ${item.id}`;
-            message += `\n  Quantite: ${item.quantity}x ${item.weight}`;
-            message += `\n  Prix unitaire: ${item.unitPrice.toFixed(2)}e`;
-            message += `\n  Sous-total: ${item.totalPrice.toFixed(2)} EUR`;
-        });
-
-        message += `\n\n====================\n`;
-        message += `\nSOUS-TOTAL: ${subTotal.toFixed(2)} EUR`;
-        if (discount > 0) {
-            message += `\nREDUCTION (${appliedPromo}): -${discount.toFixed(2)} EUR`; // AJOUT
-        }
-        message += `\nTOTAL FINAL: ${totalPrice.toFixed(2)} EUR`; // AJOUT
-        message += " \n-LIVRAISON: A convenir\n";
-        message += " \n-CONTACT: Merci de confirmer cette commande\n";
-        message += ` \n-Commande passee le: ${formattedDate}\n`;
-        return message;
+    // Goodies
+    const wantGoodies = document.getElementById('want-goodies-toggle').checked;
+    let goodiesString = "Non merci";
+    if (wantGoodies) {
+        const selectedGoodies = Array.from(document.querySelectorAll('.goodie-checkbox:checked')).map(cb => cb.value);
+        goodiesString = selectedGoodies.length > 0 ? "Oui : " + selectedGoodies.join(', ') : "Oui (Surprise)";
     }
 
+    // CIGARETTES (NOUVEAU CALCUL)
+    const wantCig = document.getElementById('cigarette-toggle').checked;
+    const cigBrand = document.getElementById('cigarette-brand').value; // Récupère la valeur du select
+    const cigPrice = wantCig ? 10.00 : 0;
+    let cigString = "Non";
+    if (wantCig) {
+        cigString = `Oui (${cigBrand}) - 10€`;
+    }
+
+    // Calcul Prix
+    let subTotal = cart.reduce((sum, item) => sum + item.totalPrice, 0);
+    let discount = 0;
+    if (appliedPromo) {
+        const promo = validPromoCodes[appliedPromo];
+        let discountableAmount = (promo.appliesTo === 'eligible') 
+            ? cart.filter(i => getProductById(i.productId)?.promoEligible).reduce((sum, i) => sum + i.totalPrice, 0)
+            : subTotal;
+        discount = (promo.type === 'percent') ? (discountableAmount * promo.value) / 100 : promo.value;
+    }
+    if (discount > subTotal) discount = subTotal;
+    const totalPrice = subTotal - discount + cigPrice; // On ajoute le prix clopes
+
+    // BONUS 300€
+    const isBonusUnlocked = totalPrice >= 300 ? "✅ OUI (Commande > 300€)" : "❌ NON";
+
+    const date = new Date();
+    const formattedDate = `${date.getDate()} ${date.toLocaleString('fr-FR', { month: 'long' })} ${date.getFullYear()} a ${date.getHours()}:${String(date.getMinutes()).padStart(2, '0')}`;
+
+    let message = "NOUVELLE COMMANDE HEISENBERG 🎩\n\n";
+    message += "====================\n";
+    message += "RESUME:\n";
+    message += `- ${totalItems} article${totalItems > 1 ? 's' : ''}\n`;
+    message += `- Paiement: ${paymentMethod}\n`; 
+    message += "====================\n";
+    message += `DETAIL DES ARTICLES:\n`;
+
+    cart.forEach((item) => {
+        message += `\n- ${item.name}`; 
+        message += `\n   Quantite: ${item.quantity}x ${item.weight}`;
+        message += `\n   Prix: ${item.totalPrice.toFixed(2)} EUR`;
+    });
+
+    message += `\n\n====================\n`;
+    message += `SOUS-TOTAL: ${subTotal.toFixed(2)} EUR\n`;
+    if (discount > 0) message += `REDUCTION (${appliedPromo}): -${discount.toFixed(2)} EUR\n`;
+    if (wantCig) message += `CIGARETTES: +10.00 EUR\n`; // Ligne clope
+    message += `TOTAL FINAL: ${totalPrice.toFixed(2)} EUR\n`; 
+    message += "====================\n";
+    
+    message += `\n📍 LIVRAISON :\n${finalAddress}\n`;
+    message += `\n📝 INFOS SUPP :\n${finalInfo}\n`;
+    message += `\n🎁 GOODIES : ${goodiesString}\n`; 
+    
+    if (wantCig) {
+        message += `\n🚬 CIGARETTES : ${cigString}\n`;
+    }
+    
+    // Ajout du statut Bonus dans le message
+    message += `\n🌟 BONUS PALIER 300€ : ${isBonusUnlocked}\n`;
+
+    message += `\n📅 Commande du: ${formattedDate}\n`;
+    return message;
+}
     // --- NOUVELLE FONCTION POUR COPIER DANS LE PRESSE-PAPIERS ---
     /*    function copyToClipboard(text) {
            if (navigator.clipboard) { // API moderne et sécurisée
