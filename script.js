@@ -8,22 +8,46 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // --- CONFIGURATION DES LIENS DE CONTACT ---
     const contactLinks = [
-        { name: 'WhatsApp', url: 'https://wa.me/33745728635', icon: '#icon-whatsapp', id: 'whatsapp', className: 'whatsapp', text: "WhatsApp" },
-        { name: 'Snapchat', url: 'https://www.snapchat.com/cerclesecret', icon: '#icon-snapchat', id: 'snapchat', className: 'snapchat', text: "Snapchat" },
-        { name: 'Telegram', url: 'https://t.me/frankybaby50', icon: '#icon-telegram', id: 'telegram', className: 'telegram', text: "Telegram" },
         {
-            name: 'Canal Telegram 💙',
-            url: 'https://t.me/+rl7MYRyOPr04Y2U0',
-            id: 'telegram-canal',
-            className: 'telegram', // Garde le style Bleu Telegram
-            text: "Canal Telegram 💙"
+            name: 'SNAPCHAT 👻',
+            url: 'https://www.snapchat.com/cerclesecret',
+            id: 'snapchat',
+            className: 'snapchat', // Il faudra peut-être ajouter ce CSS (Jaune)
+            text: "SNAPCHAT 👻"
         },
-        { name: 'Signal', url: 'https://signal.me/#eu/frankybaby.50', icon: '#icon-signal', id: 'signal', className: 'signal', text: "Signal" },
+        {
+            name: 'SIGNAL 📲',
+            url: 'https://signal.me/#eu/frankybaby.50',
+            id: 'signal',
+            className: 'signal', // Il faudra peut-être ajouter ce CSS (Jaune)
+            text: "SIGNAL 📲"
+        },
+        {
+            name: 'WHATSAPP 📞',
+            url: 'https://wa.me/33745728635',
+            id: 'whatsapp',
+            className: 'whatsapp', // Il faudra peut-être ajouter ce CSS (Jaune)
+            text: "WHATSAPP 📞"
+        },
+        {
+            name: 'TÉLÉGRAM 💙',
+            url: 'https://t.me/frankybaby50',
+            id: 'telegram-main',
+            className: 'telegram', // Garde le style Bleu Telegram
+            text: "TÉLÉGRAM 💙"
+        },
+        {
+            name: 'CANAL TÉLÉ 💙',
+            url: 'https://t.me/+rl7MYRyOPr04Y2U0',
+            id: 'telegram-secours',
+            className: 'secours',
+            text: "CANAL TÉLÉ 💙"
+        },
         {
             name: 'POTATO 🥔',
-            url: 'https://dympt.org/franky',
-            id: 'potato',
-            className: 'potato', // Garde le style Marron/Doré Potato
+            url: 'https://dympt.org/RetourP420',
+            id: 'potato-feedback',
+            className: 'potato', // Style standard ou tu peux remettre 'potato-main'
             text: "POTATO 🥔"
         },
         {
