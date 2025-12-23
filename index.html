@@ -1397,6 +1397,33 @@
             line-height: 1.4;
             margin: 0;
         }
+
+        /* --- STYLE POUR LES PRODUITS NON CLIQUABLES --- */
+        .product-item-card.unclickable {
+            pointer-events: none; /* Bloque le clic souris/doigt */
+            opacity: 0.8; /* Rend la carte un peu transparente */
+        }
+
+        .product-item-card.unclickable img {
+            filter: grayscale(100%); /* Rend l'image en NOIR ET BLANC */
+            opacity: 0.6; /* Assombrit un peu plus l'image */
+        }
+        
+        /* Optionnel : Si tu veux un petit cadenas ou icône par dessus */
+        .product-item-card.unclickable::after {
+            content: "🔒 BIENTÔT"; /* Ou juste "" si tu veux rien */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            background: rgba(0,0,0,0.7);
+            padding: 5px 10px;
+            border-radius: 10px;
+            border: 1px solid #03e7f6;
+        }
     </style>
 </head>
 
@@ -1799,6 +1826,19 @@
                     <span id="promo-applied-text"></span>
                     <button id="remove-promo-btn">×</button>
                 </div>
+            </div>
+
+            <div class="zone-selector-wrapper" style="margin-top: 20px; border-bottom: 1px solid var(--tertiary-bg-color); padding-bottom: 15px;">
+                <h4>🚚 Choisissez votre Zone</h4>
+                <select id="delivery-zone-select" class="input-area" style="height: 50px;">
+                    <option value="" selected disabled>-- Sélectionner une zone --</option>
+                    <option value="Zone 1">🟢 ZONE 1 : Centre (Min 50€)</option>
+                    <option value="Zone 2">🟡 ZONE 2 : Banlieue (Min 80€)</option>
+                    <option value="Zone 3">🔴 ZONE 3 : Grande couronne (Min 150€)</option>
+                </select>
+                <p id="zone-warning-text" style="color: #ff3b30; font-size: 0.8rem; margin-top: 5px; display: none;">
+                    ⚠️ Montant du panier insuffisant pour cette zone.
+                </p>
             </div>
 
             <div class="user-details-container">

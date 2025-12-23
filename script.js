@@ -546,6 +546,22 @@ document.addEventListener('DOMContentLoaded', function () {
                          badgeText: '2 produits', */
                     products: [
                         {
+                            id: 'Tropical Cookies 🦜',
+                            //flag: '🇺🇸',
+                            name: 'Tropical Cookies 🦜',
+                            farm: '🏠 No Farm',
+                            promoEligible: true,
+                            type: 'Static',
+                            image: 'ProductTropic.jpg',
+                            video: 'VideoTropic.mp4',
+                            description: 'La variété Tropicana cookie se caractérise par son goût acidulé et citrique sur un fond crémeux et sucré de Girl Scout Cookies',
+                            tarifs: [
+                                { weight: '5G', price: 70.00 },
+                                { weight: '10G', price: 130.00 },
+                                { weight: '25G', price: 300.00 },
+                            ]
+                        },
+                        {
                             id: 'Purple punch 🍇',
                             //flag: '🇺🇸',
                             name: 'Purple punch 🍇',
@@ -852,6 +868,123 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             ]
         },
+            // --- Catégorie 10: Bonbon 🍭 ---
+
+            {
+                id: 'Pre - rolls 🌯',
+                name: 'Pre - rolls 🌯',
+                farm: '',
+                type: 'Pre - rolls',
+                quality: 'Pre - rolls 🌯',
+                image: 'CategPre.png', // Image de la catégorie
+    
+                farms: [
+                    {
+                        /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
+                             name: 'Wizard trees 🔮',
+                             image: 'Wizard4.png', // Mets une image de farm si tu veux
+                             badgeText: '2 produits', */
+                        products: [
+                            {
+                                id: 'Cali usa 🌵',
+                                //flag: '🇺🇸',
+                                name: 'Cali usa 🌵',
+                                farm: '🏠 No Farm',
+                                clickable: false,
+                                promoEligible: true,
+                                type: 'Pre-Rolls',
+                                image: 'ProductPre.png',
+                                video: '',
+                                description: 'Rainbow multicolor',
+                                tarifs: [
+                                    { weight: '1', price: 20.00 },
+                                ]
+                            },
+                            {
+                                id: 'Amnesia 🌺',
+                                //flag: '🇺🇸',
+                                name: 'Amnesia 🌺',
+                                farm: '🏠 No Farm',
+                                clickable: false,
+                                promoEligible: true,
+                                type: 'Pre-Rolls',
+                                image: 'ProductPre.png',
+                                video: '',
+                                description: 'Rainbow multicolor',
+                                tarifs: [
+                                    { weight: '1', price: 15.00 },
+                                ]
+                            },
+                            {
+                                id: 'Lemon cherry 🍒',
+                                //flag: '🇺🇸',
+                                name: 'Lemon cherry 🍒',
+                                farm: '🏠 No Farm',
+                                clickable: false,
+                                promoEligible: true,
+                                type: 'Pre-Rolls',
+                                image: 'ProductPre.png',
+                                video: '',
+                                description: 'Rainbow multicolor',
+                                tarifs: [
+                                    { weight: '1', price: 15.00 },
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+                // --- Catégorie 10: Bonbon 🍭 ---
+
+        {
+            id: 'Space cake 🎂',
+            name: 'Space cake 🎂',
+            farm: '',
+            type: 'Space cake',
+            quality: 'Space cake 🎂',
+            image: 'CategSpace.png', // Image de la catégorie
+
+            farms: [
+                {
+                    /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
+                         name: 'Wizard trees 🔮',
+                         image: 'Wizard4.png', // Mets une image de farm si tu veux
+                         badgeText: '2 produits', */
+                    products: [
+                        {
+                            id: 'Brownies chocolat 🍫',
+                            //flag: '🇺🇸',
+                            name: 'Brownies chocolat 🍫',
+                            farm: '🏠 No Farm',
+                            clickable: false, 
+                            promoEligible: true,
+                            type: 'SpaceCake',
+                            image: 'ProductSpace.png',
+                            video: '',
+                            description: 'Rainbow multicolor',
+                            tarifs: [
+                                { weight: '1', price: 20.00 },
+                            ]
+                        },
+                        {
+                            id: 'Cookies 🍪 chocolat 🍫',
+                            //flag: '🇺🇸',
+                            name: 'Cookies 🍪 chocolat 🍫',
+                            farm: '🏠 No Farm',
+                            clickable: false, 
+                            promoEligible: true,
+                            type: 'SpaceCake',
+                            image: 'ProductSpace.png',
+                            video: '',
+                            description: 'Rainbow multicolor',
+                            tarifs: [
+                                { weight: '1', price: 20.00 },
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
         // --- Catégorie 10: Bonbon 🍭 ---
 
         {
@@ -963,6 +1096,9 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentFarmId = null; // Garde en mémoire la farm sélectionnée
     let appliedPromo = null; // Pour suivre le code promo
     let paymentMethod = 'Espèce'; // Méthode de paiement par défaut
+    const MIN_ZONE_1 = 40;  // 50€ pour Zone 1
+    const MIN_ZONE_2 = 300;  // 80€ pour Zone 2
+    const MIN_ZONE_3 = 500; // 150€ pour Zone 3
 
     // --- DÉFINIS TES CODES PROMO ICI ---
     const validPromoCodes = {
@@ -1481,6 +1617,51 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.querySelectorAll('.goodie-checkbox').forEach(cb => cb.checked = false);
             }
         };
+        // --- LOGIQUE ZONES DE LIVRAISON (AJOUT) ---
+        const zoneSelect = document.getElementById('delivery-zone-select');
+        const zoneOptions = zoneSelect.options;
+        const warningText = document.getElementById('zone-warning-text');
+
+        // On vérifie le total calculé plus haut (totalPrice)
+        // Note: Assure-toi que la variable 'totalPrice' est bien accessible ici 
+        // (elle est définie plus haut dans ta fonction renderConfirmation)
+
+        // Reset visuel
+        warningText.style.display = 'none';
+
+        // 1. Gestion Zone 1 (Index 1 dans la liste)
+        if (totalPrice < MIN_ZONE_1) {
+            zoneOptions[1].disabled = true;
+            zoneOptions[1].text = `🟢 ZONE 1 (Bloqué - Min ${MIN_ZONE_1}€)`;
+        } else {
+            zoneOptions[1].disabled = false;
+            zoneOptions[1].text = `🟢 ZONE 1 : Centre`;
+        }
+
+        // 2. Gestion Zone 2 (Index 2)
+        if (totalPrice < MIN_ZONE_2) {
+            zoneOptions[2].disabled = true;
+            zoneOptions[2].text = `🟡 ZONE 2 (Bloqué - Min ${MIN_ZONE_2}€)`;
+        } else {
+            zoneOptions[2].disabled = false;
+            zoneOptions[2].text = `🟡 ZONE 2 : Banlieue`;
+        }
+
+        // 3. Gestion Zone 3 (Index 3)
+        if (totalPrice < MIN_ZONE_3) {
+            zoneOptions[3].disabled = true;
+            zoneOptions[3].text = `🔴 ZONE 3 (Bloqué - Min ${MIN_ZONE_3}€)`;
+        } else {
+            zoneOptions[3].disabled = false;
+            zoneOptions[3].text = `🔴 ZONE 3 : Grande Couronne`;
+        }
+
+        // Si l'utilisateur avait sélectionné une zone qui est devenue interdite (ex: il a retiré un article), on reset
+        if (zoneSelect.selectedOptions[0].disabled) {
+            zoneSelect.value = ""; // On remet à zéro
+            warningText.style.display = 'block';
+            warningText.innerText = "⚠️ Votre panier a changé, veuillez re-sélectionner une zone valide.";
+        }
 
         showPage('page-confirmation');
     }
@@ -1616,114 +1797,93 @@ document.addEventListener('DOMContentLoaded', function () {
         renderCart();
     }
 
- // --- FORMATAGE DU MESSAGE DE COMMANDE (pour gerer les promo + ADRESSE/INFOS) ---
- function formatOrderMessage() {
-    // ... (Début identique à avant) ...
-    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    function formatOrderMessage() {
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
 
-    const addressInput = document.getElementById('order-address').value.trim();
-    const infoInput = document.getElementById('order-info').value.trim();
-    const finalAddress = addressInput ? addressInput : "A convenir en privé";
-    const finalInfo = infoInput ? infoInput : "Aucune";
+        // --- Inputs Utilisateur ---
+        const addressInput = document.getElementById('order-address').value.trim();
+        const infoInput = document.getElementById('order-info').value.trim();
+        
+        // --- ZONE LIVRAISON (NOUVEAU) ---
+        const zoneSelect = document.getElementById('delivery-zone-select');
+        const selectedZone = zoneSelect.value ? zoneSelect.value : "⚠️ NON SÉLECTIONNÉE";
+        // --------------------------------
 
-    // Goodies
-    const wantGoodies = document.getElementById('want-goodies-toggle').checked;
-    let goodiesString = "Non merci";
-    if (wantGoodies) {
-        const selectedGoodies = Array.from(document.querySelectorAll('.goodie-checkbox:checked')).map(cb => cb.value);
-        goodiesString = selectedGoodies.length > 0 ? "Oui : " + selectedGoodies.join(', ') : "Oui (Surprise)";
+        const finalAddress = addressInput ? addressInput : "A convenir en privé";
+        const finalInfo = infoInput ? infoInput : "Aucune";
+
+        // Goodies
+        const wantGoodies = document.getElementById('want-goodies-toggle').checked;
+        let goodiesString = "Non merci";
+        if (wantGoodies) {
+            const selectedGoodies = Array.from(document.querySelectorAll('.goodie-checkbox:checked')).map(cb => cb.value);
+            goodiesString = selectedGoodies.length > 0 ? "Oui : " + selectedGoodies.join(', ') : "Oui (Surprise)";
+        }
+
+        // Cigarettes
+        const wantCig = document.getElementById('cigarette-toggle').checked;
+        const cigBrand = document.getElementById('cigarette-brand').value;
+        const cigPrice = wantCig ? 10.00 : 0;
+        let cigString = "Non";
+        if (wantCig) cigString = `Oui (${cigBrand}) - 10€`;
+
+        // Calcul Prix
+        let subTotal = cart.reduce((sum, item) => sum + item.totalPrice, 0);
+        let discount = 0;
+        if (appliedPromo) {
+            const promo = validPromoCodes[appliedPromo];
+            let discountableAmount = (promo.appliesTo === 'eligible') 
+                ? cart.filter(i => getProductById(i.productId)?.promoEligible).reduce((sum, i) => sum + i.totalPrice, 0)
+                : subTotal;
+            discount = (promo.type === 'percent') ? (discountableAmount * promo.value) / 100 : promo.value;
+        }
+        if (discount > subTotal) discount = subTotal;
+        const totalPrice = subTotal - discount + cigPrice;
+        
+        // Bonus
+        const isBonusUnlocked = totalPrice >= 300 ? "✅ OUI (Commande > 300€)" : "❌ NON";
+        const date = new Date();
+        const formattedDate = `${date.getDate()} ${date.toLocaleString('fr-FR', { month: 'long' })} ${date.getFullYear()} a ${date.getHours()}:${String(date.getMinutes()).padStart(2, '0')}`;
+
+        // --- Construction du Message ---
+        let message = "NOUVELLE COMMANDE HEISENBERG 🎩\n\n";
+        message += "====================\n";
+        message += "RESUME:\n";
+        message += `- ${totalItems} article${totalItems > 1 ? 's' : ''}\n`;
+        message += `- Paiement: ${paymentMethod} 💳\n`; 
+        
+        // Ajout de la zone dans le résumé haut
+        message += `- Zone: ${selectedZone}\n`; 
+        
+        message += "====================\n";
+        message += `DETAIL DES ARTICLES:\n`;
+
+        cart.forEach((item) => {
+            message += `\n- ${item.name}`; 
+            message += `\n   Quantite: ${item.quantity}x ${item.weight}`;
+            message += `\n   Prix: ${item.totalPrice.toFixed(2)} EUR`;
+        });
+
+        message += `\n\n====================\n`;
+        message += `SOUS-TOTAL: ${subTotal.toFixed(2)} EUR\n`;
+        if (discount > 0) message += `REDUCTION (${appliedPromo}): -${discount.toFixed(2)} EUR\n`;
+        if (wantCig) message += `CIGARETTES: +10.00 EUR\n`;
+        message += `TOTAL FINAL: ${totalPrice.toFixed(2)} EUR\n`; 
+        message += "====================\n";
+        
+        message += `\n🚚 ZONE CHOISIE : ${selectedZone}\n`; // Rappel ici
+        message += `\n📍 ADRESSE :\n${finalAddress}\n`;
+        message += `\n📝 INFOS SUPP :\n${finalInfo}\n`;
+        message += `\n🎁 GOODIES : ${goodiesString}\n`; 
+        
+        if (wantCig) {
+            message += `\n🚬 CIGARETTES : ${cigString}\n`;
+        }
+        message += `\n🌟 BONUS PALIER 300€ : ${isBonusUnlocked}\n`;
+
+        message += `\n📅 Commande du: ${formattedDate}\n`;
+        return message;
     }
-
-    // CIGARETTES (NOUVEAU CALCUL)
-    const wantCig = document.getElementById('cigarette-toggle').checked;
-    const cigBrand = document.getElementById('cigarette-brand').value; // Récupère la valeur du select
-    const cigPrice = wantCig ? 10.00 : 0;
-    let cigString = "Non";
-    if (wantCig) {
-        cigString = `Oui (${cigBrand}) - 10€`;
-    }
-
-    // Calcul Prix
-    let subTotal = cart.reduce((sum, item) => sum + item.totalPrice, 0);
-    let discount = 0;
-    if (appliedPromo) {
-        const promo = validPromoCodes[appliedPromo];
-        let discountableAmount = (promo.appliesTo === 'eligible') 
-            ? cart.filter(i => getProductById(i.productId)?.promoEligible).reduce((sum, i) => sum + i.totalPrice, 0)
-            : subTotal;
-        discount = (promo.type === 'percent') ? (discountableAmount * promo.value) / 100 : promo.value;
-    }
-    if (discount > subTotal) discount = subTotal;
-    const totalPrice = subTotal - discount + cigPrice; // On ajoute le prix clopes
-
-    // BONUS 300€
-    const isBonusUnlocked = totalPrice >= 300 ? "✅ OUI (Commande > 300€)" : "❌ NON";
-
-    const date = new Date();
-    const formattedDate = `${date.getDate()} ${date.toLocaleString('fr-FR', { month: 'long' })} ${date.getFullYear()} a ${date.getHours()}:${String(date.getMinutes()).padStart(2, '0')}`;
-
-    let message = "NOUVELLE COMMANDE HEISENBERG 🎩\n\n";
-    message += "====================\n";
-    message += "RESUME:\n";
-    message += `- ${totalItems} article${totalItems > 1 ? 's' : ''}\n`;
-    message += `- Paiement: ${paymentMethod}\n`; 
-    message += "====================\n";
-    message += `DETAIL DES ARTICLES:\n`;
-
-    cart.forEach((item) => {
-        message += `\n- ${item.name}`; 
-        message += `\n   Quantite: ${item.quantity}x ${item.weight}`;
-        message += `\n   Prix: ${item.totalPrice.toFixed(2)} EUR`;
-    });
-
-    message += `\n\n====================\n`;
-    message += `SOUS-TOTAL: ${subTotal.toFixed(2)} EUR\n`;
-    if (discount > 0) message += `REDUCTION (${appliedPromo}): -${discount.toFixed(2)} EUR\n`;
-    if (wantCig) message += `CIGARETTES: +10.00 EUR\n`; // Ligne clope
-    message += `TOTAL FINAL: ${totalPrice.toFixed(2)} EUR\n`; 
-    message += "====================\n";
-    
-    message += `\n📍 LIVRAISON :\n${finalAddress}\n`;
-    message += `\n📝 INFOS SUPP :\n${finalInfo}\n`;
-    message += `\n🎁 GOODIES : ${goodiesString}\n`; 
-    
-    if (wantCig) {
-        message += `\n🚬 CIGARETTES : ${cigString}\n`;
-    }
-    
-    // Ajout du statut Bonus dans le message
-    message += `\n🌟 BONUS PALIER 300€ : ${isBonusUnlocked}\n`;
-
-    message += `\n📅 Commande du: ${formattedDate}\n`;
-    return message;
-}
-    // --- NOUVELLE FONCTION POUR COPIER DANS LE PRESSE-PAPIERS ---
-    /*    function copyToClipboard(text) {
-           if (navigator.clipboard) { // API moderne et sécurisée
-               navigator.clipboard.writeText(text).then(() => {
-                   showNotification('✅ Commande copiée ! Colle-la dans le chat.');
-                   tg.HapticFeedback.notificationOccurred('success');
-               }, (err) => {
-                   showNotification('❌ Erreur en copiant le message');
-               });
-           } else { // Ancien fallback (pour certains navigateurs)
-               const textArea = document.createElement('textarea');
-               textArea.value = text;
-               textArea.style.position = 'fixed'; // Hors de l'écran
-               document.body.appendChild(textArea);
-               textArea.focus();
-               textArea.select();
-               try {
-                   document.execCommand('copy');
-                   showNotification('✅ Commande copiée ! Colle-la dans le chat.');
-                   tg.HapticFeedback.notificationOccurred('success');
-               } catch (err) {
-                   showNotification('❌ Erreur en copiant le message');
-               }
-               document.body.removeChild(textArea);
-           }
-       }
-    */
     // --- GESTION DES ÉVÉNEMENTS ---
 
     // Clics sur la barre de navigation
