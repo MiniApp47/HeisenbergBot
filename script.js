@@ -1484,211 +1484,244 @@ document.addEventListener('DOMContentLoaded', function () {
         updateCartCount();
     }
 
-    function renderConfirmation() {
-        // --- 1. Calcul de base du panier ---
-        let subTotal = cart.reduce((sum, item) => sum + item.totalPrice, 0);
-        let discount = 0;
+  // Affiche la page de confirmation et gere les codes promo
+  function renderConfirmation() {
+    // --- 1. DÉFINITION DES VARIABLES ET SÉLECTEURS (EN PREMIER !) ---
+    const cigToggle = document.getElementById('cigarette-toggle');
+    const zoneSelect = document.getElementById('delivery-zone-select'); // Il doit être défini ici !
+    const zoneOptions = zoneSelect.options;
+    const warningText = document.getElementById('zone-warning-text');
+    
+    // Calcul initial du panier
+    let subTotal = cart.reduce((sum, item) => sum + item.totalPrice, 0);
+    let discount = 0;
 
-        // --- 2. Gestion CIGARETTES (+10€) ---
-        const cigToggle = document.getElementById('cigarette-toggle');
-        const cigDetails = document.getElementById('cigarette-details');
-        // On vérifie si c'est coché pour ajouter 10€
-        const cigarettePrice = cigToggle.checked ? 10.00 : 0;
-        
-        // Logique d'affichage du menu déroulant
-        cigToggle.onchange = function() {
-            if (this.checked) {
-                cigDetails.style.display = 'block';
-            } else {
-                cigDetails.style.display = 'none';
-            }
-            renderConfirmation(); // IMPORTANT : On recharge la fonction pour mettre à jour le prix total
-        };
+    // --- 2. GESTION CIGARETTES (+10€) ---
+    // On vérifie si c'est coché pour ajouter 10€
+    const cigarettePrice = cigToggle.checked ? 10.00 : 0;
 
-        // --- 3. Gestion PROMO ---
-        if (appliedPromo) {
-            const promo = validPromoCodes[appliedPromo];
-            let discountableAmount = 0;
-
-            if (promo.appliesTo === 'eligible') {
-                cart.forEach(item => {
-                    const product = getProductById(item.productId);
-                    if (product && product.promoEligible) {
-                        discountableAmount += item.totalPrice;
-                    }
-                });
-            } else {
-                discountableAmount = subTotal;
-            }
-
-            if (promo.type === 'percent') {
-                discount = (discountableAmount * promo.value) / 100;
-            } else {
-                discount = promo.value;
-            }
-        }
-        if (discount > subTotal) discount = subTotal;
-
-        // --- 4. TOTAL FINAL (Panier - Promo + Cigarette) ---
-        const totalPrice = subTotal - discount + cigarettePrice;
-
-
-        // --- 5. GESTION DU BONUS AUTOMATIQUE (CASE GRISE) ---
-        const bonusCheckbox = document.getElementById('bonus-300-checkbox');
-        const bonusWrapper = document.querySelector('.bonus-wrapper');
-
-        if (totalPrice >= 300) {
-            bonusCheckbox.checked = true;
-            bonusWrapper.classList.add('active'); // Ajoute l'effet lumineux
-        } else {
-            bonusCheckbox.checked = false;
-            bonusWrapper.classList.remove('active');
-        }
-
-        // --- 6. Affichage HTML ---
-        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-        
-        document.getElementById('confirmation-items-count').innerText = `${totalItems} article${totalItems > 1 ? 's' : ''}`;
-        document.getElementById('confirmation-total-price').innerText = `${totalPrice.toFixed(2)}€`;
-
-        // Liste des articles
-        const itemsList = document.getElementById('confirmation-items-list');
-        itemsList.innerHTML = cart.map((item, index) => `
-             <div class="cart-item">
-                <img src="${item.image}" alt="${item.name}">
-                <div class="item-details">
-                    <div>${index + 1}. ${item.name}</div>
-                    <div>Quantité: ${item.quantity}x ${item.weight}</div>
-                    <div>Prix unitaire: ${item.unitPrice.toFixed(2)}€</div>
-                </div>
-            </div>
-        `).join('');
-
-        // Promo UI
-        const promoInputContainer = document.getElementById('promo-input-container');
-        const promoAppliedContainer = document.getElementById('promo-applied-container');
-        if (appliedPromo) {
-            promoInputContainer.style.display = 'none';
-            promoAppliedContainer.style.display = 'flex';
-            document.getElementById('promo-applied-text').innerText = `Code "${appliedPromo}" appliqué !`;
-        } else {
-            promoInputContainer.style.display = 'flex';
-            promoAppliedContainer.style.display = 'none';
-            document.getElementById('promo-code-input').value = '';
-        }
-
-        // Paiement UI
-        document.querySelectorAll('.payment-btn').forEach(btn => {
-            btn.classList.toggle('active', btn.dataset.method === paymentMethod);
-        });
-
-        // Résumé Final
-        const summaryContainer = document.getElementById('confirmation-summary');
-        let summaryHTML = `
-            <div class="summary-line">
-                <span>Sous-total:</span>
-                <span>${subTotal.toFixed(2)}€</span>
-            </div>
-        `;
-        if (discount > 0) {
-            summaryHTML += `
-            <div class="summary-line discount">
-                <span>Réduction:</span>
-                <span>-${discount.toFixed(2)}€</span>
-            </div>
-            `;
-        }
-        
-        // Affichage Cigarette dans le résumé du prix
-        if (cigarettePrice > 0) {
-             summaryHTML += `
-            <div class="summary-line" style="color: #ff3b30;">
-                <span>🚬 Cigarettes:</span>
-                <span>+${cigarettePrice.toFixed(2)}€</span>
-            </div>
-            `;
-        }
-
-        summaryHTML += `
-            <div class="summary-line total">
-                <span>💰 Total final:</span>
-                <span>${totalPrice.toFixed(2)}€</span>
-            </div>
-        `;
-        summaryContainer.innerHTML = summaryHTML;
-
-        // Logique Goodies (Reste inchangée, je la remets pour être sûr)
-        const goodiesToggle = document.getElementById('want-goodies-toggle');
-        const goodiesList = document.getElementById('goodies-selection-list');
-        const feuilleOption = document.getElementById('goodie-feuille-option');
-
-        const isOnlyNeige = cart.every(item => {
-            const product = getProductById(item.productId);
-            return product && product.type === 'Neige'; 
-        });
-
-        if (isOnlyNeige) {
-            feuilleOption.style.display = 'none';
-        } else {
-            feuilleOption.style.display = 'flex';
-        }
-
-        goodiesToggle.onchange = function() {
-            if (this.checked) {
-                goodiesList.style.display = 'flex';
-            } else {
-                goodiesList.style.display = 'none';
-                document.querySelectorAll('.goodie-checkbox').forEach(cb => cb.checked = false);
-            }
-        };
-        // --- LOGIQUE ZONES DE LIVRAISON (AJOUT) ---
-        const zoneSelect = document.getElementById('delivery-zone-select');
-        const zoneOptions = zoneSelect.options;
-        const warningText = document.getElementById('zone-warning-text');
-
-        // On vérifie le total calculé plus haut (totalPrice)
-        // Note: Assure-toi que la variable 'totalPrice' est bien accessible ici 
-        // (elle est définie plus haut dans ta fonction renderConfirmation)
-
-        // Reset visuel
-        warningText.style.display = 'none';
-
-        // 1. Gestion Zone 1 (Index 1 dans la liste)
-        if (totalPrice < MIN_ZONE_1) {
-            zoneOptions[1].disabled = true;
-            zoneOptions[1].text = `🟢 ZONE 1 (Bloqué - Min ${MIN_ZONE_1}€)`;
-        } else {
-            zoneOptions[1].disabled = false;
-            zoneOptions[1].text = `🟢 ZONE 1 : Centre`;
-        }
-
-        // 2. Gestion Zone 2 (Index 2)
-        if (totalPrice < MIN_ZONE_2) {
-            zoneOptions[2].disabled = true;
-            zoneOptions[2].text = `🟡 ZONE 2 (Bloqué - Min ${MIN_ZONE_2}€)`;
-        } else {
-            zoneOptions[2].disabled = false;
-            zoneOptions[2].text = `🟡 ZONE 2 : Banlieue`;
-        }
-
-        // 3. Gestion Zone 3 (Index 3)
-        if (totalPrice < MIN_ZONE_3) {
-            zoneOptions[3].disabled = true;
-            zoneOptions[3].text = `🔴 ZONE 3 (Bloqué - Min ${MIN_ZONE_3}€)`;
-        } else {
-            zoneOptions[3].disabled = false;
-            zoneOptions[3].text = `🔴 ZONE 3 : Grande Couronne`;
-        }
-
-        // Si l'utilisateur avait sélectionné une zone qui est devenue interdite (ex: il a retiré un article), on reset
-        if (zoneSelect.selectedOptions[0].disabled) {
-            zoneSelect.value = ""; // On remet à zéro
-            warningText.style.display = 'block';
-            warningText.innerText = "⚠️ Votre panier a changé, veuillez re-sélectionner une zone valide.";
-        }
-
-        showPage('page-confirmation');
+    // Logique visuelle cigarette (Menu déroulant)
+    const cigDetails = document.getElementById('cigarette-details');
+    if (cigToggle.checked) {
+        cigDetails.style.display = 'block';
+    } else {
+        cigDetails.style.display = 'none';
     }
+    
+    // Écouteur pour recharger le prix si on coche/décoche
+    cigToggle.onchange = function() {
+        renderConfirmation(); 
+    };
+
+    // --- 3. GESTION PROMO ---
+    if (appliedPromo) {
+        const promo = validPromoCodes[appliedPromo];
+        let discountableAmount = 0;
+
+        if (promo.appliesTo === 'eligible') {
+            cart.forEach(item => {
+                const product = getProductById(item.productId);
+                if (product && product.promoEligible) {
+                    discountableAmount += item.totalPrice;
+                }
+            });
+        } else {
+            discountableAmount = subTotal;
+        }
+
+        if (promo.type === 'percent') {
+            discount = (discountableAmount * promo.value) / 100;
+        } else {
+            discount = promo.value;
+        }
+    }
+    if (discount > subTotal) discount = subTotal;
+
+    // --- 4. TOTAL FINAL ---
+    const totalPrice = subTotal - discount + cigarettePrice;
+
+    // --- 5. GESTION DU BONUS AUTOMATIQUE (CASE GRISE) ---
+    const bonusCheckbox = document.getElementById('bonus-300-checkbox');
+    const bonusWrapper = document.querySelector('.bonus-wrapper');
+
+    if (totalPrice >= 300) {
+        bonusCheckbox.checked = true;
+        bonusWrapper.classList.add('active');
+    } else {
+        bonusCheckbox.checked = false;
+        bonusWrapper.classList.remove('active');
+    }
+
+    // --- 6. GESTION DE L'IMAGE DE LA ZONE (Maintenant que zoneSelect est défini) ---
+    const imgContainer = document.getElementById('cart-zone-image-container');
+    const imgPreview = document.getElementById('cart-zone-preview');
+
+    const zoneImages = {
+        "Zone 1": "Zone1.jpg",
+        "Zone 2": "Zone2.jpg",
+        "Zone 3": "Zone3.jpg"
+    };
+
+    // Fonction locale pour mettre à jour l'image
+    const updateZoneImage = () => {
+        const selectedVal = zoneSelect.value;
+        if (selectedVal && zoneImages[selectedVal]) {
+            imgPreview.src = zoneImages[selectedVal];
+            imgContainer.style.display = 'block';
+        } else {
+            imgContainer.style.display = 'none';
+        }
+    };
+
+    // On lance la mise à jour
+    updateZoneImage();
+
+    // Gestionnaire d'événement pour la zone
+    // ATTENTION : On doit éviter la boucle infinie. On sépare la logique.
+    zoneSelect.onchange = function() {
+        updateZoneImage(); 
+        // On relance renderConfirmation pour vérifier les minimums de commande (étape 7)
+        // Mais comme on est DÉJÀ dans renderConfirmation, on appelle une petite mise à jour UI seulement si besoin
+        // Pour faire simple et robuste : on recharge tout.
+        renderConfirmation(); 
+    };
+
+    // --- 7. VERROUILLAGE DES ZONES (PALIERS PRIX) ---
+    warningText.style.display = 'none'; // Reset
+
+    // Zone 1
+    if (totalPrice < MIN_ZONE_1) {
+        zoneOptions[1].disabled = true;
+        zoneOptions[1].text = `🟢 ZONE 1 (Bloqué - Min ${MIN_ZONE_1}€)`;
+    } else {
+        zoneOptions[1].disabled = false;
+        zoneOptions[1].text = `🟢 ZONE 1 : Centre`;
+    }
+
+    // Zone 2
+    if (totalPrice < MIN_ZONE_2) {
+        zoneOptions[2].disabled = true;
+        zoneOptions[2].text = `🟡 ZONE 2 (Bloqué - Min ${MIN_ZONE_2}€)`;
+    } else {
+        zoneOptions[2].disabled = false;
+        zoneOptions[2].text = `🟡 ZONE 2 : Banlieue`;
+    }
+
+    // Zone 3
+    if (totalPrice < MIN_ZONE_3) {
+        zoneOptions[3].disabled = true;
+        zoneOptions[3].text = `🔴 ZONE 3 (Bloqué - Min ${MIN_ZONE_3}€)`;
+    } else {
+        zoneOptions[3].disabled = false;
+        zoneOptions[3].text = `🔴 ZONE 3 : Grande Couronne`;
+    }
+
+    // Vérification : Si la zone choisie devient interdite (ex: on a retiré un article)
+    // On vérifie s'il y a une vraie valeur sélectionnée (pas le placeholder vide)
+    if (zoneSelect.value !== "" && zoneSelect.selectedOptions[0].disabled) {
+        zoneSelect.value = ""; // On désélectionne
+        updateZoneImage(); // On cache l'image
+        warningText.style.display = 'block';
+        warningText.innerText = "⚠️ Votre panier a changé, veuillez re-sélectionner une zone valide.";
+    }
+
+
+    // --- 8. UI ET AFFICHAGE ---
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    document.getElementById('confirmation-items-count').innerText = `${totalItems} article${totalItems > 1 ? 's' : ''}`;
+    document.getElementById('confirmation-total-price').innerText = `${totalPrice.toFixed(2)}€`;
+
+    // Liste des articles
+    const itemsList = document.getElementById('confirmation-items-list');
+    itemsList.innerHTML = cart.map((item, index) => `
+         <div class="cart-item">
+            <img src="${item.image}" alt="${item.name}">
+            <div class="item-details">
+                <div>${index + 1}. ${item.name}</div>
+                <div>Quantité: ${item.quantity}x ${item.weight}</div>
+                <div>Prix unitaire: ${item.unitPrice.toFixed(2)}€</div>
+            </div>
+        </div>
+    `).join('');
+
+    // Promo UI
+    const promoInputContainer = document.getElementById('promo-input-container');
+    const promoAppliedContainer = document.getElementById('promo-applied-container');
+    if (appliedPromo) {
+        promoInputContainer.style.display = 'none';
+        promoAppliedContainer.style.display = 'flex';
+        document.getElementById('promo-applied-text').innerText = `Code "${appliedPromo}" appliqué !`;
+    } else {
+        promoInputContainer.style.display = 'flex';
+        promoAppliedContainer.style.display = 'none';
+        document.getElementById('promo-code-input').value = '';
+    }
+
+    // Paiement UI
+    document.querySelectorAll('.payment-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.method === paymentMethod);
+    });
+
+    // Résumé Final en bas
+    const summaryContainer = document.getElementById('confirmation-summary');
+    let summaryHTML = `
+        <div class="summary-line">
+            <span>Sous-total:</span>
+            <span>${subTotal.toFixed(2)}€</span>
+        </div>
+    `;
+    if (discount > 0) {
+        summaryHTML += `
+        <div class="summary-line discount">
+            <span>Réduction:</span>
+            <span>-${discount.toFixed(2)}€</span>
+        </div>
+        `;
+    }
+    if (cigarettePrice > 0) {
+         summaryHTML += `
+        <div class="summary-line" style="color: #ff3b30;">
+            <span>🚬 Cigarettes:</span>
+            <span>+${cigarettePrice.toFixed(2)}€</span>
+        </div>
+        `;
+    }
+    summaryHTML += `
+        <div class="summary-line total">
+            <span>💰 Total final:</span>
+            <span>${totalPrice.toFixed(2)}€</span>
+        </div>
+    `;
+    summaryContainer.innerHTML = summaryHTML;
+
+    // Logique Goodies (inchangée)
+    const goodiesToggle = document.getElementById('want-goodies-toggle');
+    const goodiesList = document.getElementById('goodies-selection-list');
+    const feuilleOption = document.getElementById('goodie-feuille-option');
+
+    const isOnlyNeige = cart.every(item => {
+        const product = getProductById(item.productId);
+        return product && product.type === 'Neige'; 
+    });
+
+    if (isOnlyNeige) {
+        feuilleOption.style.display = 'none';
+    } else {
+        feuilleOption.style.display = 'flex';
+    }
+
+    goodiesToggle.onchange = function() {
+        if (this.checked) {
+            goodiesList.style.display = 'flex';
+        } else {
+            goodiesList.style.display = 'none';
+            document.querySelectorAll('.goodie-checkbox').forEach(cb => cb.checked = false);
+        }
+    };
+
+    // ENFIN : Afficher la page
+    showPage('page-confirmation');
+}
     // Affiche la page de contact (inchangé)
     function renderContactPage() {
         const linksContainer = document.getElementById('contact-links-container');
@@ -2164,6 +2197,18 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
     });
+
+    // --- FONCTIONS VISIONNEUSE D'IMAGE ---
+    window.openImageViewer = function(src) {
+        const viewer = document.getElementById('image-viewer');
+        const img = document.getElementById('full-image');
+        viewer.style.display = "block";
+        img.src = src;
+    }
+
+    window.closeImageViewer = function() {
+        document.getElementById('image-viewer').style.display = "none";
+    }
 
     // --- INITIALISATION DE L'APP ---
     function init() {

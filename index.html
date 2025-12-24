@@ -1394,6 +1394,76 @@
             border-radius: 10px;
             border: 1px solid #03e7f6;
         }
+
+        /* --- STYLE VISIONNEUSE (ZOOM IMAGE) --- */
+        .image-viewer {
+            display: none; /* Caché par défaut */
+            position: fixed;
+            z-index: 9999; /* Au-dessus de tout */
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9); /* Fond noir presque opaque */
+            backdrop-filter: blur(5px);
+        }
+
+        .viewer-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            border-radius: 10px;
+            border: 2px solid #03e7f6; /* Bordure Cyan */
+            box-shadow: 0 0 20px rgba(3, 231, 246, 0.5);
+        }
+
+        .close-viewer {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .close-viewer:hover,
+        .close-viewer:focus {
+            color: #03e7f6;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Animation de zoom */
+        .viewer-content {  
+            animation-name: zoom;
+            animation-duration: 0.3s;
+        }
+
+        @keyframes zoom {
+            from {transform:scale(0)} 
+            to {transform:scale(1)}
+        }
+
+        /* Curseur main sur les images cliquables */
+        .clickable-image {
+            cursor: zoom-in;
+        }
+
+        /* --- STYLE DU TEXTE "CLIQUER POUR VOIR" --- */
+        .click-hint {
+            font-size: 0.8rem;       /* Petit texte */
+            color: #03e7f6;          /* Cyan pour attirer l'oeil (ou met var(--hint-color) pour gris) */
+            text-align: center;      /* Centré */
+            margin-top: 5px;         /* Un peu d'espace avec l'image */
+            margin-bottom: 10px;
+            font-style: italic;
+            opacity: 0.8;
+        }
     </style>
 </head>
 
@@ -1470,8 +1540,8 @@
 
                                 <div class="zone-card">
                                     <div class="zone-title">🟢 ZONE 1</div>
-                                    <img src="Zone1.jpg" alt="Carte Zone 1" class="zone-img">
-                                    
+                                    <img src="Zone1.jpg" alt="Carte Zone 1" class="zone-img clickable-image" onclick="openImageViewer(this.src)">                                    
+                                    <p class="click-hint">🔍 Cliquer dessus pour voir en entier</p>
                                     <p class="zone-desc">
                                         Gratuit minimum 40 euros commandes.
                                     </p>
@@ -1480,7 +1550,7 @@
                                 <div class="zone-card">
                                     <div class="zone-title">🟡 ZONE 2</div>
                                     <img src="Zone2.jpg" alt="Carte Zone 2" class="zone-img">
-
+                                    <p class="click-hint">🔍 Cliquer dessus pour voir en entier</p>
                                     <p class="zone-desc">
                                         Minimum 300 <br>
                                         Livraison 100 euros
@@ -1490,7 +1560,7 @@
                                 <div class="zone-card">
                                     <div class="zone-title">🔴 ZONE 3 </div>
                                     <img src="Zone3.jpg" alt="Carte Zone 3" class="zone-img">
-
+                                    <p class="click-hint">🔍 Cliquer dessus pour voir en entier</p>
                                     <p class="zone-desc">
                                         Minimum 500 <br>
                                         Livraison 200 euros
@@ -1809,6 +1879,13 @@
                 <p id="zone-warning-text" style="color: #ff3b30; font-size: 0.8rem; margin-top: 5px; display: none;">
                     ⚠️ Montant du panier insuffisant pour cette zone.
                 </p>
+                <div id="cart-zone-image-container" style="display:none; margin-top: 15px;">
+                    <p style="font-size: 0.9rem; color: #03e7f6; margin-bottom: 5px;">📍 Aperçu de la zone :</p>
+                    
+                    <img id="cart-zone-preview" src="" class="zone-img clickable-image" onclick="openImageViewer(this.src)">
+                    
+                    <p class="click-hint">🔍 Cliquer dessus pour voir en entier</p>
+                </div>
             </div>
 
             <div class="user-details-container">
@@ -1882,6 +1959,11 @@
             <p style="
             margin: inherit;"> LINKS </p>
         </button>
+    </div>
+
+    <div id="image-viewer" class="image-viewer" onclick="closeImageViewer()">
+        <span class="close-viewer">&times;</span>
+        <img class="viewer-content" id="full-image">
     </div>
 
     <div id="notification-toast"></div>
