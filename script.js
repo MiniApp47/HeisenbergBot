@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     products: [
                         {
                             id: '🍋 Lemon cherry 🍒',
-                            //  flag: '🇺🇸',
+                            flag: '🇪🇸',
                             name: '🍋 Lemon cherry 🍒',
                             farm: '🏠 NoFarm',
                             promoEligible: true,
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         },
                         {
                             id: 'Amnesia haze hipro 🌟',
-                            //  flag: '🇺🇸',
+                              flag: '🇪🇸',
                             name: 'Amnesia haze hipro 🌟',
                             farm: '🏠 NoFarm',
                             promoEligible: true,
@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         },
                         {
                             id: '🌴 Tropicana Banana 🍌',
-                            //  flag: '🇺🇸',
+                              flag: '🇪🇸',
                             name: '🌴 Tropicana Banana 🍌',
                             farm: 'Calimàn 🇯🇲',
                             promoEligible: true,
@@ -169,15 +169,15 @@ document.addEventListener('DOMContentLoaded', function () {
                          image: 'Wizard4.png', // Mets une image de farm si tu veux
                          badgeText: '2 produits', */
                     products: [
-                        /*         {
-                                    id: 'LEMONHAZE',
-                                   //flag: '🇺🇸',
-                                    name: '🍋 LEMON HAZE 🍋',
-                                    farm: 'FARM',
+                                /* {
+                                    id: 'Lemonade',
+                                    flag: '🇺🇸',
+                                    name: '🍓 Strawberry Limonade 🍸',
+                                    farm: '🏠 NoFarm', 
                                     promoEligible: true,
                                     type: 'Weed',
-                                    image: 'LemonProduct.png',
-                                    video: 'LemonHaze.mp4',
+                                    image: 'ProductLemonade.png',
+                                    video: 'VideoLemonade.mp4',
                                     description: 'Beuh Hollandaise craquante et poleneuse sans super fort a super bon goût à la bouche 🤪',
                                     tarifs: [
                                         { weight: '2g', price: 20.00 },
@@ -209,8 +209,24 @@ document.addEventListener('DOMContentLoaded', function () {
                          badgeText: '2 produits', */
                     products: [
                         {
+                            id: 'IceCream',
+                            flag: '🇺🇸',
+                            name: 'Ice Cream Cookies 🍪',
+                            farm: '🏠 NoFarm',
+                            type: 'Weed',
+                            image: 'ProductIceCream.png',
+                            video: 'VideoIceCream.mp4',
+                            description: 'Avec sa fumée puissante et délicieuse, cette Ice cream cali cultivée en intérieur saura faire fondre tous vos soucis',
+                            tarifs: [
+                                { weight: '2G', price: 60.00 },
+                                { weight: '5G', price: 90.00 },
+                                { weight: '10G', price: 180.00 },
+                                { weight: '25G', price: 360.00 },
+                            ]
+                        },
+                        {
                             id: 'Cali Farm W1 🥇',
-                            //flag: '🇺🇸',
+                            flag: '🇺🇸',
                             name: 'Cali Farm W1 🥇',
                             farm: '🏠 NoFarm',
                             type: 'Weed',
@@ -226,7 +242,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         },
                         {
                             id: 'Oreoz 🍪',
-                            //flag: '🇺🇸',
+                            flag: '🇺🇸',
                             name: 'Oreoz 🍪',
                             farm: '🏠 NoFarm',
                             type: 'Weed',
@@ -242,7 +258,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         },
                         {
                             id: 'Runtz 👹',
-                            //flag: '🇺🇸',
+                            flag: '🇺🇸',
                             name: 'Runtz 👹',
                             farm: '🏠 NoFarm',
                             type: 'Weed',
@@ -258,7 +274,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         },
                         {
                             id: 'Mach One 🥇',
-                            //flag: '🇺🇸',
+                            flag: '🇺🇸',
                             name: 'Mach One 🥇',
                             farm: '🏠 NoFarm',
                             type: 'Weed',
@@ -293,8 +309,25 @@ document.addEventListener('DOMContentLoaded', function () {
                          badgeText: '2 produits', */
                     products: [
                         {
+                            id: 'Lemonade',
+                            flag: '🇨🇦',
+                            name: '🍓 Strawberry Limonade 🍸',
+                            farm: '🏠 NoFarm', 
+                            promoEligible: true,
+                            type: 'Weed',
+                            image: 'ProductLemonade.png',
+                            video: 'VideoLimonade.mp4',
+                            description: 'La Strawberry Lemonade dévoile un profil terpénique ultra fruité qui rend chaque taffe mémorable. Dès la première combustion, on est saisi par un mélange sucré de fraise mûre et de citron acidulé.',
+                            tarifs: [
+                                { weight: '2g', price: 50.00 },
+                                { weight: '5g', price: 80.00 },
+                                { weight: '10g', price: 150.00 },
+                                { weight: '25g', price: 300.00 },
+                            ]
+                        },
+                        {
                             id: 'Turbo 🐌',
-                            //flag: '🇺🇸',
+                            flag: '🇨🇦',
                             name: 'Turbo 🐌',
                             farm: '🏠 No Farm',
                             promoEligible: true,
