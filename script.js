@@ -56,6 +56,13 @@ document.addEventListener('DOMContentLoaded', function () {
             id: 'potato-main',
             className: 'potato', // Garde le style Marron/Doré Potato
             text: "CANAL POTATO 🥔"
+        },
+        {
+            name: 'INSTAGRAM 📸',
+            url: 'https://www.instagram.com/leheisenbergest?igsh=MWkxcHN1bjd1bDE1cQ%3D%3D&utm_source=qr',
+            id: 'intsagram',
+            className: 'insta', 
+            text: "INSTAGRAM 📸"
         }
     ];
 
