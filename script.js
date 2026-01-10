@@ -1144,8 +1144,109 @@ document.addEventListener('DOMContentLoaded', function () {
                     ]
                 }
             ]
-        }
+        },
+        {
+            id: 'Envoi Espagne',
+            name: 'Envoi Espagne 🇪🇦',
+            farm: '',
+            type: 'Envoi Espagne 🇪🇦',
+            quality: 'Envoi Espagne 🇪🇦',
+            image: 'CategEsp.png', // Image de la catégorie
 
+            farms: [
+                {
+                    /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
+                         name: 'Wizard trees 🔮',
+                         image: 'Wizard4.png', // Mets une image de farm si tu veux
+                         badgeText: '2 produits', */
+                    products: [
+                        {
+                            id: 'Frozen 🥶 Grappe Gaz ⛽',
+                            //flag: '🇺🇸',
+                            name: 'Frozen 🥶 Grappe Gaz ⛽',
+                            farm: '🏠 La Source x Warz of Terpz',
+                            // clickable: false, 
+                            promoEligible: true,
+                            type: 'EnvoiEspagne',
+                            image: 'ProductGaz.png',
+                            video: 'VideoGaz.mp4',
+                            description: 'Grape Gas est une variété à dominance sativa au profil aromatique distinctif. Elle libère des arômes sucrés de raisin mûr, rappelant un dessert fruité, enveloppés d\'une note marquée de diesel, un contraste net entre douceur et intensité \n\n Prepaiement requis : Crypto Usdt Virement CB paiement \n Envoi relais locker 48h avec suivi ',
+                            tarifs: [
+                                { weight: '25g', price: 350.00 },
+                                { weight: '50g', price: 650.00 },
+                                { weight: '100g', price: 1200.00 },
+                            ]
+                        },
+                        {
+                            id: 'Frozen 🥶 Passion Fruit 🍹',
+                            //flag: '🇺🇸',
+                            name: 'Frozen 🥶 Passion Fruit 🍹',
+                            farm: '🏠 La Source x Warz of Terpz',
+                            // clickable: false, 
+                            promoEligible: true,
+                            type: 'EnvoiEspagne',
+                            image: 'ProductFruit.png',
+                            video: 'VideoFruit.mp4',
+                            description: 'Sucrée et super fruitée : La Passion Fruitz est bourrée de délicieux terpènes tropicaux et d\'agrumes \n\n Prepaiement requis : Crypto Usdt Virement CB paiement \n Envoi relais locker 48h avec suivi ',
+                            tarifs: [
+                                { weight: '25g', price: 350.00 },
+                                { weight: '50g', price: 650.00 },
+                                { weight: '100g', price: 1200.00 },
+                            ]
+                        },
+                        {
+                            id: 'Frozen 🥶 Tropical Cookies 🍪',
+                            //flag: '🇺🇸',
+                            name: 'Frozen 🥶 Tropical Cookies 🍪',
+                            farm: '🏠 La Source x Warz of Terpz',
+                            // clickable: false, 
+                            promoEligible: true,
+                            type: 'EnvoiEspagne',
+                            image: 'ProductTropical.png',
+                            video: 'VideoTropical.mp4',
+                            description: 'Pineapple Skunk, le premier parent de Tropical Cookies, est une variété souvent attribuée à la Humboldt Seed Company. Cette Skunk audacieuse et fruitée a été sélectionnée à partir de Big Bud et de différentes autres variétés Skunk et elle est renommée pour son parfum sucré et ses saveurs prononcées. \n\n Prepaiement requis : Crypto Usdt Virement CB paiement \n Envoi relais locker 48h avec suivi ',
+                            tarifs: [
+                                { weight: '25g', price: 350.00 },
+                                { weight: '50g', price: 650.00 },
+                                { weight: '100g', price: 1200.00 },
+                            ]
+                        },
+                        {
+                            id: 'Frozen 🥶 Lava Cake 👨🏻‍🍳',
+                            //flag: '🇺🇸',
+                            name: 'Frozen 🥶 Lava Cake 👨🏻‍🍳',
+                            farm: '🏠 La Source x Warz of Terpz',
+                            // clickable: false, 
+                            promoEligible: true,
+                            type: 'EnvoiEspagne',
+                            image: 'ProductLava.png',
+                            video: 'VideoLava.mp4',
+                            description: 'Pineapple Skunk, le premier parent de Tropical Cookies, est une variété souvent attribuée à la Humboldt Seed Company. Cette Skunk audacieuse et fruitée a été sélectionnée à partir de Big Bud et de différentes autres variétés Skunk et elle est renommée pour son parfum sucré et ses saveurs prononcées. \n\n Prepaiement requis : Crypto Usdt Virement CB paiement \n Envoi relais locker 48h avec suivi ',
+                            tarifs: [
+                                { weight: '25g', price: 350.00 },
+                                { weight: '50g', price: 650.00 },
+                                { weight: '100g', price: 1200.00 },
+                            ]
+                        }/* ,
+                        {
+                            id: 'Cookies 🍪 chocolat 🍫',
+                            //flag: '🇺🇸',
+                            name: 'Cookies 🍪 chocolat 🍫',
+                            farm: '🏠 No Farm',
+                            clickable: false, 
+                            promoEligible: true,
+                            type: 'SpaceCake',
+                            image: 'ProductSpace.png',
+                            video: '',
+                            description: 'Rainbow multicolor',
+                            tarifs: [
+                                { weight: '1', price: 20.00 },
+                            ]
+                        } */
+                    ]
+                }
+            ]
+        }
     ];
 
     // --- VARIABLES D'ÉTAT ---
@@ -1474,17 +1575,17 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
 `).join('');
 
-        // ... (la logique de descriptionHTML ne change pas) ...
-        let descriptionHTML = '';
-        if (product.description) {
-            // ...
-        }
+let descriptionHTML = '';
+if (product.description) {
+    // On ajoute la classe "product-description" pour que ton CSS (texte rouge) s'applique
+    descriptionHTML = `<div class="product-description">${product.description}</div>`;
+}
 
         // On injecte le HTML, y compris la description
         detailsContainer.innerHTML = `
     <div class="name">${product.name}</div>
     <div class="farm">${product.farm}</div>
-    ${descriptionHTML} 
+    <div class="description"> ${descriptionHTML} </div> 
     <h4 class="tarifs-title">💰 Tarifs disponibles :</h4>
 
     <div class="tarifs-grid-container">
