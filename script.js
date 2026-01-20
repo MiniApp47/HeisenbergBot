@@ -439,6 +439,60 @@ document.addEventListener('DOMContentLoaded', function () {
                          badgeText: '2 produits', */
                     products: [
                         {
+                            id: 'Grape gas ⛽️',
+                            //flag: '🇺🇸',
+                            name: 'Grape gas ⛽️',
+                            farm: 'LASOURCE X WARZ OF TERPZ 👨🏻‍🔬',
+                            promoEligible: true,
+                            type: 'Frozen',
+                            image: 'ProductGrape.png',
+                            video: 'VideoGrape.mp4',
+                            description: 'Les effets de la Grape Gas sont tout aussi impressionnants. En tant qu\'hybride équilibré, elle t\'offre le meilleur des deux mondes : une euphorie cérébrale initiale qui stimule la créativité et l\'humeur, suivie d\'une relaxation corporelle profonde et apaisante.',
+                            tarifs: [
+                                { weight: '2G', price: 60.00 },
+                                { weight: '5G', price: 100.00 },
+                                { weight: '10G', price: 200.00 },
+                                { weight: '25G', price: 450.00 },
+                                { weight: '50G', price: 800.00 },
+                            ]
+                        },
+                        {
+                            id: 'Tropical 🌴 cookies 🍪',
+                            //flag: '🇺🇸',
+                            name: 'Tropical 🌴 cookies 🍪',
+                            farm: 'LASOURCE X WARZ OF TERPZ 👨🏻‍🔬',
+                            promoEligible: true,
+                            type: 'Frozen',
+                            image: 'ProductTrop.png',
+                            video: 'VideoTrop.mp4',
+                            description: 'La variété Tropicana cookie se caractérise par son goût acidulé et citrique sur un fond crémeux et sucré de Girl Scout Cookies, un délice pour les amateurs d\'agrumes et d\'arômes sucrés.',
+                            tarifs: [
+                                { weight: '2G', price: 60.00 },
+                                { weight: '5G', price: 100.00 },
+                                { weight: '10G', price: 200.00 },
+                                { weight: '25G', price: 450.00 },
+                                { weight: '50G', price: 800.00 },
+                            ]
+                        },
+                        {
+                            id: 'Passion ❤️‍🔥 fruit 🍈',
+                            //flag: '🇺🇸',
+                            name: 'Passion ❤️‍🔥 fruit 🍈',
+                            farm: 'LASOURCE X WARZ OF TERPZ 👨🏻‍🔬',
+                            promoEligible: true,
+                            type: 'Frozen',
+                            image: 'ProductPass.png',
+                            video: 'VideoPass.mp4',
+                            description: 'La Passion Fruit est une variété hybride indica/sativa qui a été créée en croisant un clone de Sweet Pink Grapefruit avec une Orange Bud.',
+                            tarifs: [
+                                { weight: '10G', price: 180.00 },
+                                { weight: '20G', price: 350.00 },
+                                { weight: '30G', price: 520.00 },
+                                { weight: '40G', price: 700.00 },
+                                { weight: '50G', price: 850.00 },
+                            ]
+                        },
+                        {
                             id: 'Red Bull 🐂',
                             //flag: '🇺🇸',
                             name: 'Red Bull 🐂',
