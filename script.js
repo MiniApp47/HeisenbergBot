@@ -256,7 +256,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '25G', price: 300.00 },
                             ]
                         },
-                        {
+                       /*  {
                             id: 'Runtz 👹',
                             flag: '🇺🇸',
                             name: 'Runtz 👹',
@@ -271,7 +271,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '10G', price: 150.00 },
                                 { weight: '25G', price: 300.00 },
                             ]
-                        },
+                        }, */
                         {
                             id: 'Mach One 🥇',
                             flag: '🇺🇸',
@@ -324,8 +324,8 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '10g', price: 150.00 },
                                 { weight: '25g', price: 300.00 },
                             ]
-                        },
-                        {
+                        }
+                        /* {
                             id: 'Turbo 🐌',
                             flag: '🇨🇦',
                             name: 'Turbo 🐌',
@@ -341,7 +341,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '25G', price: 240.00 },
                                 { weight: '50G', price: 400.00 },
                             ]
-                        }
+                        } */
                     ]
                 }
             ]
@@ -491,8 +491,8 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '40G', price: 700.00 },
                                 { weight: '50G', price: 850.00 },
                             ]
-                        },
-                        {
+                        }
+                    /*     {
                             id: 'Red Bull 🐂',
                             //flag: '🇺🇸',
                             name: 'Red Bull 🐂',
@@ -509,7 +509,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '40G', price: 700.00 },
                                 { weight: '50G', price: 850.00 },
                             ]
-                        }
+                        } */
                     ]
                 }
             ]
@@ -784,7 +784,7 @@ document.addEventListener('DOMContentLoaded', function () {
                          image: 'Wizard4.png', // Mets une image de farm si tu veux
                          badgeText: '2 produits', */
                     products: [
-                        {
+                      /*   {
                             id: 'Beldia Original Genetic 🧬',
                             //flag: '🇺🇸',
                             name: 'Beldia Original Genetic 🧬',
@@ -801,7 +801,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '50G', price: 380.00 },
                                 { weight: '100G', price: 750.00 },
                             ]
-                        },
+                        }, */
                         {
                             id: '🍊 Orange Ice 🥶',
                             //flag: '🇺🇸',
@@ -875,7 +875,7 @@ document.addEventListener('DOMContentLoaded', function () {
                          image: 'Wizard4.png', // Mets une image de farm si tu veux
                          badgeText: '2 produits', */
                     products: [
-                        {
+                     /*    {
                             id: 'Fruit Cake 🍰',
                             //flag: '🇺🇸',
                             name: 'Willy Wonka 🍰',
@@ -891,7 +891,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '10G', price: 130.00 },
                                 { weight: '25G', price: 260.00 },
                             ]
-                        },
+                        }, */
                         {
                             id: 'Cherry Pie 🍒',
                             //flag: '🇺🇸',
@@ -926,7 +926,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '25G', price: 260.00 },
                             ]
                         },
-                        {
+                      /*   {
                             id: 'Bubble gum 🫧',
                             //flag: '🇺🇸',
                             name: 'Bubble gum 🫧',
@@ -942,7 +942,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '10G', price: 80.00 },
                                 { weight: '25G', price: 170.00 },
                             ]
-                        },
+                        }, */
                         {
                             id: 'Ice Cream 🍨',
                             //flag: '🇺🇸',
