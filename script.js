@@ -439,6 +439,22 @@ document.addEventListener('DOMContentLoaded', function () {
                          badgeText: '2 produits', */
                     products: [
                         {
+                            id: 'Mandarin OG 🍊',
+                            //flag: '🇺🇸',
+                            name: 'Mandarin OG 🍊',
+                            farm: 'STREET FARM 👨🏻‍🔬',
+                            promoEligible: true,
+                            type: 'Frozen',
+                            image: 'ProductMandarine.png',
+                            video: 'VideoMandarine.mp4',
+                            description: 'Les variétés de cannabis à saveur orange/mandarine se distinguent par leur profil d\'agrumes , parfois agrémenté de notes sucrées , acidulées et juteuses qui ravissent cultivateurs et consommateurs. Cette catégorie regroupe des génétiques riches en limonène et autres terpènes, offrant des arômes intenses et des effets vibrants. Vous y trouverez de tout, de la Tangie au Mimosa en passant par la Mandarin Cookies.',
+                            tarifs: [
+                                { weight: '5G', price: 100.00 },
+                                { weight: '10G', price: 200.00 },
+                                { weight: '25G', price: 350.00 },
+                            ]
+                        },
+                        {
                             id: 'Grape gas ⛽️',
                             //flag: '🇺🇸',
                             name: 'Grape gas ⛽️',
