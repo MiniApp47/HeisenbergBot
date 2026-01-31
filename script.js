@@ -605,6 +605,51 @@ document.addEventListener('DOMContentLoaded', function () {
                          badgeText: '2 produits', */
                     products: [
                         {
+                            id: 'HONEY 🍯 BANANA 🍌',
+                            //flag: '🇺🇸',
+                            name: 'HONEY 🍯 BANANA 🍌',
+                            farm: '🐪 SPF X General Genetic 💂',
+                            promoEligible: true,
+                            type: 'DoubleStatic',
+                            image: 'ProductHB.png',
+                            video: 'VideoHB.mp4',
+                            description: 'Honey Bananas est une variété hybride dérivant de Honey Boo et Strawberry Bananas. Quand on mélange du miel, des fraises et des bananes, on reçoit un régal délicieusement sucré, et c\'est bien le cas de Honey Bananas.\n\n Dispo uniquement Maroc : Tanger / Rabat / Casablanca / Marrakech ',
+                            tarifs: [
+                                { weight: '50g', price: 600.00 },
+                                { weight: '100G', price: 1000.00 },
+                            ]
+                        },
+                        {
+                            id: 'MENTAL RAINBOW 🌈',
+                            //flag: '🇺🇸',
+                            name: 'MENTAL RAINBOW 🌈',
+                            farm: '🐪 SPF X General Genetic 💂',
+                            promoEligible: true,
+                            type: 'DoubleStatic',
+                            image: 'ProductMR.png',
+                            video: 'VideoMR.mp4',
+                            description: 'La Mental Rainbow F1 Fast Version® est une plante qui se distingue par son profil terpénique fruité et épicé, composé de notes intenses de mangue, de papaye et d\'agrumes, parachevé par des touches terreuses, fumées et épicées.\n\n Dispo uniquement Maroc : Tanger / Rabat / Casablanca / Marrakech ',
+                            tarifs: [
+                                { weight: '50g', price: 600.00 },
+                                { weight: '100G', price: 1000.00 },
+                            ]
+                        },
+                        {
+                            id: 'MENTAL RAINBOW SHERBET ꪜ2️⃣',
+                            //flag: '🇺🇸',
+                            name: 'MENTAL RAINBOW 🌈 SHERBET ꪜ2️⃣',
+                            farm: '🐪 SPF X General Genetic 💂',
+                            promoEligible: true,
+                            type: 'DoubleStatic',
+                            image: 'ProductMR2.png',
+                            video: 'VideoMR2.mp4',
+                            description: 'Rainbow Sherbet est une variété hybride qui allie les meilleures qualités de deux variétés parentes légendaires : Champagne et Blackberry. Ce mélange crée un équilibre harmonieux d\'effets et un profil aromatique riche et complexe qui distingue Rainbow Sherbet des autres variétés \n\n Dispo uniquement Maroc : Tanger / Rabat / Casablanca / Marrakech ',
+                            tarifs: [
+                                { weight: '50g', price: 600.00 },
+                                { weight: '100G', price: 1200.00 },
+                            ]
+                        },
+                        {
                             id: '⛔ Forbidden ⛔',
                             //flag: '🇺🇸',
                             name: '⛔ Forbidden ⛔',
@@ -1313,6 +1358,43 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '1', price: 20.00 },
                             ]
                         } */
+                    ]
+                }
+            ]
+        },
+         {
+            id: 'Meet up Maroc',
+            name: 'Meet up Maroc 🇲🇦',
+            farm: '',
+            type: 'Meet up Maroc 🇲🇦',
+            quality: 'Meet up Maroc 🇲🇦',
+            image: 'CategMeetMaroc.png', // Image de la catégorie
+
+            farms: [
+                {
+                    /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
+                         name: 'Wizard trees 🔮',
+                         image: 'Wizard4.png', // Mets une image de farm si tu veux
+                         badgeText: '2 produits', */
+                    products: [
+                   /*      {
+                            id: 'Frozen 🥶 Grappe Gaz ⛽',
+                            //flag: '🇺🇸',
+                            name: 'Frozen 🥶 Grappe Gaz ⛽',
+                            farm: '🏠 La Source x Warz of Terpz',
+                            // clickable: false, 
+                            promoEligible: true,
+                            type: 'EnvoiEspagne',
+                            image: 'ProductGaz.png',
+                            video: 'VideoGaz.mp4',
+                            description: 'Grape Gas est une variété à dominance sativa au profil aromatique distinctif. Elle libère des arômes sucrés de raisin mûr, rappelant un dessert fruité, enveloppés d\'une note marquée de diesel, un contraste net entre douceur et intensité \n\n Prepaiement requis : Crypto Usdt Virement CB paiement \n Envoi relais locker 48h avec suivi ',
+                            tarifs: [
+                                { weight: '25g', price: 350.00 },
+                                { weight: '50g', price: 650.00 },
+                                { weight: '100g', price: 1200.00 },
+                            ]
+                        },
+                        */
                     ]
                 }
             ]
