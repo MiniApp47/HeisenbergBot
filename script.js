@@ -1089,13 +1089,13 @@ document.addEventListener('DOMContentLoaded', function () {
                             id: 'Brownies chocolat 🍫',
                             //flag: '🇺🇸',
                             name: 'Brownies chocolat 🍫',
-                            farm: '🏠 No Farm',
-                            clickable: false, 
+                            farm: '👨🏻‍🔬 Heis\'Cook 👨🏻‍🔬',
+                            // clickable: false, 
                             promoEligible: true,
                             type: 'SpaceCake',
-                            image: 'ProductSpace.png',
+                            image: 'ProductSpaceCookie.png',
                             video: '',
-                            description: 'Rainbow multicolor',
+                            description: 'Rainbow multicolor \n\n 🚨 A commander 24h a l\'avance 🚨',
                             tarifs: [
                                 { weight: '1', price: 20.00 },
                             ]
