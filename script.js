@@ -209,6 +209,23 @@ document.addEventListener('DOMContentLoaded', function () {
                          badgeText: '2 produits', */
                     products: [
                         {
+                            id: 'Black mamba ⚡️⚡️',
+                            flag: '🇺🇸',
+                            name: 'Black mamba ⚡️⚡️',
+                            farm: '🏠 NoFarm',
+                            type: 'Weed',
+                            image: 'ProductMamba.png',
+                            video: 'VideoMamba.mp4',
+                            description: 'C\'est une grande productrice qui possède un effet physique et cérébral à la fois. Elle est très appropriée pour la cultures en intérieur, avec des plantes uniformes et de grandes fleurs principales; Les bourgeons sont nombreux et très resserrés les un des autres, pour former des fleurs parfumées, avec de fortes nuances fruitées. La Black Mamba est une plante également très intéressante pour l’extérieur, où elle atteindra de grandes dimensions , tout en conservant une floraison rapide et une grande résistance aux moisissures.',
+                            tarifs: [
+                                { weight: '2G', price: 60.00 },
+                                { weight: '5G', price: 100.00 },
+                                { weight: '10G', price: 180.00 },
+                                { weight: '25G', price: 400.00 },
+                                { weight: '50G', price: 750.00 },
+                            ]
+                        },
+                        {
                             id: 'IceCream',
                             flag: '🇺🇸',
                             name: 'Ice Cream Cookies 🍪',
