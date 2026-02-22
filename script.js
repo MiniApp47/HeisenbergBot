@@ -209,6 +209,23 @@ document.addEventListener('DOMContentLoaded', function () {
                          badgeText: '2 produits', */
                     products: [
                         {
+                            id: 'Lemonade',
+                            flag: '🇺🇸',
+                            name: '🍓 Strawberry Limonade 🍸',
+                            farm: '🏠 NoFarm', 
+                            promoEligible: true,
+                            type: 'Weed',
+                            image: 'ProductLemonade.png',
+                            video: 'VideoLimonade.mp4',
+                            description: 'La Strawberry Lemonade dévoile un profil terpénique ultra fruité qui rend chaque taffe mémorable. Dès la première combustion, on est saisi par un mélange sucré de fraise mûre et de citron acidulé.',
+                            tarifs: [
+                                { weight: '2g', price: 50.00 },
+                                { weight: '5g', price: 80.00 },
+                                { weight: '10g', price: 150.00 },
+                                { weight: '25g', price: 300.00 },
+                            ]
+                        },
+                        {
                             id: 'Black mamba ⚡️⚡️',
                             flag: '🇺🇸',
                             name: 'Black mamba ⚡️⚡️',
@@ -310,7 +327,7 @@ document.addEventListener('DOMContentLoaded', function () {
             ]
         },
         // --- Catégorie 4: Cali Canada 🇨🇦 ---
-        {
+   /*      {
             id: 'Cali Canada 🇨🇦',
             name: ' Cali Canada 🇨🇦',
             farm: '',
@@ -323,25 +340,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
                          name: 'Wizard trees 🔮',
                          image: 'Wizard4.png', // Mets une image de farm si tu veux
-                         badgeText: '2 produits', */
+                         badgeText: '2 produits', 
                     products: [
-                        {
-                            id: 'Lemonade',
-                            flag: '🇨🇦',
-                            name: '🍓 Strawberry Limonade 🍸',
-                            farm: '🏠 NoFarm', 
-                            promoEligible: true,
-                            type: 'Weed',
-                            image: 'ProductLemonade.png',
-                            video: 'VideoLimonade.mp4',
-                            description: 'La Strawberry Lemonade dévoile un profil terpénique ultra fruité qui rend chaque taffe mémorable. Dès la première combustion, on est saisi par un mélange sucré de fraise mûre et de citron acidulé.',
-                            tarifs: [
-                                { weight: '2g', price: 50.00 },
-                                { weight: '5g', price: 80.00 },
-                                { weight: '10g', price: 150.00 },
-                                { weight: '25g', price: 300.00 },
-                            ]
-                        }
                         /* {
                             id: 'Turbo 🐌',
                             flag: '🇨🇦',
@@ -358,11 +358,11 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '25G', price: 240.00 },
                                 { weight: '50G', price: 400.00 },
                             ]
-                        } */
+                        } 
                     ]
-                }
+                } 
             ]
-        },
+        }, */
         // --- Catégorie 5: Snow cali ❄️ ---
         {
             id: 'Snow cali ❄️',
@@ -646,42 +646,6 @@ document.addEventListener('DOMContentLoaded', function () {
                             ]
                         },
                         {
-                            id: '⛔ Forbidden ⛔',
-                            //flag: '🇺🇸',
-                            name: '⛔ Forbidden ⛔',
-                            farm: '🪖 Warz of Terpz 🪖',
-                            promoEligible: true,
-                            type: 'DoubleStatic',
-                            image: 'ProductForbi.png',
-                            video: 'VideoForbi.mov',
-                            description: 'Son goût est tout aussi complexe et combine des notes de tête tropicales avec un fond terreux, des pointes de pin et une douceur acidulée de bonbon à l\'expiration',
-                            tarifs: [
-                                { weight: '10G', price: 230.00 },
-                                { weight: '20G', price: 450.00 },
-                                { weight: '30G', price: 660.00 },
-                                { weight: '40G', price: 860.00 },
-                                { weight: '50g', price: 1000.00 },
-                            ]
-                        },
-                        {
-                            id: 'Oreoz caprizun 🧃',
-                            //flag: '🇺🇸',
-                            name: 'Oreoz caprizun 🧃',
-                            farm: '🪖 Warz of Terpz 🪖',
-                            promoEligible: true,
-                            type: 'DoubleStatic',
-                            image: 'ProductCapri.png',
-                            video: 'VideoCapri.mp4',
-                            description: 'Il s\'agit d\'une fleur aux têtes bien aérées, longues et aux arômes crémeux avec des arrières notes légèrement gazeuses.',
-                            tarifs: [
-                                { weight: '10G', price: 230.00 },
-                                { weight: '20G', price: 450.00 },
-                                { weight: '30G', price: 660.00 },
-                                { weight: '40G', price: 860.00 },
-                                { weight: '50g', price: 1000.00 },
-                            ]
-                        },
-                        {
                             id: 'Piniacolada 🍍',
                             //flag: '🇺🇸',
                             name: 'Piniacolada 🍍',
@@ -720,56 +684,7 @@ document.addEventListener('DOMContentLoaded', function () {
                          image: 'Wizard4.png', // Mets une image de farm si tu veux
                          badgeText: '2 produits', */
                     products: [
-                        {
-                            id: 'Tropical Cookies 🦜',
-                            //flag: '🇺🇸',
-                            name: 'Tropical Cookies 🦜',
-                            farm: '🏠 No Farm',
-                            promoEligible: true,
-                            type: 'Static',
-                            image: 'ProductTropic.jpg',
-                            video: 'VideoTropic.mp4',
-                            description: 'La variété Tropicana cookie se caractérise par son goût acidulé et citrique sur un fond crémeux et sucré de Girl Scout Cookies',
-                            tarifs: [
-                                { weight: '5G', price: 70.00 },
-                                { weight: '10G', price: 130.00 },
-                                { weight: '25G', price: 300.00 },
-                            ]
-                        },
-                        {
-                            id: 'Purple punch 🍇',
-                            //flag: '🇺🇸',
-                            name: 'Purple punch 🍇',
-                            farm: '🏠 No Farm',
-                            promoEligible: true,
-                            type: 'Static',
-                            image: 'ProductPurple.jpg',
-                            video: '',
-                            description: 'La Purple Punch fut sélectionnée pour ravir les amoureux d’indica les plus assoifés. Les sélectionneurs derrière cette variété avaient pour projet d’infuser la pureté de la variété parente indica Granddaddy Purple avec des génétiques d’une sativa plus stimulante, l’hybride Larry OG.',
-                            tarifs: [
-                                { weight: '2G', price: 40.00 },
-                                { weight: '5G', price: 80.00 },
-                                { weight: '10G', price: 130.00 },
-                                { weight: '25G', price: 250.00 },
-                            ]
-                        },
-                        {
-                            id: 'Girls cookies 💃',
-                            //flag: '🇺🇸',
-                            name: 'Girls cookies 💃',
-                            farm: '🏠 No Farm',
-                            promoEligible: true,
-                            type: 'Static',
-                            image: 'ProductGirls.jpg',
-                            video: '',
-                            description: 'La Girl Scout Cookies 10-OH-HHC est une fleur réputée pour son équilibre unique entre puissance et plaisir gustatif',
-                            tarifs: [
-                                { weight: '2G', price: 40.00 },
-                                { weight: '5G', price: 80.00 },
-                                { weight: '10G', price: 130.00 },
-                                { weight: '25G', price: 250.00 },
-                            ]
-                        },
+                      
                         {
                             id: 'Tidirhine 🇲🇦',
                             //flag: '🇺🇸',
@@ -785,132 +700,6 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '5G', price: 80.00 },
                                 { weight: '10G', price: 130.00 },
                                 { weight: '25G', price: 250.00 },
-                            ]
-                        },
-                        {
-                            id: 'Juanita lagrimosa ✨',
-                            //flag: '🇺🇸',
-                            name: 'Juanita lagrimosa ✨',
-                            farm: '🏠 No Farm',
-                            promoEligible: true,
-                            type: 'Static',
-                            image: 'ProductGirls.jpg',
-                            video: '',
-                            description: '',
-                            tarifs: [
-                                { weight: '2G', price: 40.00 },
-                                { weight: '5G', price: 80.00 },
-                                { weight: '10G', price: 130.00 },
-                                { weight: '25G', price: 250.00 },
-                            ]
-                        },
-                        {
-                            id: 'Banana Kush 🍌',
-                            //flag: '🇺🇸',
-                            name: 'Banana Kush 🍌',
-                            farm: '🏠 No Farm',
-                            promoEligible: true,
-                            type: 'Static',
-                            image: 'ProductBanana.png',
-                            video: 'VideoBanana.mp4',
-                            description: 'La Banana Kush est une variété hors du commun, issue de la sélection des meilleures Banana OG et OG Kush.',
-                            tarifs: [
-                                { weight: '2G', price: 50.00 },
-                                { weight: '5G', price: 80.00 },
-                                { weight: '10G', price: 130.00 },
-                                { weight: '25G', price: 250.00 },
-                            ]
-                        }
-
-                    ]
-                }
-            ]
-        },
-        {
-            id: 'Hash 🍩',
-            name: 'Hash 🍩',
-            farm: '',
-            type: 'Hash',
-            quality: 'Hash 🍩',
-            image: 'CategHash.webp', // Image de la catégorie
-
-            farms: [
-                {
-                    /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
-                         name: 'Wizard trees 🔮',
-                         image: 'Wizard4.png', // Mets une image de farm si tu veux
-                         badgeText: '2 produits', */
-                    products: [
-                      /*   {
-                            id: 'Beldia Original Genetic 🧬',
-                            //flag: '🇺🇸',
-                            name: 'Beldia Original Genetic 🧬',
-                            farm: '🏠 No Farm',
-                            promoEligible: true,
-                            type: 'Hash',
-                            image: 'ProductBeldia.png',
-                            video: 'VideoBeldia.mp4',
-                            description: 'Beldia Marocaine: La variété de Kif légendaire. La Beldia est le cultivar utilisé par les Rifains depuis des décennies pour produire le bon vieux hasch marocain blond/chocolat.',
-                            tarifs: [
-                                { weight: '5G', price: 50.00 },
-                                { weight: '10G', price: 100.00 },
-                                { weight: '25G', price: 200.00 },
-                                { weight: '50G', price: 380.00 },
-                                { weight: '100G', price: 750.00 },
-                            ]
-                        }, */
-                        {
-                            id: '🍊 Orange Ice 🥶',
-                            //flag: '🇺🇸',
-                            name: '🍊 Orange Ice 🥶',
-                            farm: '🏕️ Jungle Farmz 🏕️',
-                            promoEligible: true,
-                            type: 'Hash',
-                            image: 'ProductOrange.png',
-                            video: 'VideoOrange.mov',
-                            description: 'Orange Ice est certainement une variété absolument excellente créée par Black Farm Genetics - elle est également connue sous le nom d\'Orange Ice Cream et tu peux être sûr que ce croisement entre Gelato 33 et Orange Punch est vraiment crémeux.',
-                            tarifs: [
-                                { weight: '5G', price: 50.00 },
-                                { weight: '10G', price: 100.00 },
-                                { weight: '25G', price: 200.00 },
-                                { weight: '50G', price: 350.00 },
-                                { weight: '100G', price: 500.00 },
-                            ]
-                        },
-                        {
-                            id: 'Sour diesel ⛽️',
-                            //flag: '🇺🇸',
-                            name: 'Sour diesel ⛽️',
-                            farm: '🏠 No Farm',
-                            promoEligible: true,
-                            type: 'Hash',
-                            image: 'ProductSour.png',
-                            video: 'VideoSour.mp4',
-                            description: 'La Sour Diesel est une hybride penchant du côté sativa (70 % sativa) avec un taux de THC moyennement élevé.',
-                            tarifs: [
-                                { weight: '5G', price: 40.00 },
-                                { weight: '10G', price: 80.00 },
-                                { weight: '25G', price: 150.00 },
-                                { weight: '50G', price: 280.00 },
-                                { weight: '100G', price: 450.00 },
-                            ]
-                        },
-                        {
-                            id: 'Mascot boy 🧸',
-                            //flag: '🇺🇸',
-                            name: 'Mascot boy 🧸',
-                            farm: '🏠 No Farm',
-                            promoEligible: true,
-                            type: 'Hash',
-                            image: 'ProductBoy.png',
-                            video: 'VideoBoy.mp4',
-                            description: 'Combiner la favorite très populaire aux États-Unis, la OG Kush avec la super-productive Critical confère à leur progéniture, la Critical Kush, un mélange d’excellentes caractéristiques',
-                            tarifs: [
-                                { weight: '5G', price: 40.00 },
-                                { weight: '10G', price: 80.00 },
-                                { weight: '25G', price: 150.00 },
-                                { weight: '50G', price: 280.00 },
-                                { weight: '100G', price: 450.00 },
                             ]
                         }
                     ]
