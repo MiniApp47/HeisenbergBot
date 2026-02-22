@@ -622,6 +622,30 @@ document.addEventListener('DOMContentLoaded', function () {
                          badgeText: '2 produits', */
                     products: [
                         {
+                            id: 'Mix_SPF_General',
+                            name: 'Mix 🧬',
+                            farm: '🐪 SPF X General Genetic 💂',
+                            promoEligible: true,
+                            type: 'Static', // À adapter
+                            image: 'ProductMix1.png', // Ton image globale
+                            video: 'VideoMix.mov',
+                            description: 'PRODUITS DEXCEPTIONS AVEC DE LA PASSION ❤️‍🔥 DES VRAIES GRAINES DE VRAIES PASSIONEES CHAQUE VARIÉTÉS EST UNE EXPLOSION CULINAIRE .',
+                            strains: [
+                                'Marrocan Peach 🍑', 
+                                'Mental rainbow 🌈', 
+                                'Mental 🧠 rainbow 🌈 sherbet v2', 
+                                'Honey 🍯 banana 🍌'
+                            ],
+                            tarifs: [
+                                { weight: '10G', price: 280.00 },
+                                { weight: '20G', price: 550.00 },
+                                { weight: '30G', price: 810.00 },
+                                { weight: '40G', price: 1050.00 },
+                                { weight: '50G', price: 1300.00 },
+                                { weight: '100G', price: 2500.00 }
+                            ]
+                        },
+                        {
                             id: '⛔ Forbidden ⛔',
                             //flag: '🇺🇸',
                             name: '⛔ Forbidden ⛔',
@@ -925,7 +949,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '25G', price: 260.00 },
                             ]
                         }, */
-                        {
+                       /*  {
                             id: 'Cherry Pie 🍒',
                             //flag: '🇺🇸',
                             name: 'Cherry Pie 🍒',
@@ -958,7 +982,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '10G', price: 130.00 },
                                 { weight: '25G', price: 260.00 },
                             ]
-                        },
+                        }, */
                       /*   {
                             id: 'Bubble gum 🫧',
                             //flag: '🇺🇸',
@@ -1727,22 +1751,38 @@ document.addEventListener('DOMContentLoaded', function () {
 `).join('');
 
 let descriptionHTML = '';
-if (product.description) {
-    // On ajoute la classe "product-description" pour que ton CSS (texte rouge) s'applique
-    descriptionHTML = `<div class="product-description">${product.description}</div>`;
-}
+        if (product.description) {
+            descriptionHTML = `<div class="product-description">${product.description}</div>`;
+        }
 
-        // On injecte le HTML, y compris la description
+        // --- NOUVEAU : GESTION DES STRAINS ---
+        let strainsHTML = '';
+        if (product.strains && product.strains.length > 0) {
+            strainsHTML = `
+                <div class="strain-selector-container" style="margin: 15px 0;">
+                    <label for="strain-select-${product.id}" style="color: white; font-weight: bold; margin-bottom: 5px; display: block;">🧪 Choisir la Variété :</label>
+                    <select id="strain-select-${product.id}" style="width: 100%; padding: 10px; border-radius: 8px; background: #2c2c2e; color: white; border: 1px solid #03e7f6; font-size: 1rem;">
+                        ${product.strains.map(s => `<option value="${s}">${s}</option>`).join('')}
+                    </select>
+                </div>
+            `;
+        }
+
+        // On injecte le HTML
         detailsContainer.innerHTML = `
-    <div class="name">${product.name}</div>
-    <div class="farm">${product.farm}</div>
-    <div class="description"> ${descriptionHTML} </div> 
-    <h4 class="tarifs-title">💰 Tarifs disponibles :</h4>
+            <div class="name">${product.name}</div>
+            <div class="farm">${product.farm}</div>
+            
+            ${descriptionHTML} 
+            ${strainsHTML} 
+            
+            <h4 class="tarifs-title">💰 Tarifs disponibles :</h4>
 
-    <div class="tarifs-grid-container">
-        ${tarifsHTML}
-    </div>
-    `;
+            <div class="tarifs-grid-container">
+                ${tarifsHTML}
+            </div>
+        `;
+        
         showPage('page-product');
     }
     // Met à jour l'affichage du panier (inchangé)
@@ -2100,12 +2140,13 @@ if (product.description) {
     }
 
     // --- LOGIQUE DU PANIER ---
-
-    function addToCart(productId, weight, price) {
-        const cartItemId = `${productId}-${weight}`;
+    function addToCart(productId, weight, price, strain = '') {
+        // L'ID du panier intègre la strain pour séparer les lignes si variétés différentes
+        const cartItemId = strain ? `${productId}-${weight}-${strain}` : `${productId}-${weight}`;
         const existingItem = cart.find(item => item.id === cartItemId);
 
         const product = getProductById(productId);
+        const displayName = strain ? `${product.name} [${strain}]` : product.name;
 
         if (existingItem) {
             existingItem.quantity++;
@@ -2114,7 +2155,7 @@ if (product.description) {
             cart.push({
                 id: cartItemId,
                 productId: productId,
-                name: product.name,
+                name: displayName, // Affiche le nom + la strain dans le panier et le récap
                 image: product.image,
                 weight: weight,
                 quantity: 1,
@@ -2403,11 +2444,17 @@ if (product.description) {
             });
         }
 
-        // Clic sur "Ajouter au panier"
-        if (target.closest('.add-to-cart-btn')) {
-            const btn = target.closest('.add-to-cart-btn');
-            addToCart(btn.dataset.productId, btn.dataset.weight, parseFloat(btn.dataset.price));
-        }
+       // Clic sur "Ajouter au panier"
+       if (target.closest('.add-to-cart-btn')) {
+        const btn = target.closest('.add-to-cart-btn');
+        const productId = btn.dataset.productId;
+        
+        // On vérifie si un sélecteur de strain existe pour ce produit
+        const strainSelect = document.getElementById(`strain-select-${productId}`);
+        const selectedStrain = strainSelect ? strainSelect.value : '';
+
+        addToCart(productId, btn.dataset.weight, parseFloat(btn.dataset.price), selectedStrain);
+    }
 
         // Clic sur les boutons de quantité
         if (target.closest('.quantity-btn')) {
