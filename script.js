@@ -80,10 +80,6 @@ document.addEventListener('DOMContentLoaded', function () {
             // La catégorie contient maintenant des "farms"
             farms: [
                 {
-                    /*     id: 'HASH',
-                        name: 'HASH',
-                        image: 'Frosty2.png', // Mets une image de farm si tu veux
-                        badgeText: '5 produits', */
                     products: [
                         {
                             id: '🍋 Lemon cherry 🍒',
@@ -326,6 +322,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             ]
         },
+        
         // --- Catégorie 4: Cali Canada 🇨🇦 ---
    /*      {
             id: 'Cali Canada 🇨🇦',
@@ -435,6 +432,79 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '10G', price: 350.00 },
                             ]
                         }
+                    ]
+                }
+            ]
+        },
+        {
+            id: 'HASH 🇲🇦',
+            name: ' HASH 🇲🇦',
+            farm: '',
+            type: 'HASH 🇲🇦',
+            quality: 'HASH 🇲🇦',
+            image: 'CategHash.webp', // Image de la catégorie
+
+            farms: [
+                {
+                    /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
+                         name: 'Wizard trees 🔮',
+                         image: 'Wizard4.png', // Mets une image de farm si tu veux
+                         badgeText: '2 produits', */
+                    products: [
+                                {
+                                    id: 'Sour diesel ⛽',
+                                    flag: '🇲🇦',
+                                    name: 'Sour diesel ⛽',
+                                    farm: '🏠 NoFarm', 
+                                    promoEligible: true,
+                                    type: 'HASH',
+                                    image: 'ProductSour.png',
+                                    video: 'VideoSour.mp4',
+                                    description: 'Texture mousseuse ultra-friable et aérée. Profil terpénique piquant et gazeux (diesel/agrumes) caractéristique de la lignée Sour. Frappe rapide avec un effet cérébral stimulant et énergisant. Le classique pour la journée.',   
+                                     tarifs: [
+                                        { weight: '5g', price: 40.00 },
+                                        { weight: '10g', price: 80.00 },
+                                        { weight: '25g', price: 150.00 },
+                                        { weight: '50g', price: 280.00 },
+                                        { weight: '100g', price: 450.00 },
+                                    ]
+                                },
+                                {
+                                    id: '🧸 Mascot boy',
+                                    flag: '🇲🇦',
+                                    name: '🧸 Mascot boy',
+                                    farm: '🏠 NoFarm', 
+                                    promoEligible: true,
+                                    type: 'HASH',
+                                    image: 'ProductBoy.png',
+                                    video: 'VideoBoy.mp4',
+                                    description: 'Le standard de fiabilité marocain. Un mousseux classique, légèrement gras à cœur mais qui s\'effrite sans effort. Arômes terreux et épicés avec une note de fond sucrée. Effet corporel lourd et relaxant, idéal pour décompresser.',
+                                    tarifs: [
+                                        { weight: '5g', price: 40.00 },
+                                        { weight: '10g', price: 80.00 },
+                                        { weight: '25g', price: 150.00 },
+                                        { weight: '50g', price: 280.00 },
+                                        { weight: '100g', price: 450.00 },
+                                    ]
+                                },
+                                {
+                                    id: '🍊 Orange ice ⛸',
+                                    flag: '🇲🇦',
+                                    name: '🍊 Orange ice ⛸',
+                                    farm: '🏠 NoFarm', 
+                                    promoEligible: true,
+                                    type: 'HASH',
+                                    image: 'ProductOrange.png',
+                                    video: 'VideoOrange.mp4',
+                                    description: 'Hash premium d\'inspiration US. Frappe terpénique massive dominée par l\'écorce d\'orange douce avec une finition rafraîchissante. Texture pollen/mousseux de haute pureté qui fond sous la chaleur des doigts. Effet hybride équilibré, clair et euphorique.',
+                                    tarifs: [
+                                        { weight: '5g', price: 50.00 },
+                                        { weight: '10g', price: 100.00 },
+                                        { weight: '25g', price: 200.00 },
+                                        { weight: '50g', price: 350.00 },
+                                        { weight: '100g', price: 500.00 },
+                                    ]
+                                },
                     ]
                 }
             ]
