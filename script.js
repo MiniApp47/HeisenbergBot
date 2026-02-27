@@ -776,7 +776,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             ]
         },
-        {
+       /*   {
             id: 'Filtre x3 🍦',
             name: 'Filtre x3 🍦',
             farm: '',
@@ -786,12 +786,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
             farms: [
                 {
-                    /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
+                        id: 'WIZARDTREES', // J'ai inventé un ID de farm
                          name: 'Wizard trees 🔮',
                          image: 'Wizard4.png', // Mets une image de farm si tu veux
-                         badgeText: '2 produits', */
+                         badgeText: '2 produits', 
                     products: [
-                     /*    {
+                         {
                             id: 'Fruit Cake 🍰',
                             //flag: '🇺🇸',
                             name: 'Willy Wonka 🍰',
@@ -807,8 +807,8 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '10G', price: 130.00 },
                                 { weight: '25G', price: 260.00 },
                             ]
-                        }, */
-                       /*  {
+                        }, 
+                         {
                             id: 'Cherry Pie 🍒',
                             //flag: '🇺🇸',
                             name: 'Cherry Pie 🍒',
@@ -858,7 +858,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '10G', price: 80.00 },
                                 { weight: '25G', price: 170.00 },
                             ]
-                        }, */
+                        }, 
                         {
                             id: 'Ice Cream 🍨',
                             //flag: '🇺🇸',
@@ -901,7 +901,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     ]
                 }
             ]
-        },
+        },*/
             // --- Catégorie 10: Bonbon 🍭 ---
 
             {
