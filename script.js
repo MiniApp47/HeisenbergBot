@@ -253,71 +253,8 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '10G', price: 180.00 },
                                 { weight: '25G', price: 360.00 },
                             ]
-                        },
-                        {
-                            id: 'Cali Farm W1 🥇',
-                            flag: '🇺🇸',
-                            name: 'Cali Farm W1 🥇',
-                            farm: '🏠 NoFarm',
-                            type: 'Weed',
-                            image: 'ProductW1.png',
-                            video: 'VideoW1.mp4',
-                            description: 'Origine/Culture : Cultivée en hydroponie en intérieur, typique des standards de qualité "Cali". \n Génétique : Hybride, 40% Sativa / 60% Indica',
-                            tarifs: [
-                                { weight: '2G', price: 50.00 },
-                                { weight: '5G', price: 80.00 },
-                                { weight: '10G', price: 150.00 },
-                                { weight: '25G', price: 300.00 },
-                            ]
-                        },
-                        {
-                            id: 'Oreoz 🍪',
-                            flag: '🇺🇸',
-                            name: 'Oreoz 🍪',
-                            farm: '🏠 NoFarm',
-                            type: 'Weed',
-                            image: 'ProductOreoz.png',
-                            video: 'VideoOreoz.mp4',
-                            description: 'Cookies and Cream est LA variété idéale pour les amateurs de sucré, avec sa saveur riche et crémeuse, vanillée et sucrée. Cet hybride primé est puissant grâce à ses taux élevés de THC, jusqu\'à 25 %, hérités d\'Oreoz.',
-                            tarifs: [
-                                { weight: '2G', price: 50.00 },
-                                { weight: '5G', price: 80.00 },
-                                { weight: '10G', price: 150.00 },
-                                { weight: '25G', price: 300.00 },
-                            ]
-                        },
-                       /*  {
-                            id: 'Runtz 👹',
-                            flag: '🇺🇸',
-                            name: 'Runtz 👹',
-                            farm: '🏠 NoFarm',
-                            type: 'Weed',
-                            image: 'ProductRuntz.png',
-                            video: 'VideoRuntez.mp4',
-                            description: 'Pour obtenir ces caractéristiques si désirables, ils ont croisé deux variétés légendaires et reconnues pour leur puissance : Gelato et Zkittlez. Ils ont introduit Gelato au mélange pour exploiter les saveurs de bonbon, d’agrumes et de houblon. Il est important de préciser que ce cultivar de la Californie produit également un effet créatif et conscient',
-                            tarifs: [
-                                { weight: '2G', price: 50.00 },
-                                { weight: '5G', price: 80.00 },
-                                { weight: '10G', price: 150.00 },
-                                { weight: '25G', price: 300.00 },
-                            ]
-                        }, */
-                        {
-                            id: 'Mach One 🥇',
-                            flag: '🇺🇸',
-                            name: 'Mach One 🥇',
-                            farm: '🏠 NoFarm',
-                            type: 'Weed',
-                            image: 'ProductOne.png',
-                            video: 'VideoOne.mp4',
-                            description: 'Si vous avez déjà fumé de la MAC, imaginez MAC 1 comme sa version nouvelle et améliorée. Les utilisateurs notent que cette souche offre une combinaison puissante d’effets cérébraux et physiques, ce qui la rend idéale pour une séance de fumage en fin d’après-midi ou en début de soirée',
-                            tarifs: [
-                                { weight: '2G', price: 50.00 },
-                                { weight: '5G', price: 80.00 },
-                                { weight: '10G', price: 150.00 },
-                                { weight: '25G', price: 300.00 },
-                            ]
                         }
+                      
                     ]
                 }
             ]
@@ -536,9 +473,11 @@ document.addEventListener('DOMContentLoaded', function () {
                             video: 'VideoMandarine.mp4',
                             description: 'Les variétés de cannabis à saveur orange/mandarine se distinguent par leur profil d\'agrumes , parfois agrémenté de notes sucrées , acidulées et juteuses qui ravissent cultivateurs et consommateurs. Cette catégorie regroupe des génétiques riches en limonène et autres terpènes, offrant des arômes intenses et des effets vibrants. Vous y trouverez de tout, de la Tangie au Mimosa en passant par la Mandarin Cookies.',
                             tarifs: [
-                                { weight: '5G', price: 100.00 },
-                                { weight: '10G', price: 200.00 },
-                                { weight: '25G', price: 350.00 },
+                                { weight: '5G', price: 75.00 },
+                                { weight: '10G', price: 150.00 },
+                                { weight: '25G', price: 320.00 },
+                                { weight: '50G', price: 600.00 },
+                                { weight: '100G', price: 1000.00 },
                             ]
                         },
                         {
@@ -554,7 +493,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             tarifs: [
                                 { weight: '2G', price: 60.00 },
                                 { weight: '5G', price: 100.00 },
-                                { weight: '10G', price: 200.00 },
+                                { weight: '10G', price: 150.00 },
                                 { weight: '25G', price: 450.00 },
                                 { weight: '50G', price: 800.00 },
                             ]
@@ -572,7 +511,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             tarifs: [
                                 { weight: '2G', price: 60.00 },
                                 { weight: '5G', price: 100.00 },
-                                { weight: '10G', price: 200.00 },
+                                { weight: '10G', price: 150.00 },
                                 { weight: '25G', price: 450.00 },
                                 { weight: '50G', price: 800.00 },
                             ]
@@ -588,11 +527,45 @@ document.addEventListener('DOMContentLoaded', function () {
                             video: 'VideoPass.mp4',
                             description: 'La Passion Fruit est une variété hybride indica/sativa qui a été créée en croisant un clone de Sweet Pink Grapefruit avec une Orange Bud.',
                             tarifs: [
-                                { weight: '10G', price: 180.00 },
+                                { weight: '10G', price: 150.00 },
                                 { weight: '20G', price: 350.00 },
                                 { weight: '30G', price: 520.00 },
                                 { weight: '40G', price: 700.00 },
                                 { weight: '50G', price: 850.00 },
+                            ]
+                        },
+                        {
+                            id: 'Mojito strawberry 🍹',
+                            //flag: '🇺🇸',
+                            name: 'Mojito strawberry 🍹',
+                            farm: '🪖 Warz of Terpz 🪖',
+                            promoEligible: true,
+                            type: 'Fresh Frozen',
+                            image: 'ProductMojito.png',
+                            video: 'VideoMojito.mp4',
+                            description: 'La Mojito, également connue sous le nom de "Mojito #1", est une variété de marijuana hybride à dominante sativa fabriquée en croisant le sentier de la fleur d\'oranger avec le Limégérien',
+                            tarifs: [
+                                { weight: '10G', price: 150.00 },
+                                { weight: '25G', price: 320.00 },
+                                { weight: '50G', price: 600.00 },
+                                { weight: '100G', price: 1000.00 },
+                            ]
+                        },
+                        {
+                            id: 'Chocolop 🐥',
+                            //flag: '🇺🇸',
+                            name: 'Chocolop 🐥',
+                            farm: '🪖 Warz of Terpz 🪖',
+                            promoEligible: true,
+                            type: 'Fresh Frozen',
+                            image: 'ProductChoco.png',
+                            video: 'VideoChoco.mov',
+                            description: 'Amoureux de sativa aux envies gourmandes, préparez-vous à sourire. Chocolope est un hybride presque pur de sativa (Chocolate Thai x Cannalope Haze) au parfum sucré de chocolat et aux puissants effets psychoactifs, rappelant le bon vieux temps de la Chocolate Thai des années 80. Chocolope',
+                            tarifs: [
+                                { weight: '10G', price: 150.00 },
+                                { weight: '25G', price: 320.00 },
+                                { weight: '50G', price: 600.00 },
+                                { weight: '100G', price: 1000.00 },
                             ]
                         }
                     /*     {
@@ -619,7 +592,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         // --- Catégorie 7: Fresh Frozen Plasma 🔮 ---
 
-        {
+      /*   {
             id: 'Fresh Frozen Plasma 🔮',
             name: 'Fresh Frozen Plasma 🔮',
             farm: '',
@@ -629,51 +602,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
             farms: [
                 {
-                    /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
-                         name: 'Wizard trees 🔮',
-                         image: 'Wizard4.png', // Mets une image de farm si tu veux
-                         badgeText: '2 produits', */
+                 
                     products: [
-                        {
-                            id: 'Mojito strawberry 🍹',
-                            //flag: '🇺🇸',
-                            name: 'Mojito strawberry 🍹',
-                            farm: '🪖 Warz of Terpz 🪖',
-                            promoEligible: true,
-                            type: 'Fresh Frozen',
-                            image: 'ProductMojito.png',
-                            video: 'VideoMojito.mp4',
-                            description: 'La Mojito, également connue sous le nom de "Mojito #1", est une variété de marijuana hybride à dominante sativa fabriquée en croisant le sentier de la fleur d\'oranger avec le Limégérien',
-                            tarifs: [
-                                { weight: '10G', price: 180.00 },
-                                { weight: '20G', price: 350.00 },
-                                { weight: '30G', price: 520.00 },
-                                { weight: '40G', price: 700.00 },
-                                { weight: '50g', price: 850.00 },
-                            ]
-                        },
-                        {
-                            id: 'Chocolop 🐥',
-                            //flag: '🇺🇸',
-                            name: 'Chocolop 🐥',
-                            farm: '🪖 Warz of Terpz 🪖',
-                            promoEligible: true,
-                            type: 'Fresh Frozen',
-                            image: 'ProductChoco.png',
-                            video: 'VideoChoco.mov',
-                            description: 'Amoureux de sativa aux envies gourmandes, préparez-vous à sourire. Chocolope est un hybride presque pur de sativa (Chocolate Thai x Cannalope Haze) au parfum sucré de chocolat et aux puissants effets psychoactifs, rappelant le bon vieux temps de la Chocolate Thai des années 80. Chocolope',
-                            tarifs: [
-                                { weight: '10G', price: 180.00 },
-                                { weight: '20G', price: 350.00 },
-                                { weight: '30G', price: 520.00 },
-                                { weight: '40G', price: 700.00 },
-                                { weight: '50g', price: 850.00 },
-                            ]
-                        }
+                      
                     ]
                 }
             ]
-        },
+        }, */
         // --- Catégorie 8: Double static 💥 ---
 
         {
@@ -706,13 +641,14 @@ document.addEventListener('DOMContentLoaded', function () {
                                 'Mental 🧠 rainbow 🌈 sherbet v2', 
                                 'Honey 🍯 banana 🍌'
                             ],
+                            badgePromo: '10g 250€<br>50g 1100€<br>100g 2000€',
                             tarifs: [
-                                { weight: '10G', price: 280.00 },
+                                { weight: '10G', price: 250.00 }, // Corrigé
                                 { weight: '20G', price: 550.00 },
                                 { weight: '30G', price: 810.00 },
                                 { weight: '40G', price: 1050.00 },
-                                { weight: '50G', price: 1300.00 },
-                                { weight: '100G', price: 2500.00 }
+                                { weight: '50G', price: 1100.00 },
+                                { weight: '100G', price: 2000.00 }
                             ]
                         },
                         {
@@ -726,11 +662,10 @@ document.addEventListener('DOMContentLoaded', function () {
                             video: 'VideoPinia.mov',
                             description: 'Avec ses saveurs gourmandes et tropicales, la Pina Colada séduit par son profil fruité et doux',
                             tarifs: [
-                                { weight: '10G', price: 230.00 },
-                                { weight: '20G', price: 450.00 },
-                                { weight: '30G', price: 660.00 },
-                                { weight: '40G', price: 860.00 },
-                                { weight: '50g', price: 1000.00 },
+                                { weight: '10G', price: 180.00 },
+                                { weight: '25G', price: 400.00 },
+                                { weight: '50g', price: 750.00 },
+                                { weight: '100G', price: 1300.00 },
                             ]
                         }
                     ]
@@ -1584,66 +1519,85 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Affiche la page de détail d'un produit
-    function renderProductPage(productId) {
-        // On utilise notre nouvelle fonction "helper"
-        const product = getProductById(productId);
-        if (!product) return;
+// Affiche la page de détail d'un produit
+function renderProductPage(productId) {
+    // On utilise notre nouvelle fonction "helper"
+    const product = getProductById(productId);
+    if (!product) return;
 
-        const videoElement = document.querySelector('#page-product .product-video');
+    const videoElement = document.querySelector('#page-product .product-video');
+    if (product.video) {
         videoElement.src = product.video;
-        videoElement.poster = product.image;
+        videoElement.style.display = 'block';
+    } else {
+        videoElement.style.display = 'none';
+    }
+    videoElement.poster = product.image;
 
-        document.getElementById('product-page-title').innerText = product.name;
-        const detailsContainer = document.getElementById('product-details-content');
+    document.getElementById('product-page-title').innerText = product.name;
+    const detailsContainer = document.getElementById('product-details-content');
 
-        let tarifsHTML = product.tarifs.map(tarif => `
-    <div class="tarif-item">
-        <div class="box-tarif">
-            <div class="tarif-wieght">${tarif.weight}</div>
-            <div class="tarif-price">${tarif.price.toFixed(2)}€</div>
+    let tarifsHTML = product.tarifs.map(tarif => `
+        <div class="tarif-item">
+            <div class="box-tarif">
+                <div class="tarif-wieght">${tarif.weight}</div>
+                <div class="tarif-price">${tarif.price.toFixed(2)}€</div>
+            </div>
+            <button class="add-to-cart-btn" data-product-id="${product.id}" data-weight="${tarif.weight}" data-price="${tarif.price}">
+                <svg width="20" height="20"><use href="#icon-cart"/></svg>
+            </button>
         </div>
-        <button class="add-to-cart-btn" data-product-id="${product.id}" data-weight="${tarif.weight}" data-price="${tarif.price}">
-            <svg width="20" height="20"><use href="#icon-cart"/></svg>
-        </button>
-    </div>
-`).join('');
+    `).join('');
 
-let descriptionHTML = '';
-        if (product.description) {
-            descriptionHTML = `<div class="product-description">${product.description}</div>`;
-        }
+    let descriptionHTML = '';
+    if (product.description) {
+        descriptionHTML = `<div class="product-description">${product.description}</div>`;
+    }
 
-        // --- NOUVEAU : GESTION DES STRAINS ---
-        let strainsHTML = '';
-        if (product.strains && product.strains.length > 0) {
-            strainsHTML = `
-                <div class="strain-selector-container" style="margin: 15px 0;">
-                    <label for="strain-select-${product.id}" style="color: white; font-weight: bold; margin-bottom: 5px; display: block;">🧪 Choisir la Variété :</label>
-                    <select id="strain-select-${product.id}" style="width: 100%; padding: 10px; border-radius: 8px; background: #2c2c2e; color: white; border: 1px solid #03e7f6; font-size: 1rem;">
-                        ${product.strains.map(s => `<option value="${s}">${s}</option>`).join('')}
-                    </select>
-                </div>
-            `;
-        }
-
-        // On injecte le HTML
-        detailsContainer.innerHTML = `
-            <div class="name">${product.name}</div>
-            <div class="farm">${product.farm}</div>
-            
-            ${descriptionHTML} 
-            ${strainsHTML} 
-            
-            <h4 class="tarifs-title">💰 Tarifs disponibles :</h4>
-
-            <div class="tarifs-grid-container">
-                ${tarifsHTML}
+    // --- GESTION DES STRAINS ---
+    let strainsHTML = '';
+    if (product.strains && product.strains.length > 0) {
+        strainsHTML = `
+            <div class="strain-selector-container" style="margin: 15px 0;">
+                <label for="strain-select-${product.id}" style="color: white; font-weight: bold; margin-bottom: 5px; display: block;">🧪 Choisir la Variété :</label>
+                <select id="strain-select-${product.id}" style="width: 100%; padding: 10px; border-radius: 8px; background: #2c2c2e; color: white; border: 1px solid #03e7f6; font-size: 1rem;">
+                    ${product.strains.map(s => `<option value="${s}">${s}</option>`).join('')}
+                </select>
             </div>
         `;
-        
-        showPage('page-product');
     }
+
+    // --- GESTION DU BADGE PROMO ---
+    let promoHTML = '';
+    if (product.badgePromo) {
+        promoHTML = `
+            <div class="promo-solde-badge">
+                <span class="promo-solde-title">🔥 FLASH SALE</span>
+                <div>${product.badgePromo}</div>
+            </div>
+        `;
+    }
+
+    // On injecte le HTML avec l'alignement Flex (Titre à gauche, Badge à droite)
+    detailsContainer.innerHTML = `
+        <div class="name">${product.name}</div>
+        <div class="farm">${product.farm}</div>
+        
+        ${descriptionHTML} 
+        ${strainsHTML} 
+        
+        <div style="display: flex; justify-content: space-around; align-items: anchor-center; width: 90%; margin-top: 25px; margin-bottom: 5px; border-top: 1px solid var(--tertiary-bg-color); padding-top: 15px;">
+            <h4 class="tarifs-title" style="margin: 0; border: none; padding: 0;">💰 Tarifs :</h4>
+            ${promoHTML}
+        </div>
+
+        <div class="tarifs-grid-container">
+            ${tarifsHTML}
+        </div>
+    `;
+    
+    showPage('page-product');
+}
     // Met à jour l'affichage du panier (inchangé)
     function renderCart() {
         const cartContainer = document.getElementById('cart-items-container');
