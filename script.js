@@ -491,11 +491,12 @@ document.addEventListener('DOMContentLoaded', function () {
                             video: 'VideoGrape.mp4',
                             description: 'Les effets de la Grape Gas sont tout aussi impressionnants. En tant qu\'hybride équilibré, elle t\'offre le meilleur des deux mondes : une euphorie cérébrale initiale qui stimule la créativité et l\'humeur, suivie d\'une relaxation corporelle profonde et apaisante.',
                             tarifs: [
-                                { weight: '2G', price: 60.00 },
-                                { weight: '5G', price: 100.00 },
+                                { weight: '2G', price: 40.00 },
+                                { weight: '5G', price: 80.00 },
                                 { weight: '10G', price: 150.00 },
-                                { weight: '25G', price: 450.00 },
-                                { weight: '50G', price: 800.00 },
+                                { weight: '25G', price: 320.00 },
+                                { weight: '50G', price: 600.00 },
+                                { weight: '100G', price: 1100.00 },
                             ]
                         },
                         {
@@ -509,11 +510,12 @@ document.addEventListener('DOMContentLoaded', function () {
                             video: 'VideoTrop.mp4',
                             description: 'La variété Tropicana cookie se caractérise par son goût acidulé et citrique sur un fond crémeux et sucré de Girl Scout Cookies, un délice pour les amateurs d\'agrumes et d\'arômes sucrés.',
                             tarifs: [
-                                { weight: '2G', price: 60.00 },
-                                { weight: '5G', price: 100.00 },
+                                { weight: '2G', price: 40.00 },
+                                { weight: '5G', price: 80.00 },
                                 { weight: '10G', price: 150.00 },
-                                { weight: '25G', price: 450.00 },
-                                { weight: '50G', price: 800.00 },
+                                { weight: '25G', price: 320.00 },
+                                { weight: '50G', price: 600.00 },
+                                { weight: '100G', price: 1100.00 },
                             ]
                         },
                         {
@@ -527,11 +529,12 @@ document.addEventListener('DOMContentLoaded', function () {
                             video: 'VideoPass.mp4',
                             description: 'La Passion Fruit est une variété hybride indica/sativa qui a été créée en croisant un clone de Sweet Pink Grapefruit avec une Orange Bud.',
                             tarifs: [
+                                { weight: '2G', price: 40.00 },
+                                { weight: '5G', price: 80.00 },
                                 { weight: '10G', price: 150.00 },
-                                { weight: '20G', price: 350.00 },
-                                { weight: '30G', price: 520.00 },
-                                { weight: '40G', price: 700.00 },
-                                { weight: '50G', price: 850.00 },
+                                { weight: '25G', price: 320.00 },
+                                { weight: '50G', price: 600.00 },
+                                { weight: '100G', price: 1100.00 },
                             ]
                         },
                         {
@@ -546,9 +549,11 @@ document.addEventListener('DOMContentLoaded', function () {
                             description: 'La Mojito, également connue sous le nom de "Mojito #1", est une variété de marijuana hybride à dominante sativa fabriquée en croisant le sentier de la fleur d\'oranger avec le Limégérien',
                             tarifs: [
                                 { weight: '10G', price: 150.00 },
-                                { weight: '25G', price: 320.00 },
-                                { weight: '50G', price: 600.00 },
-                                { weight: '100G', price: 1000.00 },
+                                { weight: '20G', price: 280.00 },
+                                { weight: '30G', price: 420.00 },
+                                { weight: '40G', price: 550.00 },
+                                { weight: '50G', price: 650.00 },
+                                { weight: '100G', price: 1200.00 },
                             ]
                         },
                         {
@@ -563,9 +568,11 @@ document.addEventListener('DOMContentLoaded', function () {
                             description: 'Amoureux de sativa aux envies gourmandes, préparez-vous à sourire. Chocolope est un hybride presque pur de sativa (Chocolate Thai x Cannalope Haze) au parfum sucré de chocolat et aux puissants effets psychoactifs, rappelant le bon vieux temps de la Chocolate Thai des années 80. Chocolope',
                             tarifs: [
                                 { weight: '10G', price: 150.00 },
-                                { weight: '25G', price: 320.00 },
-                                { weight: '50G', price: 600.00 },
-                                { weight: '100G', price: 1000.00 },
+                                { weight: '20G', price: 280.00 },
+                                { weight: '30G', price: 420.00 },
+                                { weight: '40G', price: 550.00 },
+                                { weight: '50G', price: 650.00 },
+                                { weight: '100G', price: 1200.00 },
                             ]
                         }
                     /*     {
@@ -644,9 +651,9 @@ document.addEventListener('DOMContentLoaded', function () {
                             badgePromo: '10g 250€<br>50g 1100€<br>100g 2000€',
                             tarifs: [
                                 { weight: '10G', price: 250.00 }, // Corrigé
-                                { weight: '20G', price: 550.00 },
-                                { weight: '30G', price: 810.00 },
-                                { weight: '40G', price: 1050.00 },
+                                { weight: '20G', price: 500.00 },
+                                { weight: '30G', price: 750.00 },
+                                { weight: '40G', price: 1000.00 },
                                 { weight: '50G', price: 1100.00 },
                                 { weight: '100G', price: 2000.00 }
                             ]
