@@ -70,12 +70,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const appData = [
         // --- Catégorie 1: Weed Spain 🇪🇸 ---
         {
-            id: 'Weed Spain 🇪🇸',
-            name: 'Weed Spain 🇪🇸',
+            id: 'Weed 🌿',
+            name: 'Weed 🌿',
             farm: '',
-            type: 'Weed',
-            quality: ' Weed Spain 🇪🇸',
-            image: 'CategWS.webp', // Image de la catégorie
+            type: 'Weed 🌿',
+            quality: ' Weed 🌿 ',
+            image: 'CategWeed.png', // Image de la catégorie
 
             // La catégorie contient maintenant des "farms"
             farms: [
@@ -149,45 +149,7 @@ document.addEventListener('DOMContentLoaded', function () {
             ]
         },
 
-        // --- Catégorie 2: Weed Hollande 🇳🇱 ---
-        {
-            id: 'Weed Hollande 🇳🇱',
-            name: ' Weed Hollande 🇳🇱',
-            farm: '',
-            type: 'Weed',
-            quality: 'Weed Hollande 🇳🇱',
-            image: 'CategWH.webp', // Image de la catégorie
-
-            farms: [
-                {
-                    /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
-                         name: 'Wizard trees 🔮',
-                         image: 'Wizard4.png', // Mets une image de farm si tu veux
-                         badgeText: '2 produits', */
-                    products: [
-                                /* {
-                                    id: 'Lemonade',
-                                    flag: '🇺🇸',
-                                    name: '🍓 Strawberry Limonade 🍸',
-                                    farm: '🏠 NoFarm', 
-                                    promoEligible: true,
-                                    type: 'Weed',
-                                    image: 'ProductLemonade.png',
-                                    video: 'VideoLemonade.mp4',
-                                    description: 'Beuh Hollandaise craquante et poleneuse sans super fort a super bon goût à la bouche 🤪',
-                                    tarifs: [
-                                        { weight: '2g', price: 20.00 },
-                                        { weight: '5g', price: 50.00 },
-                                        { weight: '10g', price: 80.00 },
-                                        { weight: '25g', price: 160.00 },
-                                        { weight: '50g', price: 300.00 },
-                                        { weight: '100g', price: 550.00 },
-                                    ]
-                                }  */
-                    ]
-                }
-            ]
-        },
+       
         // --- Catégorie 3: Cali usa 🇺🇸 ---
         {
             id: 'Cali usa 🇺🇸',
@@ -379,7 +341,7 @@ document.addEventListener('DOMContentLoaded', function () {
             farm: '',
             type: 'HASH 🇲🇦',
             quality: 'HASH 🇲🇦',
-            image: 'CategHash.webp', // Image de la catégorie
+            image: 'CategHash.png', // Image de la catégorie
 
             farms: [
                 {
