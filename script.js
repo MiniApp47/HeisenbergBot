@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function () {
             farm: '',
             type: 'Cali',
             quality: ' Cali usa 🇺🇸',
-            image: 'CategCaliU.webp', // Image de la catégorie
+            image: 'CategCaliU.png', // Image de la catégorie
 
             farms: [
                 {
@@ -1127,7 +1127,7 @@ document.addEventListener('DOMContentLoaded', function () {
             farm: '',
             type: 'Meet up Maroc 🇲🇦',
             quality: 'Meet up Maroc 🇲🇦',
-            image: 'CategMeetMaroc.webp', // Image de la catégorie
+            image: 'CategMeetMaroc.png', // Image de la catégorie
 
             farms: [
                 {
