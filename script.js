@@ -659,7 +659,7 @@ document.addEventListener('DOMContentLoaded', function () {
                          badgeText: '2 produits', */
                     products: [
                       
-                        {
+                       /*  {
                             id: 'Tidirhine 🇲🇦',
                             //flag: '🇺🇸',
                             name: 'Tidirhine 🇲🇦',
@@ -675,7 +675,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '10G', price: 130.00 },
                                 { weight: '25G', price: 250.00 },
                             ]
-                        }
+                        } */
                     ]
                 }
             ]
