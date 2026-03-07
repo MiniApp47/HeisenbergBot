@@ -596,6 +596,42 @@ document.addEventListener('DOMContentLoaded', function () {
                          badgeText: '2 produits', */
                     products: [
                         {
+                            id: 'MENTAL RAINBOW 🌈',
+                            //flag: '🇺🇸',
+                            name: 'MENTAL RAINBOW 🌈',
+                            farm: '🐪 SPF X General Genetic 💂',
+                            promoEligible: true,
+                            type: 'DoubleStatic',
+                            image: 'ProductMR.png',
+                            video: 'VideoMR.mp4',
+                            description: 'La Mental Rainbow F1 Fast Version® est une plante qui se distingue par son profil terpénique fruité et épicé, composé de notes intenses de mangue, de papaye et d\'agrumes, parachevé par des touches terreuses, fumées et épicées.\n\n Dispo uniquement Maroc : Tanger / Rabat / Casablanca / Marrakech ',
+                            tarifs: [
+                                { weight: '50g', price: 600.00 },
+                                { weight: '100G', price: 1000.00 },
+                            ]
+                        },
+                        {
+                            id: 'MENTAL RAINBOW SHERBET ꪜ2️⃣',
+                            //flag: '🇺🇸',
+                            name: 'MENTAL RAINBOW 🌈 SHERBET ꪜ2️⃣',
+                            farm: '🐪 SPF X General Genetic 💂',
+                            promoEligible: true,
+                            type: 'DoubleStatic',
+                            image: 'ProductMR2.png',
+                            video: 'VideoMR2.mp4',
+                            description: 'Rainbow Sherbet est une variété hybride qui allie les meilleures qualités de deux variétés parentes légendaires : Champagne et Blackberry. Ce mélange crée un équilibre harmonieux d\'effets et un profil aromatique riche et complexe qui distingue Rainbow Sherbet des autres variétés \n\n Dispo uniquement Maroc : Tanger / Rabat / Casablanca / Marrakech ',
+                            tarifs: [
+                                { weight: '2G', price: 100.00 },
+                                { weight: '5G', price: 150.00 },
+                                { weight: '10G', price: 250.00 },
+                                { weight: '20G', price: 500.00 },
+                                { weight: '30G', price: 750.00 },
+                                { weight: '40G', price: 1000.00 },
+                                { weight: '50G', price: 1100.00 },
+                                { weight: '100G', price: 2000.00 }
+                            ]
+                        },
+                        {
                             id: 'Mix_SPF_General',
                             name: 'Mix 🧬',
                             farm: '🐪 SPF X General Genetic 💂',
@@ -612,7 +648,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             ],
                             badgePromo: '10g 250€<br>50g 1100€<br>100g 2000€',
                             tarifs: [
-                                { weight: '10G', price: 250.00 }, // Corrigé
+                                { weight: '10G', price: 250.00 },
                                 { weight: '20G', price: 500.00 },
                                 { weight: '30G', price: 750.00 },
                                 { weight: '40G', price: 1000.00 },
