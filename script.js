@@ -425,6 +425,24 @@ document.addEventListener('DOMContentLoaded', function () {
                          badgeText: '2 produits', */
                     products: [
                         {
+                            id: 'Marrocan Peach 🍑',
+                            //flag: '🇺🇸',
+                            name: 'Marrocan Peach 🍑',
+                            farm: '🐪 SPF X General Genetic 💂',
+                            promoEligible: true,
+                            type: 'Frozen',
+                            image: 'ProductMp.png',
+                            video: 'VideoMp.mov',
+                            description: 'Moroccan Peaches offers a unique experience, starting with its enticing aroma. The sweet, peachy fragrance is complemented by bright citrus notes and a grounding earthiness.',
+                            tarifs: [
+                                { weight: '5G', price: 100.00 },
+                                { weight: '10G', price: 190.00 },
+                                { weight: '25G', price: 450.00 },
+                                { weight: '50G', price: 850.00 },
+                                { weight: '100G', price: 1600.00 },
+                            ]
+                        },
+                        {
                             id: 'Mandarin OG 🍊',
                             //flag: '🇺🇸',
                             name: 'Mandarin OG 🍊',
