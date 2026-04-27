@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             name: 'CANAL POTATO 🥔',
-            url: 'https://dympt.org/joinchat/sHotQAx0zBf6c9wNPkfQ2A',
+            url: 'https://tutuduanyu.org/joinchat/sHotQAx0zBf6c9wNPkfQ2A',
             id: 'potato-main',
             className: 'potato', // Garde le style Marron/Doré Potato
             text: "CANAL POTATO 🥔"
