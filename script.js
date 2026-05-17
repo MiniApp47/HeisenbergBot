@@ -351,6 +351,24 @@ document.addEventListener('DOMContentLoaded', function () {
                          badgeText: '2 produits', */
                     products: [
                                 {
+                                    id: 'HIGH OCTANE 🚨🚨',
+                                    flag: '🇲🇦',
+                                    name: 'HIGH OCTANE 🚨🚨',
+                                    farm: 'PRIVATE ⭕', 
+                                    promoEligible: true,
+                                    type: 'HASH',
+                                    image: 'ProductOct.png',
+                                    video: 'VideoOct.mp4',
+                                    description: '',   
+                                     tarifs: [
+                                        { weight: '5g', price: 50.00 },
+                                        { weight: '10g', price: 90.00 },
+                                        { weight: '25g', price: 180.00 },
+                                        { weight: '50g', price: 330.00 },
+                                        { weight: '100g', price: 550.00 },
+                                    ]
+                                },
+                                {
                                     id: 'Sour diesel ⛽',
                                     flag: '🇲🇦',
                                     name: 'Sour diesel ⛽',
