@@ -1091,7 +1091,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             ]
         },
-        {
+       /*  {
             id: 'Envoi Espagne',
             name: 'Envoi Espagne 🇪🇦',
             farm: '',
@@ -1104,7 +1104,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
                          name: 'Wizard trees 🔮',
                          image: 'Wizard4.png', // Mets une image de farm si tu veux
-                         badgeText: '2 produits', */
+                         badgeText: '2 produits', 
                     products: [
                         {
                             id: 'Frozen 🥶 Grappe Gaz ⛽',
@@ -1188,12 +1188,12 @@ document.addEventListener('DOMContentLoaded', function () {
                             tarifs: [
                                 { weight: '1', price: 20.00 },
                             ]
-                        } */
+                        } 
                     ]
                 }
             ]
-        },
-         {
+        }, */
+        /*  {
             id: 'Meet up Maroc',
             name: 'Meet up Maroc 🇲🇦',
             farm: '',
@@ -1206,7 +1206,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
                          name: 'Wizard trees 🔮',
                          image: 'Wizard4.png', // Mets une image de farm si tu veux
-                         badgeText: '2 produits', */
+                         badgeText: '2 produits', 
                     products: [
                         {
                             id: 'HONEY 🍯 BANANA 🍌',
@@ -1256,7 +1256,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     ]
                 }
             ]
-        }
+        } */
     ];
 
     // --- VARIABLES D'ÉTAT ---
