@@ -351,6 +351,23 @@ document.addEventListener('DOMContentLoaded', function () {
                          badgeText: '2 produits', */
                     products: [
                                 {
+                                    id: 'LA MOUSSE',
+                                    flag: '🇲🇦',
+                                    name: '🧽 LA MOUSSE 🧽',
+                                    farm: 'KING HASSAN 🦁', 
+                                    promoEligible: true,
+                                    type: 'HASH',
+                                    image: 'ProductLM.png',
+                                    video: 'VideoLM.mp4',
+                                    description: '',   
+                                     tarifs: [
+                                        { weight: '10g', price: 90.00 },
+                                        { weight: '25g', price: 200.00 },
+                                        { weight: '50g', price: 350.00 },
+                                        { weight: '100g', price: 600.00 },
+                                    ]
+                                },
+                                {
                                     id: 'HIGH OCTANE 🚨🚨',
                                     flag: '🇲🇦',
                                     name: 'HIGH OCTANE 🚨🚨',
@@ -368,7 +385,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                         { weight: '100g', price: 550.00 },
                                     ]
                                 },
-                                {
+                               /*  {
                                     id: 'Sour diesel ⛽',
                                     flag: '🇲🇦',
                                     name: 'Sour diesel ⛽',
@@ -421,7 +438,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                         { weight: '50g', price: 350.00 },
                                         { weight: '100g', price: 500.00 },
                                     ]
-                                },
+                                }, */
                     ]
                 }
             ]
