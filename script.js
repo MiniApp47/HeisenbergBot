@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
        
         // --- Catégorie 3: Cali usa 🇺🇸 ---
-        {
+        /* {
             id: 'Cali usa 🇺🇸',
             name: ' Cali usa 🇺🇸',
             farm: '',
@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
                          name: 'Wizard trees 🔮',
                          image: 'Wizard4.png', // Mets une image de farm si tu veux
-                         badgeText: '2 produits', */
+                         badgeText: '2 produits', 
                     products: [
                         {
                             id: 'Lemonade',
@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     ]
                 }
             ]
-        },
+        }, */
         
         // --- Catégorie 4: Cali Canada 🇨🇦 ---
    /*      {
@@ -298,7 +298,7 @@ document.addEventListener('DOMContentLoaded', function () {
             ]
         },
         // --- Catégorie 6: Frozen 🧊 ---
-        {
+        /* {
             id: 'Exctraction ☢️',
             name: 'Exctraction ☢️',
             farm: '',
@@ -311,7 +311,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
                          name: 'Wizard trees 🔮',
                          image: 'Wizard4.png', // Mets une image de farm si tu veux
-                         badgeText: '2 produits', */
+                         badgeText: '2 produits', 
                     products: [
                         {
                             id: 'Mix',
@@ -334,7 +334,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     ]
                 }
             ]
-        },
+        }, */
         {
             id: 'HASH 🇲🇦',
             name: ' HASH 🇲🇦',
