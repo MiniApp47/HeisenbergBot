@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
             farms: [
                 {
                     products: [
-                        {
+                       /*  {
                             id: '🍋 Lemon cherry 🍒',
                             flag: '🇪🇸',
                             name: '🍋 Lemon cherry 🍒',
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
                             ]
-                        },
+                        }, */
                         {
                             id: 'Amnesia haze hipro 🌟',
                               flag: '🇪🇸',
@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '100G', price: 750.00 },
                             ]
                         },
-                        {
+                       /*  {
                             id: '🌴 Tropicana Banana 🍌',
                               flag: '🇪🇸',
                             name: '🌴 Tropicana Banana 🍌',
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '50G', price: 400.00 },
                                 { weight: '100G', price: 750.00 },
                             ]
-                        }
+                        } */
                     ]
                 }
 
@@ -367,7 +367,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                         { weight: '100g', price: 600.00 },
                                     ]
                                 },
-                                {
+                               /*  {
                                     id: 'HIGH OCTANE 🚨🚨',
                                     flag: '🇲🇦',
                                     name: 'HIGH OCTANE 🚨🚨',
@@ -384,7 +384,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                         { weight: '50g', price: 330.00 },
                                         { weight: '100g', price: 550.00 },
                                     ]
-                                },
+                                }, */
                                /*  {
                                     id: 'Sour diesel ⛽',
                                     flag: '🇲🇦',
@@ -963,7 +963,7 @@ document.addEventListener('DOMContentLoaded', function () {
             },
                 // --- Catégorie 10: Bonbon 🍭 ---
 
-        {
+       /*  {
             id: 'Space cake 🎂',
             name: 'Space cake 🎂',
             farm: '',
@@ -976,7 +976,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
                          name: 'Wizard trees 🔮',
                          image: 'Wizard4.png', // Mets une image de farm si tu veux
-                         badgeText: '2 produits', */
+                         badgeText: '2 produits',
                     products: [
                         {
                             id: 'Brownies chocolat 🍫',
@@ -1011,7 +1011,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     ]
                 }
             ]
-        },
+        }, */
         // --- Catégorie 10: Bonbon 🍭 ---
 
         {
@@ -1067,7 +1067,7 @@ document.addEventListener('DOMContentLoaded', function () {
                          image: 'Wizard4.png', // Mets une image de farm si tu veux
                          badgeText: '2 produits', */
                     products: [
-                        {
+                        /* {
                             id: 'Pablo 🤠',
                             //flag: '🇺🇸',
                             name: 'Pablo 🤠',
@@ -1085,7 +1085,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '10G', price: 550.00 },
                                 { weight: '20G', price: 1000.00 },
                             ]
-                        },
+                        }, */
                         {
                             id: 'Le Yakuza ㊙️',
                             //flag: '🇺🇸',
