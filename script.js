@@ -259,44 +259,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 } 
             ]
         }, */
-        // --- Catégorie 5: Snow cali ❄️ ---
-        {
-            id: 'Snow cali ❄️',
-            name: 'Snow cali ❄️',
-            farm: '',
-            type: 'Cali',
-            quality: 'Snow cali ❄️',
-            image: 'CategSnow.png', // Image de la catégorie
-
-            farms: [
-                {
-                    /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
-                         name: 'Wizard trees 🔮',
-                         image: 'Wizard4.png', // Mets une image de farm si tu veux
-                         badgeText: '2 produits', */
-                    products: [
-                        {
-                            id: '🍋/🥭/🥤/🍌/🍓',
-                            //flag: '🇺🇸',
-                            name: '🍋/🥭/🥤/🍌/🍓',
-                            farm: '🏠 No Farm',
-                            promoEligible: true,
-                            type: 'Weed',
-                            image: 'ProductSnow.png',
-                            video: 'VideoSnow.mp4',
-                            description: '',
-                            tarifs: [
-                                { weight: '1G', price: 30.00 },
-                                { weight: '2G', price: 50.00 },
-                                { weight: '5G', price: 100.00 },
-                                { weight: '10G', price: 180.00 },
-                                { weight: '25G', price: 400.00 },
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
+       
         // --- Catégorie 6: Frozen 🧊 ---
         /* {
             id: 'Exctraction ☢️',
@@ -350,6 +313,22 @@ document.addEventListener('DOMContentLoaded', function () {
                          image: 'Wizard4.png', // Mets une image de farm si tu veux
                          badgeText: '2 produits', */
                     products: [
+                       /*  {
+                                    id: 'HIGH OCTANE 🚨🚨',
+                                    flag: '🇲🇦',
+                                    name: 'HIGH OCTANE 🚨🚨',
+                                    farm: 'PRIVATE ⭕', 
+                                    promoEligible: true,
+                                    type: 'HASH',
+                                    image: 'ProductOct.png',
+                                    video: 'VideoOct.mp4',
+                                    description: '',   
+                                     tarifs: [
+                                        { weight: '5g', price: 60.00 },
+                                        { weight: '10g', price: 120.00 },
+                                        { weight: '25g', price: 250.00 },
+                                    ]
+                                }, */
                                 {
                                     id: 'LA MOUSSE',
                                     flag: '🇲🇦',
@@ -361,30 +340,13 @@ document.addEventListener('DOMContentLoaded', function () {
                                     video: 'VideoLM.mp4',
                                     description: '',   
                                      tarifs: [
+                                        { weight: '5g', price: 50.00 },
                                         { weight: '10g', price: 90.00 },
                                         { weight: '25g', price: 200.00 },
                                         { weight: '50g', price: 350.00 },
                                         { weight: '100g', price: 600.00 },
                                     ]
                                 },
-                               /*  {
-                                    id: 'HIGH OCTANE 🚨🚨',
-                                    flag: '🇲🇦',
-                                    name: 'HIGH OCTANE 🚨🚨',
-                                    farm: 'PRIVATE ⭕', 
-                                    promoEligible: true,
-                                    type: 'HASH',
-                                    image: 'ProductOct.png',
-                                    video: 'VideoOct.mp4',
-                                    description: '',   
-                                     tarifs: [
-                                        { weight: '5g', price: 50.00 },
-                                        { weight: '10g', price: 90.00 },
-                                        { weight: '25g', price: 180.00 },
-                                        { weight: '50g', price: 330.00 },
-                                        { weight: '100g', price: 550.00 },
-                                    ]
-                                }, */
                                /*  {
                                     id: 'Sour diesel ⛽',
                                     flag: '🇲🇦',
@@ -460,24 +422,42 @@ document.addEventListener('DOMContentLoaded', function () {
                          badgeText: '2 produits', */
                     products: [
                         {
+                            id: 'Papaya 🥭',
+                            //flag: '🇺🇸',
+                            name: '🥭 PAPAYA 🥭',
+                            farm: '👨‍🌾 NO FARM 👨‍🌾',
+                            promoEligible: true,
+                            featured: true,
+                            type: 'Frozen',
+                            image: 'ProductOct.png',
+                            video: 'VideoOct.mp4',
+                            description: '',
+                            tarifs: [
+                                { weight: '5G', price: 60.00 },
+                                { weight: '10G', price: 120.00 },
+                                { weight: '25G', price: 250.00 },
+                            ]
+                        },
+                        {
                             id: 'Marrocan Peach 🍑',
                             //flag: '🇺🇸',
                             name: 'Marrocan Peach 🍑',
                             farm: '🐪 SPF X General Genetic 💂',
                             promoEligible: true,
+                            featured: true,
                             type: 'Frozen',
                             image: 'ProductMp.png',
                             video: 'VideoMp.mov',
                             description: 'Moroccan Peaches offers a unique experience, starting with its enticing aroma. The sweet, peachy fragrance is complemented by bright citrus notes and a grounding earthiness.',
                             tarifs: [
+                                { weight: '1G', price: 20.00 },
+                                { weight: '2G', price: 40.00 },
                                 { weight: '5G', price: 100.00 },
-                                { weight: '10G', price: 190.00 },
-                                { weight: '25G', price: 450.00 },
-                                { weight: '50G', price: 850.00 },
-                                { weight: '100G', price: 1600.00 },
+                                { weight: '10G', price: 180.00 },
+                                { weight: '25G', price: 400.00 },
                             ]
                         },
-                        {
+                       /*  {
                             id: 'Mandarin OG 🍊',
                             //flag: '🇺🇸',
                             name: 'Mandarin OG 🍊',
@@ -563,6 +543,8 @@ document.addEventListener('DOMContentLoaded', function () {
                             video: 'VideoMojito.mp4',
                             description: 'La Mojito, également connue sous le nom de "Mojito #1", est une variété de marijuana hybride à dominante sativa fabriquée en croisant le sentier de la fleur d\'oranger avec le Limégérien',
                             tarifs: [
+                                                                { weight: '5G', price: 80.00 },
+
                                 { weight: '10G', price: 150.00 },
                                 { weight: '20G', price: 280.00 },
                                 { weight: '30G', price: 420.00 },
@@ -582,6 +564,8 @@ document.addEventListener('DOMContentLoaded', function () {
                             video: 'VideoChoco.mov',
                             description: 'Amoureux de sativa aux envies gourmandes, préparez-vous à sourire. Chocolope est un hybride presque pur de sativa (Chocolate Thai x Cannalope Haze) au parfum sucré de chocolat et aux puissants effets psychoactifs, rappelant le bon vieux temps de la Chocolate Thai des années 80. Chocolope',
                             tarifs: [
+                                                                { weight: '5G', price: 80.00 },
+
                                 { weight: '10G', price: 150.00 },
                                 { weight: '20G', price: 280.00 },
                                 { weight: '30G', price: 420.00 },
@@ -589,7 +573,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '50G', price: 650.00 },
                                 { weight: '100G', price: 1200.00 },
                             ]
-                        }
+                        } */
                     /*     {
                             id: 'Red Bull 🐂',
                             //flag: '🇺🇸',
@@ -648,7 +632,7 @@ document.addEventListener('DOMContentLoaded', function () {
                          image: 'Wizard4.png', // Mets une image de farm si tu veux
                          badgeText: '2 produits', */
                     products: [
-                        {
+                      /*   {
                             id: 'MENTAL RAINBOW 🌈',
                             //flag: '🇺🇸',
                             name: 'MENTAL RAINBOW 🌈',
@@ -659,10 +643,14 @@ document.addEventListener('DOMContentLoaded', function () {
                             video: 'VideoMR.mp4',
                             description: 'La Mental Rainbow F1 Fast Version® est une plante qui se distingue par son profil terpénique fruité et épicé, composé de notes intenses de mangue, de papaye et d\'agrumes, parachevé par des touches terreuses, fumées et épicées.\n\n Dispo uniquement Maroc : Tanger / Rabat / Casablanca / Marrakech ',
                             tarifs: [
+                                { weight: '1G', price: 30.00 },
+                                { weight: '2G', price: 60.00 },
+                                { weight: '5G', price: 140.00 },
+                                { weight: '10G', price: 250.00 },
                                 { weight: '50g', price: 600.00 },
                                 { weight: '100G', price: 1000.00 },
                             ]
-                        },
+                        }, */
                         {
                             id: 'MENTAL RAINBOW SHERBET ꪜ2️⃣',
                             //flag: '🇺🇸',
@@ -701,6 +689,9 @@ document.addEventListener('DOMContentLoaded', function () {
                             ],
                             badgePromo: '10g 250€<br>50g 1100€<br>100g 2000€',
                             tarifs: [
+                                                                { weight: '1G', price: 30.00 },
+                                { weight: '2G', price: 60.00 },
+                                { weight: '5G', price: 140.00 },
                                 { weight: '10G', price: 250.00 },
                                 { weight: '20G', price: 500.00 },
                                 { weight: '30G', price: 750.00 },
@@ -720,6 +711,9 @@ document.addEventListener('DOMContentLoaded', function () {
                             video: 'VideoPinia.mov',
                             description: 'Avec ses saveurs gourmandes et tropicales, la Pina Colada séduit par son profil fruité et doux',
                             tarifs: [
+                                                                { weight: '1G', price: 30.00 },
+                                { weight: '2G', price: 60.00 },
+                                { weight: '5G', price: 140.00 },
                                 { weight: '10G', price: 180.00 },
                                 { weight: '25G', price: 400.00 },
                                 { weight: '50g', price: 750.00 },
@@ -1101,7 +1095,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '2G', price: 130.00 },
                                 { weight: '3G', price: 200.00 },
                                 { weight: '5G', price: 300.00 },
-                                { weight: '10G', price: 550.00 },
+                                { weight: '10G', price: 580.00 },
                             ]
                         }
                     ]
@@ -1554,10 +1548,14 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         filteredProducts.forEach(product => {
-            // ... (le reste de la fonction est identique)
             const card = document.createElement('div');
-            card.className = 'product-card product-item-card';
-            card.dataset.productId = product.id;
+card.className = 'product-card product-item-card';
+card.dataset.productId = product.id;
+
+// Ajoute le contour spécial aux produits mis en avant
+if (product.featured === true) {
+    card.classList.add('featured-product');
+}
 
             if (product.clickable === false) {
                 card.classList.add('unclickable');
