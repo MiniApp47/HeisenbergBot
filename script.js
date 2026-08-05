@@ -313,6 +313,22 @@ document.addEventListener('DOMContentLoaded', function () {
                          image: 'Wizard4.png', // Mets une image de farm si tu veux
                          badgeText: '2 produits', */
                     products: [
+                        {
+                                    id: 'DRY ',
+                                    flag: '🇲🇦',
+                                    name: 'Richard Miles 🚨',
+                                    farm: 'PRIVATE ⭕', 
+                                    promoEligible: true,
+                                    type: 'HASH',
+                                    image: 'ProductDry.png',
+                                    video: 'VideoDry.mp4',
+                                    description: '',   
+                                     tarifs: [
+                                        { weight: '5g', price: 40.00 },
+                                        { weight: '10g', price: 80.00 },
+                                        { weight: '25g', price: 200.00 },
+                                    ]
+                                },
                        /*  {
                                     id: 'HIGH OCTANE 🚨🚨',
                                     flag: '🇲🇦',
@@ -340,10 +356,10 @@ document.addEventListener('DOMContentLoaded', function () {
                                     video: 'VideoLM.mp4',
                                     description: '',   
                                      tarifs: [
-                                        { weight: '5g', price: 50.00 },
-                                        { weight: '10g', price: 90.00 },
-                                        { weight: '25g', price: 200.00 },
-                                        { weight: '50g', price: 350.00 },
+                                        { weight: '5g', price: 40.00 },
+                                        { weight: '10g', price: 80.00 },
+                                        { weight: '25g', price: 180.00 },
+                                        { weight: '50g', price: 340.00 },
                                         { weight: '100g', price: 600.00 },
                                     ]
                                 },
