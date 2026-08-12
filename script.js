@@ -119,8 +119,8 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '7G', price: 80.00 },
                                 { weight: '10G', price: 120.00 },
                                 { weight: '25G', price: 240.00 },
-                                { weight: '50G', price: 400.00 },
-                                { weight: '100G', price: 750.00 },
+                                { weight: '50G', price: 440.00 },
+                                { weight: '100G', price: 800.00 },
                             ]
                         },
                        /*  {
@@ -449,8 +449,8 @@ document.addEventListener('DOMContentLoaded', function () {
                             video: 'VideoOct.mp4',
                             description: '',
                             tarifs: [
-                                { weight: '5G', price: 60.00 },
-                                { weight: '10G', price: 120.00 },
+                                { weight: '5G', price: 50.00 },
+                                { weight: '10G', price: 100.00 },
                                 { weight: '25G', price: 250.00 },
                             ]
                         },
