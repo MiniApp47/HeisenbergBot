@@ -81,6 +81,23 @@ document.addEventListener('DOMContentLoaded', function () {
             farms: [
                 {
                     products: [
+                        {
+                            id: 'Bleu Monster',
+                            flag: '🇪🇸',
+                            name: 'Bleu Monster 🪬🧿',
+                            farm: '🏠 Private Heisenberg Lab',
+                            promoEligible: true,
+                            type: 'Weed',
+                            image: 'ProductBM.png',
+                            video: 'VideoBM.mov',
+                            description: 'Le Blue Monster est une variété à dominante indica reconnue pour son effet profondément relaxant et ses arômes fruités et floraux. Elle aide à détendre le corps, à apaiser le stress et procure une sensation de bien-être',
+                            tarifs: [
+                                { weight: '1G', price: 20.00 },
+                                { weight: '3G', price: 50.00 },
+                                { weight: '10G', price: 150.00 },
+                                { weight: '25G', price: 300.00 },
+                            ]
+                        },
                        /*  {
                             id: '🍋 Lemon cherry 🍒',
                             flag: '🇪🇸',
