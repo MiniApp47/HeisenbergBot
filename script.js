@@ -331,6 +331,23 @@ document.addEventListener('DOMContentLoaded', function () {
                          badgeText: '2 produits', */
                     products: [
                         {
+                                    id: 'King Hassan ',
+                                    flag: '🇲🇦',
+                                    name: 'King Hassan 👑',
+                                    farm: 'PRIVATE ⭕', 
+                                    promoEligible: true,
+                                    type: 'HASH',
+                                    image: 'ProductKH.png',
+                                    video: 'VideoKH.mp4',
+                                    description: '',   
+                                     tarifs: [
+                                        { weight: '5g', price: 40.00 },
+                                        { weight: '10g', price: 80.00 },
+                                        { weight: '25g', price: 180.00 },
+                                        { weight: '50g', price: 300.00 },
+                                    ]
+                                },
+                        {
                                     id: 'DRY ',
                                     flag: '🇲🇦',
                                     name: 'Richard Miles 🚨',
@@ -454,6 +471,42 @@ document.addEventListener('DOMContentLoaded', function () {
                          image: 'Wizard4.png', // Mets une image de farm si tu veux
                          badgeText: '2 produits', */
                     products: [
+                        {
+                            id: 'Tchikita Banana',
+                            //flag: '🇺🇸',
+                            name: '🍌 Tchikita Banana 🍌',
+                            farm: 'PRIVATE ⭕', 
+                            promoEligible: true,
+                            featured: true,
+                            type: 'Frozen',
+                            image: 'ProductTB.png',
+                            video: 'VideoTB.mp4',
+                            description: '',
+                            tarifs: [
+                                { weight: '5G', price: 50.00 },
+                                { weight: '10G', price: 100.00 },
+                                { weight: '25G', price: 220.00 },
+                                { weight: '50G', price: 400.00 },
+                            ]
+                        },
+                        {
+                            id: 'El Messi',
+                            //flag: '🇺🇸',
+                            name: '⚽ El Messi ⚽',
+                            farm: 'PRIVATE ⭕', 
+                            promoEligible: true,
+                            featured: true,
+                            type: 'Frozen',
+                            image: 'ProductEM.png',
+                            video: 'VideoEM.mp4',
+                            description: '',
+                            tarifs: [
+                                { weight: '5G', price: 50.00 },
+                                { weight: '10G', price: 100.00 },
+                                { weight: '25G', price: 220.00 },
+                                { weight: '50G', price: 400.00 },
+                            ]
+                        },
                         {
                             id: 'Papaya 🥭',
                             //flag: '🇺🇸',
