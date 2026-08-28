@@ -239,6 +239,24 @@
             display: block;
         }
 
+
+        /* Nom visible des sous-catégories (ex: Pre Rolls -> Weed / Hash) */
+        .subcategory-name {
+            width: 85%;
+            margin: 10px auto 0;
+            padding: 10px 12px;
+            box-sizing: border-box;
+            text-align: center;
+            font-family: Copperplate, 'Roboto', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #ffffff;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(3, 231, 246, 0.12));
+            border: 1px solid #03e7f6;
+            border-radius: 14px;
+            box-shadow: 0 0 10px rgba(3, 231, 246, 0.35);
+        }
+
         .category-grid {
             display: grid;
             grid-template-columns: repeat(1, 1fr);
@@ -1445,6 +1463,22 @@
             opacity: 1 !important;
             box-shadow: 0px 0px 10px rgba(3, 231, 246, 0.2);
         }
+        /* --- ACCESSOIRES PAYANTS SOUS LES CIGARETTES --- */
+        .accessories-wrapper { margin-top:15px; background:var(--secondary-bg-color); border-radius:10px; padding:15px; border:1px solid #03e7f6; }
+        .accessories-title { font-weight:700; color:#03e7f6; margin-bottom:12px; display:block; }
+        .accessory-item { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:11px 8px; border-top:1px solid rgba(255,255,255,.08); cursor:pointer; }
+        .accessory-item:first-of-type { border-top:none; }
+        .accessory-label { flex:1; }
+        .accessory-price { color:#03e7f6; font-weight:700; white-space:nowrap; }
+        .accessory-checkbox { accent-color:#03e7f6; transform:scale(1.25); }
+        .gift-tiers-wrapper { margin-top:15px; display:flex; flex-direction:column; gap:10px; }
+        .gift-tier { background:#2c2c2e; border-radius:10px; padding:12px 15px; border:1px solid #555; opacity:.65; transition:.25s ease; }
+        .gift-tier.active { opacity:1; border-color:#03e7f6; box-shadow:0 0 12px rgba(3,231,246,.22); }
+        .gift-tier-title { font-weight:800; margin-bottom:6px; color:#fff; }
+        .gift-tier.active .gift-tier-title { color:#03e7f6; }
+        .gift-tier-list { font-size:.88rem; line-height:1.5; color:var(--hint-color); }
+        .gift-tier.active .gift-tier-list { color:#fff; }
+
         /* --- STYLE DES ZONES DE LIVRAISON --- */
         .zone-card {
             background: rgba(255, 255, 255, 0.05);
@@ -1947,7 +1981,7 @@
             </div>
           <div class="cigarette-wrapper">
                 <div class="switch-header">
-                    <span class="goodies-title">🚬 Cigarettes Allemandes (+10€)</span>
+                    <span class="goodies-title">🚬 Cigarettes Allemandes (+15€)</span>
                     <label class="switch">
                         <input type="checkbox" id="cigarette-toggle">
                         <span class="slider round"></span>
@@ -1962,12 +1996,34 @@
                 </div>
             </div>
 
-            <div class="bonus-wrapper" style="margin-top: 15px; opacity: 0.7;">
-                <label class="switch-container" style="cursor: default;">
-                    <span class="goodies-text">🌟 Bonus Palier 300€ <small>(Automatique)</small></span>
-                    <input type="checkbox" id="bonus-300-checkbox" disabled> 
-                    <span class="checkmark" style="cursor: default;"></span>
+            <div class="accessories-wrapper">
+                <span class="accessories-title">✨ Accessoires personnalisés</span>
+                <label class="accessory-item">
+                    <input type="checkbox" id="accessory-box-toggle" class="accessory-checkbox">
+                    <span class="accessory-label">📦 Petite hachettes personnalisée</span>
+                    <span class="accessory-price">+10€</span>
                 </label>
+                <label class="accessory-item">
+                    <input type="checkbox" id="accessory-tray-toggle" class="accessory-checkbox">
+                    <span class="accessory-label">🛸 Plateau roulage personnalisé</span>
+                    <span class="accessory-price">+15€</span>
+                </label>
+                <label class="accessory-item">
+                    <input type="checkbox" id="accessory-lighter-toggle" class="accessory-checkbox">
+                    <span class="accessory-label">🔥 Briquet personnalisé</span>
+                    <span class="accessory-price">+10€</span>
+                </label>
+            </div>
+
+            <div class="gift-tiers-wrapper">
+                <div id="gift-tier-300" class="gift-tier">
+                    <div class="gift-tier-title">🎁 Cadeaux grosse commande — 300€+</div>
+                    <div class="gift-tier-list">📦 Petite hachettes personnalisée offerte<br>🔥 Briquet personnalisé offert<br>🍃 Feuilles personnalisées offertes<br>🔐 Anti-vol personnalisé offert</div>
+                </div>
+                <div id="gift-tier-500" class="gift-tier">
+                    <div class="gift-tier-title">🌟 Cadeau supplémentaire — 500€+</div>
+                    <div class="gift-tier-list">🛸 Plateau roulage personnalisé offert</div>
+                </div>
             </div>
             <div class="promo-container">
                 <h4>Code Promo</h4>

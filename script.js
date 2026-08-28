@@ -984,22 +984,21 @@ document.addEventListener('DOMContentLoaded', function () {
                 type: 'Pre - rolls',
                 quality: 'Pre - rolls 🌯',
                 image: 'CategPre.png', // Image de la catégorie
-    
+                hasSubcategories: true, // Weed / Hash
+
                 farms: [
                     {
-                        /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
-                             name: 'Wizard trees 🔮',
-                             image: 'Wizard4.png', // Mets une image de farm si tu veux
-                             badgeText: '2 produits', */
+                        id: 'pre-rolls-weed',
+                        name: 'Weed 🌿',
+                        image: 'CategWeed.png',
                         products: [
                             {
-                                id: 'Cali usa 🌵',
-                                //flag: '🇺🇸',
-                                name: 'Cali usa 🌵',
+                                id: 'Blue Monster 🌵',
+                                name: 'Blue Monster 🌵',
                                 farm: '🏠 No Farm',
-                                clickable: false,
+                                clickable: true,
                                 promoEligible: true,
-                                type: 'Pre-Rolls',
+                                type: 'Pre-Rolls Weed',
                                 image: 'ProductPre.png',
                                 video: '',
                                 description: 'Rainbow multicolor',
@@ -1009,32 +1008,73 @@ document.addEventListener('DOMContentLoaded', function () {
                             },
                             {
                                 id: 'Amnesia 🌺',
-                                //flag: '🇺🇸',
                                 name: 'Amnesia 🌺',
                                 farm: '🏠 No Farm',
-                                clickable: false,
+                                clickable: true,
                                 promoEligible: true,
-                                type: 'Pre-Rolls',
+                                type: 'Pre-Rolls Weed',
                                 image: 'ProductPre.png',
                                 video: '',
                                 description: 'Rainbow multicolor',
                                 tarifs: [
-                                    { weight: '1', price: 15.00 },
+                                    { weight: '1', price: 20.00 },
                                 ]
                             },
                             {
                                 id: 'Lemon cherry 🍒',
-                                //flag: '🇺🇸',
                                 name: 'Lemon cherry 🍒',
                                 farm: '🏠 No Farm',
-                                clickable: false,
+                                clickable: true,
                                 promoEligible: true,
-                                type: 'Pre-Rolls',
+                                type: 'Pre-Rolls Weed',
                                 image: 'ProductPre.png',
                                 video: '',
                                 description: 'Rainbow multicolor',
                                 tarifs: [
-                                    { weight: '1', price: 15.00 },
+                                    { weight: '1', price: 20.00 },
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        id: 'pre-rolls-hash',
+                        name: 'Hash 🇲🇦',
+                        image: 'CategHash.png',
+                        products: [
+                            {
+                                id: 'Frozen SPF Pre-Roll',
+                                flag: '🇲🇦',
+                                name: 'Frozen SPF ❄️',
+                                farm: 'SPF',
+                                clickable: true,
+                                promoEligible: true,
+                                type: 'Pre-Rolls Hash',
+                                image: 'ProductPre.png',
+                                video: '',
+                                description: 'Strain : Marrocan Peach 🍑',
+                                tarifs: [
+                                    { weight: '0.5G', price: 10.00 },
+                                ]
+                            },
+                            {
+                                id: 'Double Static SPF Pre-Roll',
+                                flag: '🇲🇦',
+                                name: 'Double Static SPF ⚡️',
+                                farm: 'SPF',
+                                clickable: true,
+                                promoEligible: true,
+                                type: 'Pre-Rolls Hash',
+                                image: 'ProductPre.png',
+                                video: '',
+                                description: 'Pre-roll Double Static SPF – 0.5G',
+                                strains: [
+                                    'Mental Rainbow 🌈',
+                                    'Marrocan Peach 🍑',
+                                    'Honey Banana 🍯🍌',
+                                    'Mental Rainbow Sherbet V2 🌈🍧'
+                                ],
+                                tarifs: [
+                                    { weight: '0.5G', price: 15.00 },
                                 ]
                             }
                         ]
@@ -1474,27 +1514,20 @@ document.addEventListener('DOMContentLoaded', function () {
             productListContainer.style.gridTemplateColumns = 'repeat(1, 1fr)';
 
         } else if (currentView === 'farms') {
-            // --- MIS EN COMMENTAIRE COMME DEMANDÉ ---
-            /*
             renderFarmList(currentCategoryId);
-    
-            // --- GESTION DES FILTRES (Vue Farms) ---
+
+            // Vue utilisée comme sous-catégories (ex: Pre Rolls -> Weed / Hash)
             searchFilterWrapper.style.display = 'none';
-            farmFilterWrapper.style.display = 'none'; 
+            farmFilterWrapper.style.display = 'none';
             qualityFilterWrapper.style.display = 'none';
-    
-            // --- GESTION DU STYLE DE GRILLE ---
-            productListContainer.style.gridTemplateColumns = 'repeat(1, 1fr)'; 
-    
-            // --- AJOUT BOUTON RETOUR (vers Catégories) ---
+            productListContainer.style.gridTemplateColumns = 'repeat(1, 1fr)';
+
             const category = appData.find(c => c.id === currentCategoryId);
             const backButton = document.createElement('button');
-            backButton.className = 'back-to-categories-btn'; 
+            backButton.className = 'back-to-categories-btn';
             backButton.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg> ${category.name}`;
-            backButton.style.cssText = `background: var(--tertiary-bg-color); border: none; color: white; padding: 10px 15px; border-radius: 10px; font-size: 1.1rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 10px; width: 100%; box-sizing: border-box; margin-top: 3vh;font-family: Copperplate;`;
+            backButton.style.cssText = `background: linear-gradient(180deg, black, transparent); border-bottom: 2px solid #03e7f6; border-top: none; border-left: none; border-right: none; color: white; padding: 10px 15px; border-radius: 10px; font-size: 1.1rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 10px; width: 100%; box-sizing: border-box; margin-top: 3vh; font-family: Copperplate;`;
             filterContainer.prepend(backButton);
-            */
-            // --- FIN DU BLOC COMMENTÉ ---
 
         } else if (currentView === 'products') {
             // --- MODIFICATION : On ne passe plus currentFarmId ---
@@ -1512,11 +1545,15 @@ document.addEventListener('DOMContentLoaded', function () {
             const category = appData.find(c => c.id === currentCategoryId);
             // const farm = category.farms.find(f => f.id === currentFarmId); // <- On n'a plus besoin de ça
             const backButton = document.createElement('button');
-            backButton.className = 'back-to-categories-btn'; // <-- MODIFIÉ (pour réutiliser le clic)
+            const hasSelectedSubcategory = category.hasSubcategories === true && currentFarmId;
+            const selectedSubcategory = hasSelectedSubcategory
+                ? category.farms.find(farm => farm.id === currentFarmId)
+                : null;
+            backButton.className = hasSelectedSubcategory ? 'back-to-farms-btn' : 'back-to-categories-btn';
             backButton.innerHTML = `<svg width="24"
          height="24"
           viewBox="0 0 24 24"
-          ><path fill="currentColor" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>  ${category.name}`; // <-- MODIFIÉ (on affiche le nom de la catégorie)
+          ><path fill="currentColor" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>  ${selectedSubcategory ? selectedSubcategory.name : category.name}`;
             backButton.style.cssText = ` background: linear-gradient(180deg, black, transparent); 
             border-bottom: 2px solid #03e7f6;
             border-top: none;
@@ -1595,9 +1632,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
             card.innerHTML = `
             <div class="card-badge">${productCount > 0 ? productCount + ' produit' + (productCount > 1 ? 's' : '') : farm.badgeText || ''}</div>
-            
             <img src="${farm.image}" alt="${farm.name}">
-           
+            <div class="subcategory-name">${farm.name}</div>
         `;
             productListContainer.appendChild(card);
         });
@@ -1611,10 +1647,14 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // --- MODIFICATION MAJEURE ---
-        // On récupère TOUS les produits de TOUTES les farms de cette catégorie
-        const allProducts = category.farms.flatMap(farm => farm.products);
-        // --- FIN MODIFICATION ---
+        // Si une sous-catégorie est sélectionnée, on affiche uniquement ses produits.
+        // Sinon, comportement normal : tous les produits de la catégorie.
+        const selectedFarm = currentFarmId
+            ? category.farms.find(farm => farm.id === currentFarmId)
+            : null;
+        const allProducts = selectedFarm
+            ? selectedFarm.products
+            : category.farms.flatMap(farm => farm.products);
 
         if (!allProducts || allProducts.length === 0) {
             productListContainer.innerHTML = '<p class="no-results">Aucun produit dans cette catégorie.</p>';
@@ -1775,6 +1815,9 @@ function renderProductPage(productId) {
   function renderConfirmation() {
     // --- 1. DÉFINITION DES VARIABLES ET SÉLECTEURS (EN PREMIER !) ---
     const cigToggle = document.getElementById('cigarette-toggle');
+    const accessoryBoxToggle = document.getElementById('accessory-box-toggle');
+    const accessoryTrayToggle = document.getElementById('accessory-tray-toggle');
+    const accessoryLighterToggle = document.getElementById('accessory-lighter-toggle');
     const zoneSelect = document.getElementById('delivery-zone-select'); // Il doit être défini ici !
     const zoneOptions = zoneSelect.options;
     const warningText = document.getElementById('zone-warning-text');
@@ -1783,9 +1826,9 @@ function renderProductPage(productId) {
     let subTotal = cart.reduce((sum, item) => sum + item.totalPrice, 0);
     let discount = 0;
 
-    // --- 2. GESTION CIGARETTES (+10€) ---
-    // On vérifie si c'est coché pour ajouter 10€
-    const cigarettePrice = cigToggle.checked ? 10.00 : 0;
+    // --- 2. GESTION CIGARETTES (+15€) ---
+    // On vérifie si c'est coché pour ajouter 15€
+    const cigarettePrice = cigToggle.checked ? 15.00 : 0;
 
     // Logique visuelle cigarette (Menu déroulant)
     const cigDetails = document.getElementById('cigarette-details');
@@ -1799,6 +1842,16 @@ function renderProductPage(productId) {
     cigToggle.onchange = function() {
         renderConfirmation(); 
     };
+
+    // --- 2B. ACCESSOIRES PERSONNALISÉS ---
+    const accessoryBoxPrice = accessoryBoxToggle.checked ? 10.00 : 0;
+    const accessoryTrayPrice = accessoryTrayToggle.checked ? 15.00 : 0;
+    const accessoryLighterPrice = accessoryLighterToggle.checked ? 10.00 : 0;
+    const accessoriesPrice = accessoryBoxPrice + accessoryTrayPrice + accessoryLighterPrice;
+    accessoryBoxToggle.onchange = function() { renderConfirmation(); };
+    accessoryTrayToggle.onchange = function() { renderConfirmation(); };
+    accessoryLighterToggle.onchange = function() { renderConfirmation(); };
+
 
     // --- 3. GESTION PROMO ---
     if (appliedPromo) {
@@ -1825,19 +1878,13 @@ function renderProductPage(productId) {
     if (discount > subTotal) discount = subTotal;
 
     // --- 4. TOTAL FINAL ---
-    const totalPrice = subTotal - discount + cigarettePrice;
+    const totalPrice = subTotal - discount + cigarettePrice + accessoriesPrice;
 
-    // --- 5. GESTION DU BONUS AUTOMATIQUE (CASE GRISE) ---
-    const bonusCheckbox = document.getElementById('bonus-300-checkbox');
-    const bonusWrapper = document.querySelector('.bonus-wrapper');
-
-    if (totalPrice >= 300) {
-        bonusCheckbox.checked = true;
-        bonusWrapper.classList.add('active');
-    } else {
-        bonusCheckbox.checked = false;
-        bonusWrapper.classList.remove('active');
-    }
+    // --- 5. PALIERS CADEAUX AUTOMATIQUES ---
+    const giftTier300 = document.getElementById('gift-tier-300');
+    const giftTier500 = document.getElementById('gift-tier-500');
+    giftTier300.classList.toggle('active', totalPrice >= 300);
+    giftTier500.classList.toggle('active', totalPrice >= 500);
 
     // --- 6. GESTION DE L'IMAGE DE LA ZONE (Maintenant que zoneSelect est défini) ---
     const imgContainer = document.getElementById('cart-zone-image-container');
@@ -1972,6 +2019,15 @@ function renderProductPage(productId) {
             <span>+${cigarettePrice.toFixed(2)}€</span>
         </div>
         `;
+    }
+    if (accessoryBoxPrice > 0) {
+        summaryHTML += `<div class="summary-line"><span>📦 Petite hachettes personnalisée:</span><span>+${accessoryBoxPrice.toFixed(2)}€</span></div>`;
+    }
+    if (accessoryTrayPrice > 0) {
+        summaryHTML += `<div class="summary-line"><span>🛸 Plateau personnalisé:</span><span>+${accessoryTrayPrice.toFixed(2)}€</span></div>`;
+    }
+    if (accessoryLighterPrice > 0) {
+        summaryHTML += `<div class="summary-line"><span>🔥 Briquet personnalisé:</span><span>+${accessoryLighterPrice.toFixed(2)}€</span></div>`;
     }
     summaryHTML += `
         <div class="summary-line total">
@@ -2168,9 +2224,18 @@ function renderProductPage(productId) {
         // Cigarettes
         const wantCig = document.getElementById('cigarette-toggle').checked;
         const cigBrand = document.getElementById('cigarette-brand').value;
-        const cigPrice = wantCig ? 10.00 : 0;
+        const cigPrice = wantCig ? 15.00 : 0;
         let cigString = "Non";
-        if (wantCig) cigString = `Oui (${cigBrand}) - 10€`;
+        if (wantCig) cigString = `Oui (${cigBrand}) - 15€`;
+
+        // Accessoires personnalisés
+        const wantBox = document.getElementById('accessory-box-toggle').checked;
+        const wantTray = document.getElementById('accessory-tray-toggle').checked;
+        const wantPersonalizedLighter = document.getElementById('accessory-lighter-toggle').checked;
+        const boxPrice = wantBox ? 10.00 : 0;
+        const trayPrice = wantTray ? 15.00 : 0;
+        const personalizedLighterPrice = wantPersonalizedLighter ? 10.00 : 0;
+        const accessoriesPrice = boxPrice + trayPrice + personalizedLighterPrice;
 
         // Calcul Prix
         let subTotal = cart.reduce((sum, item) => sum + item.totalPrice, 0);
@@ -2183,10 +2248,11 @@ function renderProductPage(productId) {
             discount = (promo.type === 'percent') ? (discountableAmount * promo.value) / 100 : promo.value;
         }
         if (discount > subTotal) discount = subTotal;
-        const totalPrice = subTotal - discount + cigPrice;
+        const totalPrice = subTotal - discount + cigPrice + accessoriesPrice;
         
-        // Bonus
-        const isBonusUnlocked = totalPrice >= 300 ? "✅ OUI (Commande > 300€)" : "❌ NON";
+        // Cadeaux automatiques selon le palier
+        const gifts300 = totalPrice >= 300 ? "✅ Petite hachettes personnalisée + Briquet personnalisé + Feuilles personnalisées + Anti-vol personnalisé" : "❌ Palier non atteint";
+        const gifts500 = totalPrice >= 500 ? "✅ Plateau roulage personnalisé offert" : "❌ Palier non atteint";
         const date = new Date();
         const formattedDate = `${date.getDate()} ${date.toLocaleString('fr-FR', { month: 'long' })} ${date.getFullYear()} a ${date.getHours()}:${String(date.getMinutes()).padStart(2, '0')}`;
 
@@ -2212,7 +2278,10 @@ function renderProductPage(productId) {
         message += `\n\n====================\n`;
         message += `SOUS-TOTAL: ${subTotal.toFixed(2)} EUR\n`;
         if (discount > 0) message += `REDUCTION (${appliedPromo}): -${discount.toFixed(2)} EUR\n`;
-        if (wantCig) message += `CIGARETTES: +10.00 EUR\n`;
+        if (wantCig) message += `CIGARETTES: +15.00 EUR\n`;
+        if (wantBox) message += `PETITE HACHETTES PERSONNALISEE: +10.00 EUR\n`;
+        if (wantTray) message += `PLATEAU ROULAGE PERSONNALISE: +15.00 EUR\n`;
+        if (wantPersonalizedLighter) message += `BRIQUET PERSONNALISE: +10.00 EUR\n`;
         message += `TOTAL FINAL: ${totalPrice.toFixed(2)} EUR\n`; 
         message += "====================\n";
         
@@ -2224,7 +2293,15 @@ function renderProductPage(productId) {
         if (wantCig) {
             message += `\n🚬 CIGARETTES : ${cigString}\n`;
         }
-        message += `\n🌟 BONUS PALIER 300€ : ${isBonusUnlocked}\n`;
+        if (wantBox || wantTray || wantPersonalizedLighter) {
+            const paidAccessories = [];
+            if (wantBox) paidAccessories.push('Petite hachettes personnalisée (+10€)');
+            if (wantTray) paidAccessories.push('Plateau roulage personnalisé (+15€)');
+            if (wantPersonalizedLighter) paidAccessories.push('Briquet personnalisé (+10€)');
+            message += `\n✨ ACCESSOIRES : ${paidAccessories.join(' + ')}\n`;
+        }
+        message += `\n🎁 CADEAUX 300€+ : ${gifts300}\n`;
+        message += `\n🌟 CADEAU 500€+ : ${gifts500}\n`;
 
         message += `\n📅 Commande du: ${formattedDate}\n`;
         return message;
@@ -2289,11 +2366,18 @@ function renderProductPage(productId) {
         // 1. Clic sur une carte CATÉGORIE
         const categoryCard = target.closest('.category-card');
         if (categoryCard) {
-            currentView = 'products'; // <-- MODIFIÉ (on saute la vue "farms")
             currentCategoryId = categoryCard.dataset.categoryId;
-            // On reset les filtres
+            currentFarmId = null;
+            const category = appData.find(c => c.id === currentCategoryId);
+
+            // Les catégories normales ouvrent directement leurs produits.
+            // Pre Rolls ouvre d'abord ses sous-catégories Weed / Hash.
+            currentView = category && category.hasSubcategories === true ? 'farms' : 'products';
+
             currentFilters.searchTerm = '';
+            currentFilters.farm = 'all';
             document.getElementById('search-filter').value = '';
+            document.getElementById('farm-filter').value = 'all';
             renderHomePage();
             return;
         }
@@ -2318,22 +2402,22 @@ function renderProductPage(productId) {
         }
 
 
-        // 2. NOUVEAU : Clic sur une carte FARM (MIS EN COMMENTAIRE)
-        /*    const farmCard = target.closest('.farm-card');
-           if (farmCard) {
-   
-               if (farmCard.classList.contains('unclickable')) {
-                   return;
-               }
-   
-               currentView = 'products'; // On va à la vue "products"
-               currentFarmId = farmCard.dataset.farmId;
-               // On reset les filtres
-               currentFilters.searchTerm = '';
-               document.getElementById('search-filter').value = '';
-               renderHomePage();
-               return;
-           } */
+        // 2. Clic sur une sous-catégorie (réutilise les cartes FARM)
+        const farmCard = target.closest('.farm-card');
+        if (farmCard) {
+            if (farmCard.classList.contains('unclickable')) {
+                return;
+            }
+
+            currentView = 'products';
+            currentFarmId = farmCard.dataset.farmId;
+            currentFilters.searchTerm = '';
+            currentFilters.farm = 'all';
+            document.getElementById('search-filter').value = '';
+            document.getElementById('farm-filter').value = 'all';
+            renderHomePage();
+            return;
+        }
 
         // 3. Clic sur une carte PRODUIT
         const productCard = target.closest('.product-item-card');
