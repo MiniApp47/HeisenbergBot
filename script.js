@@ -331,6 +331,23 @@ document.addEventListener('DOMContentLoaded', function () {
                          badgeText: '2 produits', */
                     products: [
                         {
+                                    id: 'WEDDING CAKE ',
+                                    flag: '🇲🇦',
+                                    name: 'WEDDING CAKE 🎂',
+                                    farm: 'PRIVATE ⭕', 
+                                    promoEligible: true,
+                                    type: 'HASH',
+                                    image: 'ProductWC.png',
+                                    video: 'VideoWC.mp4',
+                                    description: 'Une résine au profil gourmand et élégant, avec des notes crémeuses, vanillées et légèrement sucrées rappelant une pâtisserie fraîche. Sa texture souple et travaillée accompagne un parfum riche avec une petite touche terreuse en fond. Une référence équilibrée et savoureuse pour les amateurs de profils dessert.',
+  
+                                     tarifs: [
+                                        { weight: '5g', price: 40.00 },
+                                        { weight: '10g', price: 80.00 },
+                                        { weight: '25g', price: 200.00 },
+                                    ]
+                                },
+                        {
                                     id: 'King Hassan ',
                                     flag: '🇲🇦',
                                     name: 'King Hassan 👑',
@@ -339,7 +356,8 @@ document.addEventListener('DOMContentLoaded', function () {
                                     type: 'HASH',
                                     image: 'ProductKH.png',
                                     video: 'VideoKH.mp4',
-                                    description: '',   
+                                    description: 'Un grand classique d’inspiration marocaine avec une texture souple, homogène et facile à travailler. Son profil aromatique développe des notes terreuses, épicées et légèrement boisées, accompagnées d’une petite douceur en fin de bouche. Une référence traditionnelle, simple et efficace.',
+   
                                      tarifs: [
                                         { weight: '5g', price: 40.00 },
                                         { weight: '10g', price: 80.00 },
@@ -356,7 +374,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                     type: 'HASH',
                                     image: 'ProductDry.png',
                                     video: 'VideoDry.mp4',
-                                    description: '',   
+                                    description: 'Une résine au caractère plus moderne avec une texture dense, grasse à cœur et particulièrement malléable. Son profil aromatique mélange des notes profondes, légèrement fruitées et épicées avec une finition terreuse persistante. Une référence premium au parfum marqué et à la présentation soignée.', 
                                      tarifs: [
                                         { weight: '5g', price: 40.00 },
                                         { weight: '10g', price: 80.00 },
