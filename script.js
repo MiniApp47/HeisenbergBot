@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         {
             name: 'WHATSAPP 📞',
-            url: 'https://wa.me/33745728635',
+            url: 'https://wa.me/33745364498',
             id: 'whatsapp',
             className: 'whatsapp', // Il faudra peut-être ajouter ce CSS (Jaune)
             text: "WHATSAPP 📞"
@@ -347,7 +347,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                         { weight: '25g', price: 200.00 },
                                     ]
                                 },
-                        {
+                        /* {
                                     id: 'King Hassan ',
                                     flag: '🇲🇦',
                                     name: 'King Hassan 👑',
@@ -364,8 +364,8 @@ document.addEventListener('DOMContentLoaded', function () {
                                         { weight: '25g', price: 180.00 },
                                         { weight: '50g', price: 300.00 },
                                     ]
-                                },
-                        {
+                                }, */
+                      /*   {
                                     id: 'DRY ',
                                     flag: '🇲🇦',
                                     name: 'Richard Miles 🚨',
@@ -380,7 +380,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                         { weight: '10g', price: 80.00 },
                                         { weight: '25g', price: 200.00 },
                                     ]
-                                },
+                                }, */
                        /*  {
                                     id: 'HIGH OCTANE 🚨🚨',
                                     flag: '🇲🇦',
@@ -397,7 +397,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                         { weight: '25g', price: 250.00 },
                                     ]
                                 }, */
-                                {
+                               /*  {
                                     id: 'LA MOUSSE',
                                     flag: '🇲🇦',
                                     name: '🧽 LA MOUSSE 🧽',
@@ -414,7 +414,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                         { weight: '50g', price: 340.00 },
                                         { weight: '100g', price: 600.00 },
                                     ]
-                                },
+                                }, */
                                /*  {
                                     id: 'Sour diesel ⛽',
                                     flag: '🇲🇦',
@@ -507,7 +507,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '50G', price: 400.00 },
                             ]
                         },
-                        {
+                       /*  {
                             id: 'El Messi',
                             //flag: '🇺🇸',
                             name: '⚽ El Messi ⚽',
@@ -524,7 +524,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '25G', price: 220.00 },
                                 { weight: '50G', price: 400.00 },
                             ]
-                        },
+                        }, */
                         {
                             id: 'Papaya 🥭',
                             //flag: '🇺🇸',
