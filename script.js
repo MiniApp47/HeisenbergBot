@@ -331,6 +331,23 @@ document.addEventListener('DOMContentLoaded', function () {
                          badgeText: '2 produits', */
                     products: [
                         {
+                                    id: 'banana og Humboldt ',
+                                    flag: '🇲🇦',
+                                    name: 'Banana og Humboldt 🍌',
+                                    farm: 'PRIVATE ⭕', 
+                                    promoEligible: true,
+                                    type: 'HASH',
+                                    image: 'ProductBH.png',
+                                    video: 'VideoBH.mp4',
+                                    description: 'Une résine au profil gourmand et élégant, avec des notes fruité, vanillées et légèrement sucrées rappelant un fruit frais. Sa texture souple et travaillée accompagne un parfum riche avec une petite touche terreuse en fond. Une référence équilibrée et savoureuse pour les amateurs de profils dessert.',
+                                     tarifs: [
+                                        { weight: '5g', price: 50.00 },
+                                        { weight: '10g', price: 90.00 },
+                                        { weight: '25g', price: 200.00 },
+                                        { weight: '50g', price: 400.00 },
+                                    ]
+                                },
+                        /* {
                                     id: 'WEDDING CAKE ',
                                     flag: '🇲🇦',
                                     name: 'WEDDING CAKE 🎂',
@@ -346,7 +363,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                         { weight: '10g', price: 80.00 },
                                         { weight: '25g', price: 200.00 },
                                     ]
-                                },
+                                }, */
                         /* {
                                     id: 'King Hassan ',
                                     flag: '🇲🇦',
