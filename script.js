@@ -82,6 +82,23 @@ document.addEventListener('DOMContentLoaded', function () {
                 {
                     products: [
                         {
+                            id: 'Cherry 🍒 Pie 🥧',
+                            flag: '🇪🇸',
+                            name: 'Cherry 🍒 Pie 🥧',
+                            farm: 'Private USA 🇺🇸',
+                            promoEligible: true,
+                            type: 'Weed',
+                            image: 'ProductCP.png',
+                            video: 'VideoCP.mp4',
+                            description: 'Lorsqu’elle est fumée, la Cherry 🍒 Pie 🥧 se distingue d’autres variétés Kush par sa fraîcheur. Avec ses effets, principalement indica, s’ajoute une belle touche de sativa qui rehaussent de puissants effets corporels.',
+                            tarifs: [
+                                { weight: '2G', price: 40.00 },
+                                { weight: '5G', price: 90.00 },
+                                { weight: '10G', price: 170.00 },
+                                { weight: '25G', price: 400.00 },
+                            ]
+                        },
+                        {
                             id: 'Bleu Monster',
                             flag: '🇪🇸',
                             name: 'Bleu Monster 🪬🧿',
@@ -330,6 +347,22 @@ document.addEventListener('DOMContentLoaded', function () {
                          image: 'Wizard4.png', // Mets une image de farm si tu veux
                          badgeText: '2 produits', */
                     products: [
+                        {
+                                    id: 'bubble gum ',
+                                    flag: '🇲🇦',
+                                    name: 'Bubble Gum 🍬',
+                                    farm: 'CTNG ⭕', 
+                                    promoEligible: true,
+                                    type: 'HASH',
+                                    image: 'ProductBG.png',
+                                    video: 'VideoBG.mp4',
+                                    description: 'Un grand classique d’inspiration marocaine avec une texture souple, homogène et facile à travailler. Son profil aromatique développe des notes sucrées, épicées et légèrement boisées, accompagnées d’une petite douceur en fin de bouche. Une référence traditionnelle, simple et efficace \n Quantité limite 🔞',
+                                     tarifs: [
+                                        { weight: '5g', price: 60.00 },
+                                        { weight: '10g', price: 120.00 },
+                                        { weight: '25g', price: 250.00 },
+                                    ]
+                                },
                         {
                                     id: 'banana og Humboldt ',
                                     flag: '🇲🇦',
