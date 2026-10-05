@@ -96,9 +96,9 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '2G', price: 40.00 },
                                 { weight: '5G', price: 90.00 },
                                 { weight: '10G', price: 150.00 },
-                                { weight: '25G', price: 400.00 },
+                                { weight: '25G', price: 300.00 },
                             ]
-                        },
+                        }, 
                         {
                             id: 'Bleu Monster',
                             flag: '🇪🇸',
@@ -856,7 +856,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '100G', price: 2000.00 }
                             ]
                         },
-                        {
+                       /*  {
                             id: 'Piniacolada 🍍',
                             //flag: '🇺🇸',
                             name: 'Piniacolada 🍍',
@@ -875,7 +875,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '50g', price: 750.00 },
                                 { weight: '100G', price: 1300.00 },
                             ]
-                        }
+                        } */
                     ]
                 }
             ]
