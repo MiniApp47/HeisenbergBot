@@ -87,6 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             name: 'Cherry 🍒 Pie 🥧',
                             farm: 'Private USA 🇺🇸',
                             promoEligible: true,
+                            featured: true,
                             type: 'Weed',
                             image: 'ProductCP.png',
                             video: 'VideoCP.mp4',
@@ -94,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             tarifs: [
                                 { weight: '2G', price: 40.00 },
                                 { weight: '5G', price: 90.00 },
-                                { weight: '10G', price: 170.00 },
+                                { weight: '10G', price: 150.00 },
                                 { weight: '25G', price: 400.00 },
                             ]
                         },
@@ -104,6 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             name: 'Bleu Monster 🪬🧿',
                             farm: '🏠 Private Heisenberg Lab',
                             promoEligible: true,
+                            featured: true,
                             type: 'Weed',
                             image: 'ProductBM.png',
                             video: 'VideoBM.mov',
@@ -111,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             tarifs: [
                                 { weight: '1G', price: 20.00 },
                                 { weight: '3G', price: 50.00 },
-                                { weight: '10G', price: 150.00 },
+                                { weight: '10G', price: 130.00 },
                                 { weight: '25G', price: 300.00 },
                             ]
                         },
