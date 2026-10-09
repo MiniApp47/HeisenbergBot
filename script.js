@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             id: 'king blue',
                             flag: '🇪🇸',
                             name: 'KING BLUE 🦋',
-                            farm: 'Private USA 🇺🇸',
+                            farm: 'Wizard Trees 🇺🇸',
                             promoEligible: true,
                             featured: true,
                             type: 'Weed',
