@@ -82,6 +82,23 @@ document.addEventListener('DOMContentLoaded', function () {
                 {
                     products: [
                         {
+                            id: 'king blue',
+                            flag: '🇪🇸',
+                            name: 'KING BLUE 🦋',
+                            farm: 'Private USA 🇺🇸',
+                            promoEligible: true,
+                            featured: true,
+                            type: 'Weed',
+                            image: 'ProductKB.png',
+                            video: 'VideoKB.mp4',
+                            description: 'Fusée usa 🇺🇸 ! \n\n Hybride légendaire (créé initialement à Santa Cruz) aux arômes de baies sucrées et de pin, offrant un effet équilibré entre détente corporelle et stimulation cérébrale (c\'est l\'une des variétés les plus vendues en Californie)',
+                            tarifs: [
+                                { weight: '2G', price: 50.00 },
+                                { weight: '5G', price: 100.00 },
+                                { weight: '10G', price: 180.00 },
+                            ]
+                        }, 
+                        {
                             id: 'Cherry 🍒 Pie 🥧',
                             flag: '🇪🇸',
                             name: 'Cherry 🍒 Pie 🥧',
