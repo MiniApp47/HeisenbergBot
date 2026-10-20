@@ -110,8 +110,8 @@ document.addEventListener('DOMContentLoaded', function () {
                             video: 'VideoCP.mp4',
                             description: 'Lorsqu’elle est fumée, la Cherry 🍒 Pie 🥧 se distingue d’autres variétés Kush par sa fraîcheur. Avec ses effets, principalement indica, s’ajoute une belle touche de sativa qui rehaussent de puissants effets corporels.',
                             tarifs: [
-                                { weight: '2G', price: 40.00 },
-                                { weight: '5G', price: 90.00 },
+                                { weight: '2.5G', price: 40.00 },
+                                { weight: '5G', price: 80.00 },
                                 { weight: '10G', price: 150.00 },
                                 { weight: '25G', price: 300.00 },
                             ]
@@ -129,9 +129,9 @@ document.addEventListener('DOMContentLoaded', function () {
                             description: 'Le Blue Monster est une variété à dominante indica reconnue pour son effet profondément relaxant et ses arômes fruités et floraux. Elle aide à détendre le corps, à apaiser le stress et procure une sensation de bien-être',
                             tarifs: [
                                 { weight: '1G', price: 20.00 },
-                                { weight: '3G', price: 50.00 },
-                                { weight: '10G', price: 130.00 },
-                                { weight: '25G', price: 300.00 },
+                                { weight: '3.5G', price: 40.00 },
+                                { weight: '10G', price: 120.00 },
+                                { weight: '25G', price: 240.00 },
                             ]
                         },
                        /*  {
@@ -1221,7 +1221,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }, */
         // --- Catégorie 10: Bonbon 🍭 ---
 
-        {
+      /*   {
             id: 'Bonbon 🍭',
             name: 'Bonbon 🍭',
             farm: '',
@@ -1234,7 +1234,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
                          name: 'Wizard trees 🔮',
                          image: 'Wizard4.png', // Mets une image de farm si tu veux
-                         badgeText: '2 produits', */
+                         badgeText: '2 produits', 
                     products: [
                         {
                             id: '6️⃣ 9️⃣',
@@ -1256,7 +1256,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     ]
                 }
             ]
-        },
+        }, */
         // --- Catégorie 11: Neige ⛄ ---
 
         {
