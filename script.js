@@ -1269,30 +1269,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             farms: [
                 {
-                    /*      id: 'WIZARDTREES', // J'ai inventé un ID de farm
-                         name: 'Wizard trees 🔮',
-                         image: 'Wizard4.png', // Mets une image de farm si tu veux
-                         badgeText: '2 produits', */
                     products: [
-                        /* {
-                            id: 'Pablo 🤠',
-                            //flag: '🇺🇸',
-                            name: 'Pablo 🤠',
-                            farm: '🇨🇴',
-                            promoEligible: true,
-                            type: 'Neige',
-                            image: 'ProductPablo.png',
-                            video: 'VideoPablo.mp4',
-                            description: '',
-                            tarifs: [
-                                { weight: '1G', price: 60.00 },
-                                { weight: '2G', price: 110.00 },
-                                { weight: '3G', price: 160.00 },
-                                { weight: '5G', price: 250.00 },
-                                { weight: '10G', price: 550.00 },
-                                { weight: '20G', price: 1000.00 },
-                            ]
-                        }, */
                         {
                             id: 'Le Yakuza ㊙️',
                             //flag: '🇺🇸',
@@ -1309,6 +1286,38 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '3G', price: 200.00 },
                                 { weight: '5G', price: 300.00 },
                                 { weight: '10G', price: 580.00 },
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            id: 'Bombonne 🍨',
+            name: 'Bombonne 🍨',
+            farm: '',
+            type: 'Bombonne',
+            quality: 'Bombonne 🍨',
+            image: 'CategCreamy.png', // Image de la catégorie
+
+            farms: [
+                {
+                    products: [
+                        {
+                            id: 'Cream deluxe',
+                            //flag: '🇺🇸',
+                            name: 'Cream deluxe 🍬',
+                            farm: '',
+                            promoEligible: true,
+                            type: 'Bombonne',
+                            image: 'ProductCD.jpg',
+                            video: '',
+                            description: '',
+                            tarifs: [
+                                { weight: '1G', price: 25.00 },
+                                { weight: '1 carton', price: 120.00 },
+                                { weight: '2 carton', price: 220.00 },
+                                { weight: '3 carton', price: 300.00 },
                             ]
                         }
                     ]
