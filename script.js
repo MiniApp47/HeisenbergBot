@@ -1312,7 +1312,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             type: 'Bombonne',
                             image: 'ProductCD.jpg',
                             video: '',
-                            description: '',
+                            description: 'À venir récupère secteur : \n Saint Louis / Huningue / Village neuf / Hésingue / Hegenheim / Rosenau / Kembs / Bartenheim',
                             tarifs: [
                                 { weight: '1G', price: 25.00 },
                                 { weight: '1 carton', price: 120.00 },
