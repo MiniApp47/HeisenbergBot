@@ -1292,7 +1292,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             ]
         },
-        {
+       /*  {
             id: 'Bombonne 🍨',
             name: 'Bombonne 🍨',
             farm: '',
@@ -1323,7 +1323,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     ]
                 }
             ]
-        },
+        }, */
        /*  {
             id: 'Envoi Espagne',
             name: 'Envoi Espagne 🇪🇦',
