@@ -835,7 +835,8 @@ document.addEventListener('DOMContentLoaded', function () {
                             video: 'VideoMR2.mp4',
                             description: 'Rainbow Sherbet est une variété hybride qui allie les meilleures qualités de deux variétés parentes légendaires : Champagne et Blackberry. Ce mélange crée un équilibre harmonieux d\'effets et un profil aromatique riche et complexe qui distingue Rainbow Sherbet des autres variétés \n\n Dispo uniquement Maroc : Tanger / Rabat / Casablanca / Marrakech ',
                             tarifs: [
-                                { weight: '2G', price: 100.00 },
+                                { weight: '1G', price: 30.00 },
+                                { weight: '2G', price: 60.00 },
                                 { weight: '5G', price: 150.00 },
                                 { weight: '10G', price: 250.00 },
                                 { weight: '20G', price: 500.00 },
