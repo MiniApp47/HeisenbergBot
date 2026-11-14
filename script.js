@@ -110,10 +110,10 @@ document.addEventListener('DOMContentLoaded', function () {
                             video: 'VideoCP.mp4',
                             description: 'Lorsqu’elle est fumée, la Cherry 🍒 Pie 🥧 se distingue d’autres variétés Kush par sa fraîcheur. Avec ses effets, principalement indica, s’ajoute une belle touche de sativa qui rehaussent de puissants effets corporels.',
                             tarifs: [
-                                { weight: '2.5G', price: 40.00 },
-                                { weight: '5G', price: 80.00 },
-                                { weight: '10G', price: 150.00 },
-                                { weight: '25G', price: 300.00 },
+                                { weight: '1G', price: 20.00 },
+                                { weight: '3.5G', price: 40.00 },
+                                { weight: '10G', price: 120.00 },
+                                { weight: '25G', price: 240.00 },
                             ]
                         }, 
                         {
@@ -367,6 +367,23 @@ document.addEventListener('DOMContentLoaded', function () {
                          badgeText: '2 produits', */
                     products: [
                         {
+                                    id: 'La Mousse à Yaya 😈😈 ',
+                                    flag: '🇲🇦',
+                                    name: 'La Mousse à Yaya 😈😈',
+                                    farm: 'CTNG ⭕', 
+                                    promoEligible: true,
+                                    type: 'HASH',
+                                    image: 'ProductMY.png',
+                                    video: 'VideoMY.mp4',
+                                    description: '',
+                                     tarifs: [
+                                        { weight: '5g', price: 50.00 },
+                                        { weight: '10g', price: 90.00 },
+                                        { weight: '25g', price: 200.00 },
+                                        { weight: '50g', price: 400.00 },
+                                    ]
+                                },
+                        {
                                     id: 'bubble gum ',
                                     flag: '🇲🇦',
                                     name: 'Bubble Gum 🍬',
@@ -558,7 +575,7 @@ document.addEventListener('DOMContentLoaded', function () {
                          image: 'Wizard4.png', // Mets une image de farm si tu veux
                          badgeText: '2 produits', */
                     products: [
-                        {
+                      /*   {
                             id: 'Tchikita Banana',
                             //flag: '🇺🇸',
                             name: '🍌 Tchikita Banana 🍌',
@@ -575,7 +592,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '25G', price: 220.00 },
                                 { weight: '50G', price: 400.00 },
                             ]
-                        },
+                        }, */
                        /*  {
                             id: 'El Messi',
                             //flag: '🇺🇸',
