@@ -377,10 +377,10 @@ document.addEventListener('DOMContentLoaded', function () {
                                     video: 'VideoMY.mp4',
                                     description: '',
                                      tarifs: [
-                                        { weight: '5g', price: 50.00 },
-                                        { weight: '10g', price: 90.00 },
-                                        { weight: '25g', price: 200.00 },
-                                        { weight: '50g', price: 400.00 },
+                                        { weight: '10g', price: 70.00 },
+                                        { weight: '25g', price: 180.00 },
+                                        { weight: '50g', price: 300.00 },
+                                        { weight: '100g', price: 600.00 },
                                     ]
                                 },
                         {
@@ -628,7 +628,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '25G', price: 250.00 },
                             ]
                         },
-                        {
+                        /* {
                             id: 'Marrocan Peach 🍑',
                             //flag: '🇺🇸',
                             name: 'Marrocan Peach 🍑',
@@ -646,7 +646,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '10G', price: 180.00 },
                                 { weight: '25G', price: 400.00 },
                             ]
-                        },
+                        }, */
                        /*  {
                             id: 'Mandarin OG 🍊',
                             //flag: '🇺🇸',
