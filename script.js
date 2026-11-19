@@ -92,6 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             image: 'ProductKB.png',
                             video: 'VideoKB.mp4',
                             description: 'Fusée usa 🇺🇸 ! \n\n Hybride légendaire (créé initialement à Santa Cruz) aux arômes de baies sucrées et de pin, offrant un effet équilibré entre détente corporelle et stimulation cérébrale (c\'est l\'une des variétés les plus vendues en Californie)',
+                                                        badgePromo: '2g 40€<br>5g 80€<br>10g 150€',
                             tarifs: [
                                 { weight: '2G', price: 50.00 },
                                 { weight: '5G', price: 100.00 },
