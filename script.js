@@ -92,11 +92,12 @@ document.addEventListener('DOMContentLoaded', function () {
                             image: 'ProductKB.png',
                             video: 'VideoKB.mp4',
                             description: 'Fusée usa 🇺🇸 ! \n\n Hybride légendaire (créé initialement à Santa Cruz) aux arômes de baies sucrées et de pin, offrant un effet équilibré entre détente corporelle et stimulation cérébrale (c\'est l\'une des variétés les plus vendues en Californie)',
-                                                        badgePromo: '2g 40€<br>5g 80€<br>10g 150€',
+                                                        badgePromo: '2g 40€<br>5g 80€<br>10g 150€<br>25g 300€',
                             tarifs: [
                                 { weight: '2G', price: 50.00 },
                                 { weight: '5G', price: 100.00 },
-                                { weight: '10G', price: 180.00 },
+                                { weight: '10G', price: 150.00 },
+                                { weight: '25G', price: 300.00 },
                             ]
                         }, 
                         {
@@ -378,6 +379,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                     video: 'VideoMY.mp4',
                                     description: '',
                                      tarifs: [
+                                        { weight: '5g', price: 40.00 },
                                         { weight: '10g', price: 70.00 },
                                         { weight: '25g', price: 180.00 },
                                         { weight: '50g', price: 300.00 },
@@ -612,7 +614,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '50G', price: 400.00 },
                             ]
                         }, */
-                        {
+                       /*  {
                             id: 'Papaya 🥭',
                             //flag: '🇺🇸',
                             name: '🥭 PAPAYA 🥭',
@@ -628,7 +630,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 { weight: '10G', price: 100.00 },
                                 { weight: '25G', price: 250.00 },
                             ]
-                        },
+                        }, */
                         /* {
                             id: 'Marrocan Peach 🍑',
                             //flag: '🇺🇸',
@@ -852,12 +854,13 @@ document.addEventListener('DOMContentLoaded', function () {
                             image: 'ProductMR2.png',
                             video: 'VideoMR2.mp4',
                             description: 'Rainbow Sherbet est une variété hybride qui allie les meilleures qualités de deux variétés parentes légendaires : Champagne et Blackberry. Ce mélange crée un équilibre harmonieux d\'effets et un profil aromatique riche et complexe qui distingue Rainbow Sherbet des autres variétés \n\n Dispo uniquement Maroc : Tanger / Rabat / Casablanca / Marrakech ',
+                            badgePromo: '2G 50€<br>5G 120€<br>10g 220€<br>25g 500€',
                             tarifs: [
                                 { weight: '1G', price: 30.00 },
-                                { weight: '2G', price: 60.00 },
+                                { weight: '2G', price: 50.00 },
                                 { weight: '5G', price: 150.00 },
-                                { weight: '10G', price: 250.00 },
-                                { weight: '20G', price: 500.00 },
+                                { weight: '10G', price: 220.00 },
+                                { weight: '25G', price: 500.00 },
                                 { weight: '30G', price: 750.00 },
                                 { weight: '40G', price: 1000.00 },
                                 { weight: '50G', price: 1100.00 },
